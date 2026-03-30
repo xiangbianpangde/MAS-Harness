@@ -1,0 +1,146 @@
+{
+  "version": "2.0.0",
+  "architecture": "planner-worker",
+  "timestamp": "2026-03-30T19:39:26.867848",
+  "session_id": "mas-v2-1774870326",
+  "total_tasks": 6,
+  "success_count": 4,
+  "success_rate": 66.66666666666666,
+  "avg_score": 77.83333333333333,
+  "avg_tokens": 2313.5,
+  "avg_time": 72.94288106759389,
+  "results": [
+    {
+      "task_id": "code_quicksort",
+      "task_name": "快速排序",
+      "success": true,
+      "score": 89.0,
+      "tokens_used": 4257,
+      "time_seconds": 106.06282329559326,
+      "architecture": "planner-worker",
+      "error": null,
+      "steps": [
+        {
+          "step": "plan",
+          "strategy": "direct",
+          "time": 10.292361497879028
+        },
+        {
+          "step": "execute",
+          "tokens": 4257,
+          "time": 95.77033519744873
+        }
+      ]
+    },
+    {
+      "task_id": "code_lcs",
+      "task_name": "最长公共子序列",
+      "success": true,
+      "score": 100,
+      "tokens_used": 3103,
+      "time_seconds": 100.73981785774231,
+      "architecture": "planner-worker",
+      "error": null,
+      "steps": [
+        {
+          "step": "plan",
+          "strategy": "decompose",
+          "time": 28.375960111618042
+        },
+        {
+          "step": "execute",
+          "tokens": 3103,
+          "time": 72.36362838745117
+        }
+      ]
+    },
+    {
+      "task_id": "math_prob",
+      "task_name": "概率计算",
+      "success": false,
+      "score": 58.0,
+      "tokens_used": 731,
+      "time_seconds": 29.56689429283142,
+      "architecture": "planner-worker",
+      "error": null,
+      "steps": [
+        {
+          "step": "plan",
+          "strategy": "direct",
+          "time": 12.734332799911499
+        },
+        {
+          "step": "execute",
+          "tokens": 731,
+          "time": 16.832528829574585
+        }
+      ]
+    },
+    {
+      "task_id": "plan_critical",
+      "task_name": "关键路径",
+      "success": true,
+      "score": 78.0,
+      "tokens_used": 2174,
+      "time_seconds": 68.90044474601746,
+      "architecture": "planner-worker",
+      "error": null,
+      "steps": [
+        {
+          "step": "plan",
+          "strategy": "direct",
+          "time": 18.1621253490448
+        },
+        {
+          "step": "execute",
+          "tokens": 2174,
+          "time": 50.738269090652466
+        }
+      ]
+    },
+    {
+      "task_id": "creative_story",
+      "task_name": "科幻故事",
+      "success": true,
+      "score": 92.0,
+      "tokens_used": 1436,
+      "time_seconds": 59.82842302322388,
+      "architecture": "planner-worker",
+      "error": null,
+      "steps": [
+        {
+          "step": "plan",
+          "strategy": "direct",
+          "time": 13.000414609909058
+        },
+        {
+          "step": "execute",
+          "tokens": 1436,
+          "time": 46.827946186065674
+        }
+      ]
+    },
+    {
+      "task_id": "reason_logic",
+      "task_name": "逻辑推理",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 2180,
+      "time_seconds": 72.55888319015503,
+      "architecture": "planner-worker",
+      "error": null,
+      "steps": [
+        {
+          "step": "plan",
+          "strategy": "direct",
+          "time": 19.446622848510742
+        },
+        {
+          "step": "execute",
+          "tokens": 2180,
+          "time": 53.112239360809326
+        }
+      ]
+    }
+  ]
+}
