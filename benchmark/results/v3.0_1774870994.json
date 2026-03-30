@@ -1,0 +1,85 @@
+{
+  "version": "3.0.0",
+  "architecture": "planner-worker-reviewer",
+  "timestamp": "2026-03-30T19:43:14.799607",
+  "total_tasks": 6,
+  "success_count": 0,
+  "success_rate": 0.0,
+  "avg_score": 50.0,
+  "avg_tokens": 0.0,
+  "avg_time": 0.320877472559611,
+  "results": [
+    {
+      "task_id": "code_quicksort",
+      "task_name": "快速排序",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 0.3725264072418213,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 3,
+      "error": "Failed after 2 retries",
+      "steps": []
+    },
+    {
+      "task_id": "code_lcs",
+      "task_name": "最长公共子序列",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 0.31233859062194824,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 3,
+      "error": "Failed after 2 retries",
+      "steps": []
+    },
+    {
+      "task_id": "math_prob",
+      "task_name": "概率计算",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 0.3358132839202881,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 3,
+      "error": "Failed after 2 retries",
+      "steps": []
+    },
+    {
+      "task_id": "plan_critical",
+      "task_name": "关键路径",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 0.2982454299926758,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 3,
+      "error": "Failed after 2 retries",
+      "steps": []
+    },
+    {
+      "task_id": "creative_story",
+      "task_name": "科幻故事",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 0.29455137252807617,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 3,
+      "error": "Failed after 2 retries",
+      "steps": []
+    },
+    {
+      "task_id": "reason_logic",
+      "task_name": "逻辑推理",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 0.31178975105285645,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 3,
+      "error": "Failed after 2 retries",
+      "steps": []
+    }
+  ]
+}
