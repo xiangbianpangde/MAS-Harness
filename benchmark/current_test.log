@@ -1,16 +1,20 @@
-=== MAS v2.0 Planner-Worker Benchmark ===
-Architecture: planner-worker
-Tasks: 6
+============================================================
+MAS v7.0 - Thinking Block Extractor Architecture
+============================================================
+Time: 2026-03-30T21:18:19.235128
 
-[code_quicksort] 快速排序... Score: 89.0, Time: 106.1s
-[code_lcs] 最长公共子序列... Score: 100.0, Time: 100.7s
-[math_prob] 概率计算... Score: 58.0, Time: 29.6s
-[plan_critical] 关键路径... Score: 78.0, Time: 68.9s
-[creative_story] 科幻故事... Score: 92.0, Time: 59.8s
-[reason_logic] 逻辑推理... Score: 50.0, Time: 72.6s
+[快速排序] -> score=30(未找到有效代码), time=58.6s, chars=58
+[最长公共子序列] -> score=100(LCS实现完整正确), time=47.5s, chars=128
+[概率计算] -> score=85(答案正确但表达不清晰), time=35.8s, chars=173
+[关键路径] -> score=100(关键路径正确), time=34.8s, chars=84
+[科幻故事] -> score=100(优秀故事(645字)，有对话有情节), time=45.4s, chars=645
+[逻辑推理]fatal: pathspec 'results/v7.0_20260330_212301.json' did not match any files
+ -> score=100(推理正确), time=47.9s, chars=305
 
-=== Results ===
-Success Rate: 66.7%
-Average Score: 77.8
-Average Time: 72.9s
-Saved to: /root/.openclaw/workspace-mas/benchmark/results/v2.0_1774870766.json
+============================================================
+Success Rate: 83.3%
+Average Score: 85.8
+Average Time: 45.0s
+Average Tokens: 22082
+============================================================
+Results saved to: /root/.openclaw/workspace-mas/benchmark/results/v7.0_20260330_212301.json
