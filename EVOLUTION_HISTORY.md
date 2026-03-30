@@ -50,23 +50,25 @@
 - Reviewer: 评估质量，决定是否重试(最多2次)
 
 ### Results
-| Task | Score | Tokens | Time | Attempts | Status |
-|------|-------|--------|------|----------|--------|
-| code_quicksort | 100 | 0 | 56s | 1 | ✅ |
-| code_lcs | 100 | 0 | 45s | 1 | ✅ |
-| math_prob | 70 | 0 | 17s | 1 | ✅ |
-| plan_critical | 70 | 0 | 42s | 1 | ✅ |
-| creative_story | 50 | 0 | 491s | 3 | ❌ Failed |
-| reason_logic | 94 | 0 | 92s | 1 | ✅ |
+| Task | Score | Time | Attempts | vs v2.0 |
+|------|-------|------|----------|----------|
+| code_quicksort | 100 | 80s | 1 | +11 |
+| code_lcs | 94 | 37s | 1 | -6 |
+| math_prob | 70 | 18s | 1 | +12 |
+| plan_critical | 70 | 95s | 2 | -8 |
+| creative_story | 50 | 494s | 3 | ❌ -42 |
+| reason_logic | 82 | 107s | 1 | +32 |
 
-**Summary**: Success Rate 83.3% (5/6), Avg Score 80.7, Avg Time 123.8s
+**Summary**: Success Rate 83.3% (5/6), Avg Score 77.7, Avg Time 138.5s
 
 **Key Findings**:
 - ✅ 成功率最高 (83.3% vs v1:80%, v2:66.7%)
-- ✅ code类任务保持100分（完美执行）
-- ✅ reason_logic 显著提升 (50→94 vs v2)
-- ❌ creative_story 反而恶化 (92→50, 3次重试仍失败)
-- ⏱️ 平均时间增加（Reviewer开销）
+- ✅ reason_logic 显著提升 (50→82, +32)
+- ✅ math_prob 提升 (58→70, +12)
+- ❌ creative_story 严重恶化 (92→50, 3次重试仍失败)
+- ❌ plan_critical 下降 (78→70)
+- ⏱️ 平均时间大幅增加（迭代开销）
+- ⚠️ tokens_used 全部为0（评分脚本bug）
 
 ---
 
@@ -76,12 +78,13 @@
 |------|------|--------|--------|----------|----------|
 | v1.0 | Single-Agent | 80% | 87.0 | 44s | 基线 |
 | v2.0 | Planner-Worker | 66.7% | 77.8 | 73s | 创意任务↑, 推理↓ |
-| v3.0 | +Reviewer | **83.3%** | 80.7 | 124s | 成功率最高, 推理↑↑ |
+| v3.0 | +Reviewer | **83.3%** | 77.7 | 138s | 成功率最高, 推理↑↑, creative↓ |
 
 ---
 
 ## 下一步
 
 v4.0 方向建议:
-- creative_story 需要单独优化（长文本截断 vs 迭代重试冲突）
+- creative_story 需要单独优化策略（长文本与Reviewer迭代冲突）
+- reason_logic 已通过Reviewer提升，可保持
 - 可考虑: 并行多Worker + 投票机制 或 长文本专用Worker
