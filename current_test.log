@@ -1,0 +1,11 @@
+=== MAS v3.0 Planner-Worker-Reviewer ===
+[code_quicksort] 快速排序... Score: 100, Attempts: 1
+[code_lcs] 最长公共子序列... Score: 100, Attempts: 1
+[math_prob] 概率计算... Score: 70, Attempts: 1
+[plan_critical] 关键路径... Score: 70, Attempts: 1
+[creative_story] 科幻故事... Score: 50, Attempts: 3
+[reason_logic] 逻辑推理... Score: 94, Attempts: 1
+
+Success Rate: 83.3%
+Avg Score: 80.7
+Saved: /root/.openclaw/workspace-mas/benchmark/results/v3.0_1774873264.json

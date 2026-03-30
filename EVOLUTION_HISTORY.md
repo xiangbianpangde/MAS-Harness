@@ -42,20 +42,31 @@
 
 ## v3.0.0 - Planner-Worker-Reviewer (2026-03-30)
 **Architecture**: Planner + Worker + Reviewer Agent (迭代改进)
-**Status**: 🔄 Testing
+**Status**: ✅ Completed
 
 ### Design
 - Planner: 分析任务类型，选择策略
 - Worker: 执行任务
 - Reviewer: 评估质量，决定是否重试(最多2次)
 
-### 预期改进
-- 推理类任务通过Reviewer反馈迭代改进
-- 失败任务自动重试
+### Results
+| Task | Score | Tokens | Time | Attempts | Status |
+|------|-------|--------|------|----------|--------|
+| code_quicksort | 100 | 0 | 56s | 1 | ✅ |
+| code_lcs | 100 | 0 | 45s | 1 | ✅ |
+| math_prob | 70 | 0 | 17s | 1 | ✅ |
+| plan_critical | 70 | 0 | 42s | 1 | ✅ |
+| creative_story | 50 | 0 | 491s | 3 | ❌ Failed |
+| reason_logic | 94 | 0 | 92s | 1 | ✅ |
 
-### 执行说明
-⚠️ v3.0 必须通过 subagent 运行（直接Python调用缺少API key）
-API调用需通过OpenClaw内部路由
+**Summary**: Success Rate 83.3% (5/6), Avg Score 80.7, Avg Time 123.8s
+
+**Key Findings**:
+- ✅ 成功率最高 (83.3% vs v1:80%, v2:66.7%)
+- ✅ code类任务保持100分（完美执行）
+- ✅ reason_logic 显著提升 (50→94 vs v2)
+- ❌ creative_story 反而恶化 (92→50, 3次重试仍失败)
+- ⏱️ 平均时间增加（Reviewer开销）
 
 ---
 
@@ -65,14 +76,12 @@ API调用需通过OpenClaw内部路由
 |------|------|--------|--------|----------|----------|
 | v1.0 | Single-Agent | 80% | 87.0 | 44s | 基线 |
 | v2.0 | Planner-Worker | 66.7% | 77.8 | 73s | 创意任务↑, 推理↓ |
-| v3.0 | +Reviewer | TBD | TBD | TBD | 迭代改进 |
+| v3.0 | +Reviewer | **83.3%** | 80.7 | 124s | 成功率最高, 推理↑↑ |
 
 ---
 
 ## 下一步
 
-v3.0 如果成功:
-- 预期 math_prob 和 reason_logic 通过迭代改进提升
-
-v3.0 如果失败:
-- 考虑 v4.0 采用不同策略: 并行多Worker + 投票机制
+v4.0 方向建议:
+- creative_story 需要单独优化（长文本截断 vs 迭代重试冲突）
+- 可考虑: 并行多Worker + 投票机制 或 长文本专用Worker
