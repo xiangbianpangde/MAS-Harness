@@ -8,4 +8,13 @@ Time: 2026-03-30T21:47:26.786226
 [概率计算] -> score=100(答案正确), time=39.2s, chars=310, attempts=1
 [关键路径] -> score=100(关键路径正确), time=37.1s, chars=146, attempts=1
 [科幻故事] -> score=100(优秀故事(502字)), time=35.8s, chars=502, attempts=1
-[逻辑推理]
+[逻辑推理]fatal: pathspec 'results/v7.0_20260330_215126.json' did not match any files
+ -> score=100(推理正确), time=47.3s, chars=369, attempts=1
+
+============================================================
+Success Rate: 100.0%
+Average Score: 100.0
+Average Time: 37.9s
+Average Tokens: 22037
+============================================================
+Results saved to: /root/.openclaw/workspace-mas/benchmark/results/v7.0_20260330_215126.json
