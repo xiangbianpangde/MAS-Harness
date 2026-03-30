@@ -1,0 +1,147 @@
+{
+  "version": "7.0.0",
+  "architecture": "v7.0-thinking-extractor",
+  "timestamp": "2026-03-30T21:33:43.568742",
+  "total_tasks": 6,
+  "success_count": 6,
+  "success_rate": 100.0,
+  "avg_score": 100.0,
+  "avg_tokens": 21749.5,
+  "avg_time": 49.31526950995127,
+  "results": [
+    {
+      "task_id": "code_quicksort",
+      "task_name": "快速排序",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 22220,
+      "time_seconds": 121.97119188308716,
+      "architecture": "v7.0-thinking-extractor",
+      "attempts": 3,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 238,
+          "chars": 90,
+          "score": 30.0,
+          "feedback": "未找到有效代码"
+        },
+        {
+          "attempt": 2,
+          "response_length": 220,
+          "chars": 69,
+          "score": 30.0,
+          "feedback": "未找到有效代码"
+        },
+        {
+          "attempt": 3,
+          "response_length": 2127,
+          "chars": 16,
+          "score": 100.0,
+          "feedback": "完美包含所有关键元素"
+        }
+      ]
+    },
+    {
+      "task_id": "code_lcs",
+      "task_name": "最长公共子序列",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 21537,
+      "time_seconds": 29.303733825683594,
+      "architecture": "v7.0-thinking-extractor",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 957,
+          "chars": 35,
+          "score": 100.0,
+          "feedback": "LCS实现完整正确"
+        }
+      ]
+    },
+    {
+      "task_id": "math_prob",
+      "task_name": "概率计算",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 21650,
+      "time_seconds": 33.74453854560852,
+      "architecture": "v7.0-thinking-extractor",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 678,
+          "chars": 135,
+          "score": 100.0,
+          "feedback": "答案正确"
+        }
+      ]
+    },
+    {
+      "task_id": "plan_critical",
+      "task_name": "关键路径",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 21563,
+      "time_seconds": 32.14088153839111,
+      "architecture": "v7.0-thinking-extractor",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 614,
+          "chars": 134,
+          "score": 100.0,
+          "feedback": "关键路径正确"
+        }
+      ]
+    },
+    {
+      "task_id": "creative_story",
+      "task_name": "科幻故事",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 21560,
+      "time_seconds": 36.9533429145813,
+      "architecture": "v7.0-thinking-extractor",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 632,
+          "chars": 499,
+          "score": 100.0,
+          "feedback": "优秀故事(499字)"
+        }
+      ]
+    },
+    {
+      "task_id": "reason_logic",
+      "task_name": "逻辑推理",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 21967,
+      "time_seconds": 41.77792835235596,
+      "architecture": "v7.0-thinking-extractor",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 584,
+          "chars": 314,
+          "score": 100.0,
+          "feedback": "推理正确"
+        }
+      ]
+    }
+  ]
+}
