@@ -1,0 +1,131 @@
+{
+  "version": "5.0.0",
+  "architecture": "v5.0-enhanced-planner-worker-reviewer",
+  "timestamp": "2026-03-30T20:35:17.076342",
+  "total_tasks": 6,
+  "success_count": 5,
+  "success_rate": 0.8333333333333334,
+  "avg_score": 90.0,
+  "avg_tokens": 0.0,
+  "avg_time": 46.62011476357778,
+  "results": [
+    {
+      "task_id": "code_quicksort",
+      "task_name": "快速排序",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 0,
+      "time_seconds": 50.42866492271423,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 3899,
+          "chars": 603,
+          "score": 100.0,
+          "feedback": "完美包含所有关键元素"
+        }
+      ]
+    },
+    {
+      "task_id": "code_lcs",
+      "task_name": "最长公共子序列",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 0,
+      "time_seconds": 52.32359290122986,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 3744,
+          "chars": 713,
+          "score": 100.0,
+          "feedback": "LCS实现完整正确"
+        }
+      ]
+    },
+    {
+      "task_id": "math_prob",
+      "task_name": "概率计算",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 0,
+      "time_seconds": 22.593124389648438,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 955,
+          "chars": 256,
+          "score": 100.0,
+          "feedback": "答案正确"
+        }
+      ]
+    },
+    {
+      "task_id": "plan_critical",
+      "task_name": "关键路径",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 0,
+      "time_seconds": 49.66004753112793,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 1478,
+          "chars": 279,
+          "score": 100.0,
+          "feedback": "关键路径正确"
+        }
+      ]
+    },
+    {
+      "task_id": "creative_story",
+      "task_name": "科幻故事",
+      "success": false,
+      "score": 40.0,
+      "tokens_used": 0,
+      "time_seconds": 56.64945936203003,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 0,
+          "chars": 0
+        }
+      ]
+    },
+    {
+      "task_id": "reason_logic",
+      "task_name": "逻辑推理",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 0,
+      "time_seconds": 48.06579947471619,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 618,
+          "chars": 169,
+          "score": 100.0,
+          "feedback": "推理正确"
+        }
+      ]
+    }
+  ]
+}

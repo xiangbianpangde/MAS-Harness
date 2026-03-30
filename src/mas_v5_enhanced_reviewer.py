@@ -13,16 +13,16 @@ Fix: creative tasks get ONE shot with max_tokens=2048, no review loop.
 
 import json
 import time
-import subprocess
 import os
 import re
+import urllib.request
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 
-# API Configuration
-API_URL = "https://api.minimax.chat/v1/text/chatcompletion_pro?GroupId=1234567890"
+# API Configuration - matching v3.0 working config
+API_URL = "https://api.minimaxi.com/anthropic/v1/messages"
 API_KEY = os.environ.get("MINIMAX_API_KEY", "")
-MODEL = "MiniMax-M2"
+MODEL = "MiniMax-M2.7"
 
 TASKS = [
     {
@@ -69,30 +69,38 @@ TASKS = [
     }
 ]
 
-def call_api(prompt: str, temperature: float = 0.7, max_tokens: int = 4096) -> str:
-    """Call MiniMax API"""
-    payload = {
-        "model": MODEL,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": temperature,
-        "max_tokens": max_tokens
+def call_api(prompt: str, max_tokens: int = 4096) -> tuple[str, int]:
+    """Call MiniMax API - matching v3.0 working implementation"""
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {API_KEY}'
+    }
+    body = {
+        'model': MODEL,
+        'max_tokens': max_tokens,
+        'messages': [{'role': 'user', 'content': prompt}]
     }
     
-    result = subprocess.run(
-        ["curl", "-s", "-X", "POST", API_URL,
-         "-H", f"Authorization: Bearer {API_KEY}",
-         "-H", "Content-Type: application/json",
-         "-d", json.dumps(payload)],
-        capture_output=True, text=True, timeout=120
-    )
-    
     try:
-        resp = json.loads(result.stdout)
-        if "choices" in resp and len(resp["choices"]) > 0:
-            return resp["choices"][0]["message"]["content"]
-        return f"ERROR: {resp}"
-    except:
-        return f"ERROR: {result.stdout[:500]}"
+        req = urllib.request.Request(
+            API_URL, data=json.dumps(body).encode('utf-8'),
+            headers=headers, method='POST'
+        )
+        with urllib.request.urlopen(req, timeout=180) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+        
+        # Handle content blocks (text and thinking)
+        response_text = ''
+        tokens = 0
+        if isinstance(data.get('content'), list):
+            for block in data.get('content', []):
+                if block.get('type') == 'text':
+                    response_text = block.get('text', '')
+                    break
+        tokens = data.get('usage', {}).get('total_tokens', 0)
+        return response_text, tokens
+    except Exception as e:
+        return f"ERROR: {str(e)}", 0
 
 def planner_analyze(task: Dict) -> Dict:
     """Planner decides strategy based on task type"""
@@ -101,7 +109,6 @@ def planner_analyze(task: Dict) -> Dict:
     if category == "creative":
         return {
             "strategy": "creative_single",
-            "temperature": 0.95,
             "max_tokens": 2048,  # Extended for creative
             "reviewer_enabled": False,  # No retry for creative
             "retry_limit": 0
@@ -109,7 +116,6 @@ def planner_analyze(task: Dict) -> Dict:
     elif category == "reasoning":
         return {
             "strategy": "reasoning_iterative",
-            "temperature": 0.7,
             "max_tokens": 2048,
             "reviewer_enabled": True,
             "retry_limit": 1  # Only 1 retry for reasoning
@@ -117,7 +123,6 @@ def planner_analyze(task: Dict) -> Dict:
     else:  # code
         return {
             "strategy": "code_verified",
-            "temperature": 0.5,
             "max_tokens": 4096,
             "reviewer_enabled": True,
             "retry_limit": 1
@@ -220,11 +225,12 @@ def run_task(task: Dict, strategy: Dict) -> Dict:
         
         # Worker generates response
         print(f"    [Worker] Attempt {attempts}/{max_retries + 1}")
-        response = call_api(
+        response, tokens_used = call_api(
             task["prompt"],
-            temperature=strategy["temperature"],
             max_tokens=strategy["max_tokens"]
         )
+        if tokens_used > 0:
+            result["tokens_used"] = tokens_used
         
         if response.startswith("ERROR:"):
             error = response
@@ -238,10 +244,10 @@ def run_task(task: Dict, strategy: Dict) -> Dict:
             "chars": len([c for c in response if '\u4e00' <= c <= '\u9fff'])
         })
         
-        # Creative tasks: no review, accept as-is
+        # Creative tasks: no review, score based on length check
         if not strategy["reviewer_enabled"]:
-            score = 80.0  # Assume good for creative with good prompt
-            success = True
+            score, _ = reviewer_score(task["id"], response)
+            success = score >= 60
             break
         
         # Reviewer evaluates
@@ -293,7 +299,7 @@ def run_v5_0_benchmark():
         # Planner analyzes and decides strategy
         strategy = planner_analyze(task)
         print(f"    [Planner] Strategy: {strategy['strategy']}, "
-              f"temp={strategy['temperature']}, tokens={strategy['max_tokens']}, "
+              f"tokens={strategy['max_tokens']}, "
               f"reviewer={'ON' if strategy['reviewer_enabled'] else 'OFF'}")
         
         result = run_task(task, strategy)

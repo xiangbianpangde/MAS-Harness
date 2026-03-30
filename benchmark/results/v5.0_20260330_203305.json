@@ -1,0 +1,85 @@
+{
+  "version": "5.0.0",
+  "architecture": "v5.0-enhanced-planner-worker-reviewer",
+  "timestamp": "2026-03-30T20:33:04.088725",
+  "total_tasks": 6,
+  "success_count": 0,
+  "success_rate": 0.0,
+  "avg_score": 0.0,
+  "avg_tokens": 0.0,
+  "avg_time": 0.168278177579244,
+  "results": [
+    {
+      "task_id": "code_quicksort",
+      "task_name": "快速排序",
+      "success": false,
+      "score": 0.0,
+      "tokens_used": 0,
+      "time_seconds": 0.18914031982421875,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': 'token not match group'}}",
+      "steps": []
+    },
+    {
+      "task_id": "code_lcs",
+      "task_name": "最长公共子序列",
+      "success": false,
+      "score": 0.0,
+      "tokens_used": 0,
+      "time_seconds": 0.16600966453552246,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': 'token not match group'}}",
+      "steps": []
+    },
+    {
+      "task_id": "math_prob",
+      "task_name": "概率计算",
+      "success": false,
+      "score": 0.0,
+      "tokens_used": 0,
+      "time_seconds": 0.16076254844665527,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': 'token not match group'}}",
+      "steps": []
+    },
+    {
+      "task_id": "plan_critical",
+      "task_name": "关键路径",
+      "success": false,
+      "score": 0.0,
+      "tokens_used": 0,
+      "time_seconds": 0.15968871116638184,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': 'token not match group'}}",
+      "steps": []
+    },
+    {
+      "task_id": "creative_story",
+      "task_name": "科幻故事",
+      "success": false,
+      "score": 0.0,
+      "tokens_used": 0,
+      "time_seconds": 0.17177414894104004,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': 'token not match group'}}",
+      "steps": []
+    },
+    {
+      "task_id": "reason_logic",
+      "task_name": "逻辑推理",
+      "success": false,
+      "score": 0.0,
+      "tokens_used": 0,
+      "time_seconds": 0.1622936725616455,
+      "architecture": "v5.0-enhanced-planner-worker-reviewer",
+      "attempts": 1,
+      "error": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': 'token not match group'}}",
+      "steps": []
+    }
+  ]
+}

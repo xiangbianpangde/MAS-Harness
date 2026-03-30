@@ -1,11 +1,56 @@
-=== MAS v3.0 Planner-Worker-Reviewer ===
-[code_quicksort] 快速排序... Score: 100, Attempts: 1
-[code_lcs] 最长公共子序列... Score: 100, Attempts: 1
-[math_prob] 概率计算... Score: 70, Attempts: 1
-[plan_critical] 关键路径... Score: 70, Attempts: 1
-[creative_story] 科幻故事... Score: 50, Attempts: 3
-[reason_logic] 逻辑推理... Score: 94, Attempts: 1
 
-Success Rate: 83.3%
-Avg Score: 80.7
-Saved: /root/.openclaw/workspace-mas/benchmark/results/v3.0_1774873264.json
+============================================================
+MAS v5.0 Enhanced Planner-Worker-Reviewer Benchmark
+============================================================
+
+[code_quicksort] 快速排序
+    Type: code, Category: code
+    [Planner] Strategy: code_verified, temp=0.5, tokens=4096, reviewer=ON
+    [Worker] Attempt 1/2
+    Result: ❌ Score=0, Attempts=1, Time=0.2s
+
+[code_lcs] 最长公共子序列
+    Type: code, Category: code
+    [Planner] Strategy: code_verified, temp=0.5, tokens=4096, reviewer=ON
+    [Worker] Attempt 1/2
+    Result: ❌ Score=0, Attempts=1, Time=0.2s
+
+[math_prob] 概率计算
+    Type: reasoning, Category: reasoning
+    [Planner] Strategy: reasoning_iterative, temp=0.7, tokens=2048, reviewer=ON
+    [Worker] Attempt 1/2
+    Result: ❌ Score=0, Attempts=1, Time=0.2s
+
+[plan_critical] 关键路径
+    Type: reasoning, Category: reasoning
+    [Planner] Strategy: reasoning_iterative, temp=0.7, tokens=2048, reviewer=ON
+    [Worker] Attempt 1/2
+    Result: ❌ Score=0, Attempts=1, Time=0.2s
+
+[creative_story] 科幻故事
+    Type: creative, Category: creative
+    [Planner] Strategy: creative_single, temp=0.95, tokens=2048, reviewer=OFF
+    [Worker] Attempt 1/1
+    Result: ❌ Score=0, Attempts=1, Time=0.2s
+
+[reason_logic] 逻辑推理
+    Type: reasoning, Category: reasoning
+    [Planner] Strategy: reasoning_iterative, temp=0.7, tokens=2048, reviewer=ON
+    [Worker] Attempt 1/2
+    Result: ❌ Score=0, Attempts=1, Time=0.2s
+
+============================================================
+BENCHMARK COMPLETE
+============================================================
+Success Rate: 0.0% (0/6)
+Avg Score: 0.0
+Avg Time: 0.2s
+
+Results saved to: /root/.openclaw/workspace-mas/benchmark/results/v5.0_20260330_203305.json
+
+--- Version Comparison ---
+v1.0: 80% success, 87.0 avg (baseline)
+v2.0: 66.7% success, 77.8 avg
+v3.0: 83.3% success, 80.7 avg (previous best)
+v4.0: 16.7% success, 49.2 avg (FAILED)
+v5.0: 0.0% success, 0.0 avg

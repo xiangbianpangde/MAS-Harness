@@ -1,0 +1,157 @@
+{
+  "version": "4.0.0",
+  "architecture": "v4.0-parallel-multi-worker",
+  "timestamp": "2026-03-30T20:32:36.222325",
+  "total_tasks": 6,
+  "success_count": 0,
+  "success_rate": 0.0,
+  "avg_score": 45.833333333333336,
+  "avg_tokens": 0.0,
+  "avg_time": 48.83332300186157,
+  "results": [
+    {
+      "task_id": "code_quicksort",
+      "task_name": "快速排序",
+      "success": false,
+      "score": 30.0,
+      "tokens_used": 0,
+      "time_seconds": 41.09434962272644,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "verification": "code_elements_checked"
+        }
+      ]
+    },
+    {
+      "task_id": "code_lcs",
+      "task_name": "最长公共子序列",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 28.27644634246826,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "verification": "code_elements_checked"
+        }
+      ]
+    },
+    {
+      "task_id": "math_prob",
+      "task_name": "概率计算",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 45.48953652381897,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "worker": "w0",
+          "answer": "ERROR:"
+        },
+        {
+          "worker": "w1",
+          "answer": "ERROR:"
+        },
+        {
+          "worker": "w2",
+          "answer": "ERROR:"
+        },
+        {
+          "majority_vote": "ERROR:"
+        }
+      ]
+    },
+    {
+      "task_id": "plan_critical",
+      "task_name": "关键路径",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 48.380656480789185,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "worker": "w0",
+          "answer": "ERROR:"
+        },
+        {
+          "worker": "w1",
+          "answer": "ERROR:"
+        },
+        {
+          "worker": "w2",
+          "answer": "ERROR:"
+        },
+        {
+          "majority_vote": "ERROR:"
+        }
+      ]
+    },
+    {
+      "task_id": "creative_story",
+      "task_name": "科幻故事",
+      "success": false,
+      "score": 45.0,
+      "tokens_used": 0,
+      "time_seconds": 67.48540663719177,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "worker": "w0",
+          "score": 45.0,
+          "chars": 0
+        },
+        {
+          "worker": "w1",
+          "score": 45.0,
+          "chars": 0
+        },
+        {
+          "worker": "w2",
+          "score": 45.0,
+          "chars": 0
+        }
+      ]
+    },
+    {
+      "task_id": "reason_logic",
+      "task_name": "逻辑推理",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 62.273542404174805,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "worker": "w0",
+          "answer": "ERROR:"
+        },
+        {
+          "worker": "w1",
+          "answer": "ERROR:"
+        },
+        {
+          "worker": "w2",
+          "answer": "ERROR:"
+        },
+        {
+          "majority_vote": "ERROR:"
+        }
+      ]
+    }
+  ]
+}
