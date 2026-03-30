@@ -38,3 +38,9 @@
 | Version | Date | Architecture | Success Rate | Avg Score | Status |
 |---------|------|--------------|--------------|------------|--------|
 | 1.0.0 | 2026-03-30 | Single-Agent | TBD | TBD | Baseline |
+
+### v1.0.1 - Baseline Runner Added (2026-03-30 19:10)
+- Added mas_runner.py for benchmark execution
+- GitHub connectivity restored
+- Resources: CPU 3%, Mem 1.7GB avail, Disk 21GB
+- Status: Ready to run baseline benchmark
