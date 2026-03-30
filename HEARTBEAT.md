@@ -1,22 +1,43 @@
-Every time you wake up via the Heartbeat trigger (e.g., every 10 minutes), you MUST map your actions strictly to your **OODA Core Loop (Step 1 to Step 6)**. 
-Execute silently using your Bash tool. DO NOT reply to the user.
+# HEARTBEAT.md - MAS Evolution Engine Heartbeat
 
-# Heartbeat Execution Check-list:
+Every ~30 minutes, execute the OODA Core Loop:
 
-**A. Background Process & Resource Check (OODA Step 3 & Step 5)**
-1. Use `ps aux | grep python` to check if a MAS architecture test is currently running.
-2. Check resource limits: run `df -h` and `nvidia-smi`. If approaching red lines (GPU > 90%, Disk < 10GB), immediately write and execute a garbage collection script (delete old models/logs).
-3. **24-Hour Timeout**: If a test process has been running for > 24 hours, `kill -9` it immediately. Record "Fatal Deadlock / Timeout" in your memory, and proceed to Step 4 (Evaluate as 0 score).
+## OODA Loop Execution Checklist:
 
-**B. Evaluate & Document (OODA Step 4 & Step 6)**
-1. If no test is running, check the output logs of the last executed test.
-2. Assess the Benchmark score. Record the score and your architectural ablation analysis in a local `EVOLUTION_HISTORY.md` file.
-3. **Convergence Check**: Have the last 10 iterations improved by less than 1%? 
-   - If YES, you have hit a paradigm bottleneck. Package the current architecture, use `git tag` to create a release, `git push --tags`, and explicitly write a plan to completely rebuild the topology (e.g., switch from Tree to Swarm).
-   - If NO, commit the incremental progress: `git add . && git commit -m "Auto-Evolve: [Reason]" && git push`.
+### A. Background Process & Resource Check
+1. `ps aux | grep python` - Check if MAS test is running
+2. `df -h /` and `free -h` - Check resources
+3. If GPU >90% or Disk <3GB: Run garbage collection script
+4. If test process >24 hours: `kill -9` it, record "Deadlock/Timeout"
 
-**C. Design & Sandbox Execution (OODA Step 2 & Step 3)**
-1. Based on the evaluation, write the Python code for the next generation of your MAS architecture.
-2. **CRITICAL EXECUTION RULE**: OpenClaw timeouts if you wait for long scripts. You MUST execute the new architecture test asynchronously in the background using `nohup`:
-   `nohup python next_gen_mas.py > current_test.log 2>&1 &`
-3. End your heartbeat turn silently. Let the code run in the background. You will check on it during your next heartbeat.
+### B. Evaluate & Document
+1. If no test running: Check latest benchmark results in `benchmark/results/`
+2. Record score in `EVOLUTION_HISTORY.md`
+3. **Convergence Check**: If last 10 iterations improved <1%:
+   - Package current architecture
+   - `git tag vX.Y.Z` and `git push --tags`
+   - Plan paradigm shift (new topology)
+
+### C. Design & Execute Next Generation
+1. Analyze last results, design next architecture
+2. Write Python code for next gen MAS
+3. Run in background: `nohup python3 src/mas_v{N}.py > current_test.log 2>&1 &`
+4. Record PID and start time
+
+## Quick Status Check:
+```bash
+cd /root/.openclaw/workspace-mas
+ps aux | grep -E "mas_v|python.*benchmark" | grep -v grep
+cat benchmark/results/latest.json 2>/dev/null | jq '.success_rate, .avg_score'
+```
+
+## Alert Conditions:
+- Disk <3GB remaining
+- Memory <500MB available
+- CPU >95% for >5 minutes
+- Test process timeout (>24h)
+
+## Alert Action:
+If critical + 3自救 attempts failed:
+- Send QQ alert via `message(channel=qqbot, to=qqbot:c2c:USER_OPENID)`
+- Push emergency log to GitHub
