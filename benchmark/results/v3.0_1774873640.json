@@ -1,0 +1,85 @@
+{
+  "version": "3.0.0",
+  "architecture": "planner-worker-reviewer",
+  "timestamp": "2026-03-30T20:27:20.487159",
+  "total_tasks": 6,
+  "success_count": 5,
+  "success_rate": 83.33333333333334,
+  "avg_score": 77.66666666666667,
+  "avg_tokens": 0.0,
+  "avg_time": 138.47303346792856,
+  "results": [
+    {
+      "task_id": "code_quicksort",
+      "task_name": "快速排序",
+      "success": true,
+      "score": 100,
+      "tokens_used": 0,
+      "time_seconds": 80.18977189064026,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": []
+    },
+    {
+      "task_id": "code_lcs",
+      "task_name": "最长公共子序列",
+      "success": true,
+      "score": 94.0,
+      "tokens_used": 0,
+      "time_seconds": 36.68813610076904,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": []
+    },
+    {
+      "task_id": "math_prob",
+      "task_name": "概率计算",
+      "success": true,
+      "score": 70.0,
+      "tokens_used": 0,
+      "time_seconds": 18.169512033462524,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": []
+    },
+    {
+      "task_id": "plan_critical",
+      "task_name": "关键路径",
+      "success": true,
+      "score": 70.0,
+      "tokens_used": 0,
+      "time_seconds": 94.68604755401611,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 2,
+      "error": null,
+      "steps": []
+    },
+    {
+      "task_id": "creative_story",
+      "task_name": "科幻故事",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 494.2119953632355,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 3,
+      "error": "Failed after 2 retries",
+      "steps": []
+    },
+    {
+      "task_id": "reason_logic",
+      "task_name": "逻辑推理",
+      "success": true,
+      "score": 82.0,
+      "tokens_used": 0,
+      "time_seconds": 106.892737865448,
+      "architecture": "planner-worker-reviewer",
+      "attempts": 1,
+      "error": null,
+      "steps": []
+    }
+  ]
+}
