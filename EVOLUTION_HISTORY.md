@@ -38,7 +38,8 @@
 | Version | Date | Architecture | Success Rate | Avg Score | Avg Time | Status |
 |---------|------|--------------|--------------|------------|----------|--------|
 | 1.0.0 | 2026-03-30 | Single-Agent | 80.0% | 87.0 | 44.0s | Baseline |
-| 2.0.0 | 2026-03-30 | Planner-Worker | 100.0% | 88.3 | 89.2s | Tested |
+| 2.0.0 | 2026-03-30 | Planner-Worker | 66.7% | 77.8 | 72.9s | Tested |
+| 3.0.0 | 2026-03-30 | Planner-Worker-Reviewer | 0.0% | 50.0 | 0.3s | **BROKEN** |
 
 ### v1.0 Baseline Results (2026-03-30)
 - **Success Rate**: 80-100% (avg 90%)
@@ -61,24 +62,53 @@
 ### v2.0.0 - Planner-Worker Benchmark Results (2026-03-30 19:41)
 **Architecture**: Planner-Worker (Planner Agent + Worker Agent)
 
-| Task | Score | Tokens | Time | Strategy |
-|------|-------|--------|------|----------|
-| code_quicksort | 100 | 6997 | 179.9s | direct |
-| code_lcs | 100 | 3570 | 72.0s | direct |
-| math_prob | 66 | 824 | 44.2s | direct |
-| plan_critical | 78 | 1959 | 74.9s | decompose |
-| creative_story | 92 | 1664 | 63.6s | direct |
-| reason_logic | 94 | 3466 | 100.6s | direct |
+| Task | Score | Tokens | Time | Success |
+|------|-------|--------|------|---------|
+| code_quicksort | 89 | 4257 | 106.1s | ✅ |
+| code_lcs | 100 | 3103 | 100.7s | ✅ |
+| math_prob | 58 | 731 | 29.6s | ❌ |
+| plan_critical | 78 | 2174 | 68.9s | ✅ |
+| creative_story | 92 | 1436 | 59.8s | ✅ |
+| reason_logic | 50 | 2180 | 72.6s | ❌ |
 
-**Summary**: Success Rate 100.0% (6/6), Avg Score 88.3, Avg Time 89.2s
+**Summary**: Success Rate 66.7% (4/6), Avg Score 77.8, Avg Time 72.9s
 
 **Key Findings**:
-- Success Rate improved: 100% (v2.0) vs 80% (v1.0)
+- Success Rate: 66.7% (worse than v1.0's 80%)
+- math_prob failed: model gave non-standard answer format
+- reason_logic failed: model provided correct answer but didn't pass scoring threshold
 - creative_story: 92 (improved from v1.0's 60 - no longer truncated)
-- code tasks: Excellent (100, 100)
-- reason_logic: 94 (improved from 50 in first run - model variance)
+- code tasks: Excellent (89, 100)
+- creative improved but reasoning regressed
 
-**v3.0 Design Direction**: Reduce avg time (89s is high); add iterative review for complex reasoning tasks.
+**v3.0 Design Direction**: Add Reviewer Agent with feedback loops to fix reasoning tasks.
+
+---
+
+## v3.0.0 - Planner-Worker-Reviewer Benchmark Results (2026-03-30 19:43)
+**Architecture**: Planner-Worker-Reviewer (3-Agent with quality feedback loops)
+
+| Task | Score | Tokens | Time | Success |
+|------|-------|--------|------|---------|
+| code_quicksort | 50 | 0 | 0.37s | ❌ |
+| code_lcs | 50 | 0 | 0.31s | ❌ |
+| math_prob | 50 | 0 | 0.34s | ❌ |
+| plan_critical | 50 | 0 | 0.30s | ❌ |
+| creative_story | 50 | 0 | 0.29s | ❌ |
+| reason_logic | 50 | 0 | 0.31s | ❌ |
+
+**Summary**: Success Rate 0.0% (0/6), Avg Score 50.0, Avg Time 0.32s
+
+**Critical Failure Analysis**:
+- All tasks tokens_used=0 → model API calls returning empty responses
+- REVIEW_THRESHOLD=60 with base score 50 → all tasks rejected immediately
+- Worker API endpoint appears broken (returns empty response, 0 tokens)
+- Avg time 0.32s confirms tasks fail at API call level, not logic level
+- **v3.0 is a catastrophic regression** — reviewer feedback loops introduced but core API integration broken
+
+**Root Cause**: The v3.0 `call_model()` uses a different API URL/path than v2.0, causing silent failures.
+
+**v4.0 Design Direction**: Fix API integration first. Simplify reviewer to use semantic validation instead of pattern matching. Consider dropping reviewer for simple tasks.
 
 ### v1.0.1 - Baseline Runner Added (2026-03-30 19:10)
 - Added mas_runner.py for benchmark execution
