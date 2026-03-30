@@ -78,23 +78,35 @@ def call_model(prompt: str, session_id: str, timeout: int = 120) -> str:
     )
     
     try:
-        # Parse JSON output
-        lines = result.stdout.strip().split('\n')
-        json_start = -1
-        for i, line in enumerate(lines):
-            if line.strip().startswith('{"payloads"'):
-                json_start = i
-                break
-        
+        # Find JSON in output - it may have log lines before it
+        output = result.stdout
+        # Look for the JSON payload
+        json_start = output.find('"payloads"')
         if json_start >= 0:
-            json_str = '\n'.join(lines[json_start:])
-            resp = json.loads(json_str)
-            if resp.get('payloads') and len(resp['payloads']) > 0:
-                return resp['payloads'][0].get('text', '')
+            # Back up to find the start of JSON object
+            start = output.rfind('{', 0, json_start)
+            if start >= 0:
+                # Find the end - look for the closing brace
+                # We need to be careful about nested objects
+                json_str = output[start:]
+                resp = json.loads(json_str)
+                if resp.get('payloads') and len(resp['payloads']) > 0:
+                    return resp['payloads'][0].get('text', '')
     except Exception as e:
         pass
     
-    return f"ERROR: {result.stdout[:200]}"
+    # Fallback: try to find any text in the output
+    for line in output.split('\n'):
+        if 'payloads' in line and 'text' in line:
+            try:
+                # Try to extract text value
+                match = re.search(r'"text":\s*"([^"]*)"', line)
+                if match:
+                    return match.group(1)
+            except:
+                pass
+    
+    return f"ERROR: Parsing failed. Output: {output[:500]}"
 
 def parallel_call(prompts: List[str], base_session: str, timeout: int = 120) -> List[str]:
     """Call model in parallel for multiple prompts"""
@@ -131,7 +143,6 @@ def score_code_response(task_id: str, response: str) -> float:
         has_random = "random" in response_lower
         has_test = "test" in response_lower or "assert" in response_lower or "unittest" in response_lower
         
-        # Check for code blocks
         code_match = re.search(r'```python\n(.*?)```', response, re.DOTALL)
         if code_match:
             code = code_match.group(1).lower()
@@ -151,7 +162,6 @@ def score_code_response(task_id: str, response: str) -> float:
         has_dp = "dp" in response_lower or "dynamic" in response_lower
         has_return_length = "len" in response_lower and "return" in response_lower
         
-        # Check for code blocks
         code_match = re.search(r'```python\n(.*?)```', response, re.DOTALL)
         if code_match:
             code = code_match.group(1).lower()
@@ -175,7 +185,7 @@ def score_reasoning_response(response: str, task_id: str) -> float:
         elif "5" in response and "14" in response:
             return 90.0
         elif "5/8" in response or "0.625" in response:
-            return 30.0  # Wrong (with replacement)
+            return 30.0
         elif any(corr in response for corr in ["10", "28", "8", "choose", "组合"]):
             return 70.0
         return 50.0
@@ -199,9 +209,9 @@ def score_reasoning_response(response: str, task_id: str) -> float:
         elif ("B" in response or "乙") and ("真" in response or "truth" in response.lower()):
             return 90.0
         elif "甲" in response and "真" in response:
-            return 40.0  # Wrong answer
+            return 40.0
         elif "丙" in response and "真" in response:
-            return 30.0  # Wrong answer
+            return 30.0
         return 50.0
     
     return 50.0
@@ -209,9 +219,7 @@ def score_reasoning_response(response: str, task_id: str) -> float:
 def score_creative_response(response: str) -> float:
     """Score creative tasks - length and quality"""
     chinese_chars = len([c for c in response if '\u4e00' <= c <= '\u9fff'])
-    total_len = len(response)
     
-    # Length check (500 chars ≈ 200-250 words in Chinese)
     if 400 <= chinese_chars <= 700:
         length_score = 100.0
     elif chinese_chars >= 300:
@@ -221,7 +229,6 @@ def score_creative_response(response: str) -> float:
     else:
         length_score = 40.0
     
-    # Quality indicators
     has_story_structure = response.count('。') >= 5
     has_paragraphs = response.count('\n') >= 3
     quality_score = 50.0
@@ -259,7 +266,6 @@ def run_v4_0_benchmark():
         
         try:
             if task["category"] == "creative":
-                # 3 workers generate independently, reviewer picks best
                 print(f"  [Creative] Running 3 parallel workers...")
                 prompts = [task["prompt"]] * 3
                 responses = parallel_call(prompts, f"{base_session}-{task['id']}", timeout=180)
@@ -279,7 +285,6 @@ def run_v4_0_benchmark():
                 attempts = 1
                 
             elif task["category"] == "reasoning":
-                # Majority voting with 3 workers
                 print(f"  [Reasoning] Running 3 workers with majority voting...")
                 prompts = [task["prompt"]] * 3
                 responses = parallel_call(prompts, f"{base_session}-{task['id']}", timeout=120)
@@ -299,7 +304,6 @@ def run_v4_0_benchmark():
                 attempts = 1
                 
             else:  # code
-                # Verification approach
                 print(f"  [Code] Generating and verifying...")
                 session_id = f"{base_session}-{task['id']}"
                 response = call_model(task["prompt"], session_id, timeout=120)
@@ -334,8 +338,9 @@ def run_v4_0_benchmark():
         
         status = "✅" if success else "❌"
         print(f"  Result: {status} Score={score:.1f}, Time={elapsed:.1f}s")
+        if not success and score < 60:
+            print(f"  Response preview: {response[:200]}...")
     
-    # Calculate summary
     success_count = sum(1 for r in results if r["success"])
     avg_score = sum(r["score"] for r in results) / len(results)
     avg_time = sum(r["time_seconds"] for r in results) / len(results)
@@ -363,7 +368,6 @@ if __name__ == "__main__":
     
     summary = run_v4_0_benchmark()
     
-    # Save results
     timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_file = f"/root/.openclaw/workspace-mas/benchmark/results/v4.0_{timestamp_str}.json"
     
