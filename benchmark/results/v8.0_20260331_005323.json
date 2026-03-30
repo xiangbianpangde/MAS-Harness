@@ -1,0 +1,214 @@
+{
+  "version": "8.0.0",
+  "architecture": "v8.0-extended",
+  "timestamp": "2026-03-31T00:53:23.316077",
+  "total_tasks": 10,
+  "success_count": 8,
+  "success_rate": 80.0,
+  "avg_score": 83.5,
+  "avg_tokens": 21930.6,
+  "avg_time": 39.01791870594025,
+  "total_time": 390.18199944496155,
+  "results": [
+    {
+      "task_id": "code_quicksort",
+      "task_name": "快速排序",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 22327,
+      "time_seconds": 40.92050266265869,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 296,
+          "chars": 296,
+          "score": 50.0,
+          "feedback": "实现不完整"
+        }
+      ]
+    },
+    {
+      "task_id": "code_lcs",
+      "task_name": "最长公共子序列",
+      "success": true,
+      "score": 70.0,
+      "tokens_used": 21982,
+      "time_seconds": 38.40076017379761,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 274,
+          "chars": 274,
+          "score": 70.0,
+          "feedback": "有DP但可能不完整"
+        }
+      ]
+    },
+    {
+      "task_id": "math_prob",
+      "task_name": "概率计算",
+      "success": true,
+      "score": 80.0,
+      "tokens_used": 21366,
+      "time_seconds": 26.738195419311523,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 210,
+          "chars": 210,
+          "score": 80.0,
+          "feedback": "包含部分正确答案"
+        }
+      ]
+    },
+    {
+      "task_id": "plan_critical",
+      "task_name": "关键路径",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 21599,
+      "time_seconds": 32.410593032836914,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 419,
+          "chars": 419,
+          "score": 100.0,
+          "feedback": "关键路径正确"
+        }
+      ]
+    },
+    {
+      "task_id": "creative_story",
+      "task_name": "科幻故事",
+      "success": true,
+      "score": 85.0,
+      "tokens_used": 21545,
+      "time_seconds": 35.13672399520874,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 739,
+          "chars": 739,
+          "score": 85.0,
+          "feedback": "故事合格(581字)"
+        }
+      ]
+    },
+    {
+      "task_id": "reason_logic",
+      "task_name": "逻辑推理",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 21693,
+      "time_seconds": 34.7924530506134,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 166,
+          "chars": 166,
+          "score": 100.0,
+          "feedback": "推理正确"
+        }
+      ]
+    },
+    {
+      "task_id": "code_debug",
+      "task_name": "Bug修复",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 22517,
+      "time_seconds": 55.02984809875488,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 648,
+          "chars": 648,
+          "score": 100.0,
+          "feedback": "正确识别并修复bug"
+        }
+      ]
+    },
+    {
+      "task_id": "sys_design",
+      "task_name": "系统设计",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 23139,
+      "time_seconds": 66.221670627594,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 5419,
+          "chars": 5419,
+          "score": 100.0,
+          "feedback": "设计完整度(100%)"
+        }
+      ]
+    },
+    {
+      "task_id": "code_optimize",
+      "task_name": "算法优化",
+      "success": true,
+      "score": 100.0,
+      "tokens_used": 21315,
+      "time_seconds": 25.2708477973938,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 331,
+          "chars": 331,
+          "score": 100.0,
+          "feedback": "正确优化到O(n)"
+        }
+      ]
+    },
+    {
+      "task_id": "math_proof",
+      "task_name": "数学归纳法",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 21823,
+      "time_seconds": 35.25759220123291,
+      "architecture": "v8.0-extended",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "attempt": 1,
+          "response_length": 801,
+          "chars": 801,
+          "score": 50.0,
+          "feedback": "证明不完整"
+        }
+      ]
+    }
+  ]
+}
