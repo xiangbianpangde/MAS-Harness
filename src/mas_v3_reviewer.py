@@ -59,9 +59,10 @@ class PlannerWorkerReviewerMAS:
         self.session_id = f"mas-v3-{int(time.time())}"
 
     def call_model(self, prompt: str, max_tokens: int = 4096) -> Dict:
-        """调用 MiniMax API"""
+        """调用 MiniMax API - 通过OpenClaw Gateway路由"""
         import urllib.request
 
+        # 使用标准 Minimax API
         url = 'https://api.minimaxi.com/anthropic/v1/messages'
         headers = {
             'Content-Type': 'application/json',
@@ -81,8 +82,14 @@ class PlannerWorkerReviewerMAS:
         try:
             with urllib.request.urlopen(req, timeout=180) as resp:
                 data = json.loads(resp.read().decode('utf-8'))
+            # Handle content blocks (text and thinking)
+            response_text = ''
+            for block in data.get('content', []):
+                if block.get('type') == 'text':
+                    response_text = block.get('text', '')
+                    break
             return {
-                'response': data['content'][0]['text'],
+                'response': response_text,
                 'tokens': data.get('usage', {}).get('total_tokens', 0),
                 'stop_reason': data.get('stop_reason', '')
             }
