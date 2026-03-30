@@ -69,15 +69,37 @@
 
 ---
 
+## v6.0.0 - Creative-Fix Attempt (2026-03-30)
+**Architecture**: v5.0 + Creative Empty-Response Retry
+**Status**: ❌ Regression
+
+| Task | Score | vs v5.0 |
+|------|-------|---------|
+| code_quicksort | 100 | ➡️ |
+| code_lcs | 100 | ➡️ |
+| math_prob | 100 | ➡️ |
+| plan_critical | 100 | ➡️ |
+| creative_story | 0 | ❌ (API返回空 - 仅返回thinking块) |
+| reason_logic | 100 | ➡️ |
+
+**Summary**: Success Rate 83.3%, Avg Score 83.3, Avg Time 61s
+
+**Key Finding**: 
+- creative_story API问题：MiniMax API对中文创意提示仅返回"thinking"块，不返回"text"块
+- 需要从thinking块提取内容，或使用不同策略
+
+---
+
 ## 版本对比
 
-| 版本 | 架构 | 成功率 | 平均分 | 平均时间 |
-|------|------|--------|--------|----------|
-| v1.0 | Single-Agent | 80% | 87.0 | 44s |
-| v2.0 | Planner-Worker | 66.7% | 77.8 | 73s |
-| v3.0 | +Reviewer | 83.3% | 80.7 | 124s |
-| v4.0 | 并行多Worker | 0% | — | — |
-| **v5.0** | **Enhanced P-W-R** | **83.3%** | **90.0** | **47s** |
+| 版本 | 架构 | 成功率 | 平均分 | 平均时间 | 状态 |
+|------|------|--------|--------|----------|------|
+| v1.0 | Single-Agent | 80% | 87.0 | 44s | ✅ |
+| v2.0 | Planner-Worker | 66.7% | 77.8 | 73s | ⚠️ |
+| v3.0 | +Reviewer | 83.3% | 80.7 | 124s | ✅ |
+| v4.0 | 并行多Worker | 0% | — | — | ❌ |
+| **v5.0** | **Enhanced P-W-R** | **83.3%** | **90.0** ⭐ | **47s** | **🎉最佳** |
+| v6.0 | +Creative-Retry | 83.3% | 83.3 | 61s | ❌ |
 
 ---
 
@@ -86,9 +108,11 @@
 - **v5.0 avg_score = 90.0** > v1.0 baseline 87.0 (improvement 3.4%)
 - 连续改进: v1→v3→v5 呈现上升趋势
 - creative_story 持续是瓶颈
+- v6.0 回归：API对创意提示返回空内容
 
 ## 下一步
 
-v6.0 设计方向:
-- 专门针对 creative_story 的长文本生成优化
-- 考虑增加 max_tokens 或专用创意Worker
+v7.0 设计方向:
+- 从thinking块提取创意内容（而非仅text块）
+- 或使用不同API端点/模型处理创意任务
+- 考虑添加enable_thinking=False参数强制只返回text
