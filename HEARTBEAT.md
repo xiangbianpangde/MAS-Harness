@@ -24,6 +24,12 @@ Every ~30 minutes, execute the OODA Core Loop:
 3. Run in background: `nohup python3 src/mas_v{N}.py > current_test.log 2>&1 &`
 4. Record PID and start time
 
+## Current Best: v7.0
+- Success Rate: **100%** (6/6)
+- Average Score: **100.0**
+- Average Time: 49s
+- GitHub: da627e4
+
 ## Quick Status Check:
 ```bash
 cd /root/.openclaw/workspace-mas
