@@ -5,4 +5,7 @@ Time: 2026-03-30T21:47:26.786226
 
 [快速排序] -> score=100(完美包含所有关键元素), time=31.6s, chars=8, attempts=1
 [最长公共子序列] -> score=100(LCS实现完整正确), time=36.4s, chars=116, attempts=1
-[概率计算]
+[概率计算] -> score=100(答案正确), time=39.2s, chars=310, attempts=1
+[关键路径] -> score=100(关键路径正确), time=37.1s, chars=146, attempts=1
+[科幻故事] -> score=100(优秀故事(502字)), time=35.8s, chars=502, attempts=1
+[逻辑推理]
