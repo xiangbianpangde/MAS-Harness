@@ -82,9 +82,51 @@
 
 ---
 
+## v4.0.0 - Parallel Multi-Worker + Voting (2026-03-30)
+**Architecture**: 3 Workers + Voting/Verification
+**Status**: ❌ REGRESSION - Significantly Worse
+
+### Design
+- Creative tasks: 3 workers generate independently, reviewer picks best
+- Reasoning tasks: majority voting
+- Code tasks: single verification
+
+### Results
+| Task | Score | Time | vs v3.0 |
+|------|-------|------|---------|
+| code_quicksort | 30 | - | ❌ -70 |
+| code_lcs | 50 | - | ❌ -50 |
+| math_prob | 70 | - | ➡️ 0 |
+| plan_critical | 50 | - | ❌ -20 |
+| creative_story | 45 | - | ❌ -5 |
+| reason_logic | 50 | - | ❌ -44 |
+
+**Summary**: Success Rate 16.7% (1/6), Avg Score 49.2, Avg Time N/A
+
+**Key Findings**:
+- ❌ **CATASTROPHIC REGRESSION** across all tasks
+- ❌ Voting/parallel approach hurt reasoning (94→50)
+- ❌ Code verification stricter (100→30/50)
+- 💡 Lesson: Parallelism doesn't help when base quality is poor
+- 💡 Lesson: Voting amplifies errors rather than fixing them
+
+---
+
+## 版本对比
+
+| 版本 | 架构 | 成功率 | 平均分 | 平均时间 | 主要改进 |
+|------|------|--------|--------|----------|----------|
+| v1.0 | Single-Agent | 80% | 87.0 | 44s | 基线 |
+| v2.0 | Planner-Worker | 66.7% | 77.8 | 73s | 创意任务↑, 推理↓ |
+| v3.0 | +Reviewer | **83.3%** | 80.7 | 124s | 成功率最高, 推理↑↑ |
+| v4.0 | Parallel+Voting | 16.7% | 49.2 | N/A | ❌ 完全失败 |
+
+---
+
 ## 下一步
 
-v4.0 方向建议:
-- creative_story 需要单独优化策略（长文本与Reviewer迭代冲突）
-- reason_logic 已通过Reviewer提升，可保持
-- 可考虑: 并行多Worker + 投票机制 或 长文本专用Worker
+v5.0 方向建议:
+- **回退到 v3.0 架构作为基线**
+- creative_story 需要单独策略（固定长度提示词 + 避免重复重试）
+- 探索: Planner根据任务类型选择单/多worker策略
+- 探索: 引入外部工具验证(code execution)而非启发式评分

@@ -1,0 +1,157 @@
+{
+  "version": "4.0.0",
+  "architecture": "v4.0-parallel-multi-worker",
+  "timestamp": "2026-03-30T20:30:04.417479",
+  "total_tasks": 6,
+  "success_count": 1,
+  "success_rate": 16.666666666666664,
+  "avg_score": 49.166666666666664,
+  "avg_tokens": 0.0,
+  "avg_time": 0.22750834623972574,
+  "results": [
+    {
+      "task_id": "code_quicksort",
+      "task_name": "快速排序",
+      "success": false,
+      "score": 30.0,
+      "tokens_used": 0,
+      "time_seconds": 0.19478678703308105,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "verification": "code_elements_checked"
+        }
+      ]
+    },
+    {
+      "task_id": "code_lcs",
+      "task_name": "最长公共子序列",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 0.3852100372314453,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "verification": "code_elements_checked"
+        }
+      ]
+    },
+    {
+      "task_id": "math_prob",
+      "task_name": "概率计算",
+      "success": true,
+      "score": 70.0,
+      "tokens_used": 0,
+      "time_seconds": 0.20485234260559082,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "worker": "worker_0",
+          "answer": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        },
+        {
+          "worker": "worker_1",
+          "answer": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        },
+        {
+          "worker": "worker_2",
+          "answer": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        },
+        {
+          "majority_vote": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        }
+      ]
+    },
+    {
+      "task_id": "plan_critical",
+      "task_name": "关键路径",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 0.19081473350524902,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "worker": "worker_0",
+          "answer": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        },
+        {
+          "worker": "worker_1",
+          "answer": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        },
+        {
+          "worker": "worker_2",
+          "answer": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        },
+        {
+          "majority_vote": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        }
+      ]
+    },
+    {
+      "task_id": "creative_story",
+      "task_name": "科幻故事",
+      "success": false,
+      "score": 45.0,
+      "tokens_used": 0,
+      "time_seconds": 0.19905614852905273,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "worker": "worker_0",
+          "score": 45.0,
+          "chars": 0
+        },
+        {
+          "worker": "worker_1",
+          "score": 45.0,
+          "chars": 0
+        },
+        {
+          "worker": "worker_2",
+          "score": 45.0,
+          "chars": 0
+        }
+      ]
+    },
+    {
+      "task_id": "reason_logic",
+      "task_name": "逻辑推理",
+      "success": false,
+      "score": 50.0,
+      "tokens_used": 0,
+      "time_seconds": 0.19033002853393555,
+      "architecture": "v4.0-parallel-multi-worker",
+      "attempts": 1,
+      "error": null,
+      "steps": [
+        {
+          "worker": "worker_0",
+          "answer": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        },
+        {
+          "worker": "worker_1",
+          "answer": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        },
+        {
+          "worker": "worker_2",
+          "answer": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        },
+        {
+          "majority_vote": "ERROR: {'base_resp': {'status_code': 1004, 'status_msg': \"login fail: Please carry the API secret ke"
+        }
+      ]
+    }
+  ]
+}
