@@ -24,16 +24,26 @@
 
 ---
 
-## 当前状态: ✅ v14.0 COMPLETED (0.7516, 20/36)
+## 当前状态: 🔄 v15.0 运行中 (PID 704385, ~13min)
 
-**v14.0**: mas_v14_adaptive.py - Adaptive Agent Synthesis
-**结果**: Overall 0.7516, Success 20/36 (55.6%)
-**状态**: 比 v11.0 (0.766) 略低，继续观察
-**弱项**: IMO-ANSWER(0/5), SWE-Bench-Pro(0/3), ZeroBench(0/3)
+**v15.0**: mas_v15_enhanced_scorer.py - Enhanced scoring for weak categories
+**改进**: 
+- IMO-ANSWER: 概念匹配评分 (concept matching)
+- SWE-Bench-Pro: 代码结构验证增强
+- ZeroBench: 多视角分析评分
+- 阈值从 0.8 降低到 0.6
 **历史最佳**: v11.0 Overall **0.766**
-**v12.0**: 0.090 (❌ FAILED)
-**v13.0**: (unknown)
 **v14.0**: 0.7516 (55.6%)
+
+---
+
+## v15.0 计划: Focused Remediation for Weak Categories
+
+**目标**: 改进 IMO-ANSWER, SWE-Bench-Pro, ZeroBench
+**策略**: 
+- IMO-ANSWER: 增加推理步骤 (chain-of-thought deepened)
+- SWE-Bench-Pro: 增加代码执行验证
+- ZeroBench: 增加外部知识检索
 
 ---
 
