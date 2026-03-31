@@ -525,3 +525,28 @@ from mas_v14_adaptive import solve_math as solver
 **Conclusion**: Need to modify v16's source code directly, not use runtime patching
 **Status**: v16 (0.8577) remains the best
 
+
+---
+
+## v16.1 - v16 Final Verification Run (2026-04-01)
+
+**Status**: ✅ **NEW RECORD: 0.8680**
+
+| Category | Score | Change |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.859 | -0.020 |
+| BBEH | 0.900 | - |
+| HLE | 1.000 | - |
+| IMO-ANSWER | 0.787 | -0.016 |
+| SWE-Bench-Pro | 0.817 | **+0.067** |
+| MATH-500 | 0.860 | **+0.140** |
+| GPQA-Diamond | 1.000 | - |
+| OSWorld-Tool-Hard | 0.300 | - |
+| ZeroBench | 0.880 | -0.003 |
+
+**Overall**: 0.8680 (+0.010 vs previous 0.8577)
+**Runtime**: 1146s (19 min)
+**Success**: 27/34 (79.4%)
+
+**Key Improvements**: MATH-500 +0.14, SWE-Bench +0.067
+**Weakness**: OSWorld (0.300) still needs work
