@@ -24,16 +24,22 @@
 
 ---
 
-## 当前状态: 🔄 v16.0 Benchmark Running
+## 当前状态: 🚀 READY FOR v17
 
-**v16.0 Enhanced Benchmark**:
-- Started: 2026-04-01 02:08
-- Process: PID 730241
-- Time limit: 3600s (1h)
-- Fix: SWE-Bench-Pro typo (FIX_INDATORS → FIX_INDICATORS)
+**v16.0 结果** (已完成):
+- Overall: **0.8577** (NEW BEST!)
+- Gen: 15, Runtime: 786.5s
+- Success: 26/34 (76.5%)
 
-**v15.0 (Error)**: 0.6716 (SWE-Bench-Pro failed)
-**v14.0 (Last Good)**: 0.7516 overall
+**弱点分析**:
+| Category | Score | Weight |
+|----------|-------|--------|
+| OSWorld-Tool-Hard | 0.300 | 2% | ← 重点改进
+| MATH-500 | 0.720 | 8% | ← 改进
+| IMO-ANSWER | 0.803 | 15% | ← 改进
+| SWE-Bench-Pro | 0.750 | 10% | ← 改进
+
+**建议**: v17 聚焦 OSWorld/MATH/IMO 强化训练
 
 ---
 

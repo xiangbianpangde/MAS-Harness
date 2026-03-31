@@ -447,3 +447,64 @@ Paradigm shift: Instead of fixed agent topologies, v14 uses a TaskAnalyzer to ex
 **vs v11.0 (0.766)**: -9.4%
 **Analysis**: SWE-Bench-Pro scorer missing FIX_INDATORS attribute, needs fix
 **Next**: Fix SWE-Bench-Pro scorer, rerun v16
+
+---
+
+## v15.0.0 - Enhanced Benchmark (36 tasks) - ERROR
+**Architecture**: mas_v15_enhanced_scorer.py
+**Date**: 2026-04-01
+**Status**: ❌ **REGRESSION** (SWE-Bench-Pro bug)
+
+| Category | Weight | Score | Status |
+|----------|--------|-------|--------|
+| ARC-AGI-3 | 25% | 0.400 | 1/5 |
+| BBEH | 20% | 0.900 | 3/4 |
+| HLE | 15% | 1.000 | 5/5 |
+| IMO-ANSWER | 15% | 0.788 | 4/5 |
+| SWE-Bench-Pro | 10% | **0.000** | ❌ Error |
+| MATH-500 | 8% | 0.860 | 4/5 |
+| GPQA-Diamond | 4% | 1.000 | 3/3 |
+| OSWorld-Tool-Hard | 2% | 0.300 | 1/3 |
+| ZeroBench | 1% | 0.850 | 2/3 |
+
+**Summary**: Overall **0.6716**, Success Rate **75.8%** (25/33, 3 errors)
+**Analysis**: FIX_INDATORS typo in EnhancedSWEScorer caused SWE-Bench-Pro to fail
+**Fix**: Corrected to FIX_INDICATORS in v16
+
+---
+
+## v16.0.0 - Enhanced Benchmark (FIXED)
+**Architecture**: mas_v16_enhanced_scorer.py
+**Date**: 2026-04-01
+**Status**: 🔄 RUNNING (PID 730243)
+**Fix**: FIX_INDATORS → FIX_INDICATORS
+**Expected**: Restore v14.0's 0.7516 level with proper SWE-Bench-Pro scoring
+
+---
+
+## v10-v16: Extended Benchmark Evolution (2026-03-31 ~ 2026-04-01)
+
+| Version | Overall Score | Key Changes |
+|---------|---------------|-------------|
+| v10 | 0.7759 | Extended to 9-category benchmark |
+| v11 | 0.7657 | Minor refinements |
+| v12 | 0.0903 | ❌ Error/bug run |
+| v14 | 0.7516 | Recovery + adaptive scoring |
+| v15 | 0.6716 | ❌ SWE-Bench-Pro typo (FIX_INDATORS) |
+| **v16** | **0.8577** | ✅ **NEW BEST** (FIX_INDICATORS corrected) |
+
+### v16 Detailed Results (34 tasks, Gen 15)
+| Category | Score | Weight |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.879 | 25% |
+| BBEH | 0.900 | 20% |
+| HLE | 1.000 | 15% |
+| IMO-ANSWER | 0.803 | 15% |
+| SWE-Bench-Pro | 0.750 | 10% |
+| MATH-500 | 0.720 | 8% |
+| GPQA-Diamond | 1.000 | 4% |
+| OSWorld-Tool-Hard | 0.300 | 2% |
+| ZeroBench | 0.883 | 1% |
+
+**Runtime**: 786.5s
+**Status**: No test currently running
