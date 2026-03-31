@@ -24,16 +24,26 @@
 
 ---
 
-## 当前状态: ✅ v16 CONFIRMED BEST (0.8577)
+## 当前状态: 🔴 API UNAVAILABLE
 
-**v16.0 最终确认**:
+**v16.0 结果** (已确认, 2026-04-01 02:22):
 - Overall: **0.8577** ✅
 - Gen: 15, Runtime: 786.5s
 - Success: 26/34 (76.5%)
 
-**v17 失败**: 设计缺陷 - v16 直接导入函数名，不通过 SOLVER_MAP
+**⚠️ CRITICAL: MiniMax API 模型不可用**
+```
+status_code: 2061
+status_msg: "your current token plan not support model, MiniMax-Text-01"
+```
+- API Key 有效但模型不支持
+- 可能原因: 账户余额不足/订阅过期/模型下架
+- 影响: v17 无法运行（获取空响应）
 
-**建议**: 基于 v16 源码直接修改，而非运行时 patch
+**建议**:
+1. 检查 MiniMax 账户状态
+2. 更新 API Key 或模型名称
+3. 或切换到其他 LLM 提供商
 
 ---
 
