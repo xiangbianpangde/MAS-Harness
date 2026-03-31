@@ -24,23 +24,22 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE - v16 完成, v17 待测试
+## 当前状态: ⚠️ API RATE LIMIT / v16 RE-RUN NEEDED
 
-**v16.0 结果** (已验证, 786.5s):
-- Overall: **0.8577** ✅
+**v16.0 结果** (0.8577 是当前最佳):
+- Overall: 0.8577 ✅
 - Gen: 15, Runtime: 786.5s
 - Success: 26/34 (76.5%)
 
-**弱点**:
-| Category | Score | Weight |
-|----------|-------|--------|
-| OSWorld-Tool-Hard | 0.300 | 2% | ← 重点改进
-| MATH-500 | 0.720 | 8% | ← 改进
-| IMO-ANSWER | 0.803 | 15% | ← 改进
-| SWE-Bench-Pro | 0.750 | 10% | ← 改进
+**v17 问题已诊断**:
+- v16 直接 import solvers by name，不是通过 SOLVER_MAP
+- runtime patching 无效，需直接修改 mas_v16_enhanced_scorer.py 源码
 
-**问题**: 重复运行 benchmark 时 LLM API 调用挂起 (可能是 rate limit)
-**v17 状态**: mas_v17_clean.py 已创建，imports 测试通过，但实际运行挂起
+**资源状态**:
+- Disk: 18G (53%) ✅
+- Memory: 191Mi free ⚠️ (偏低但非紧急)
+
+**下一步**: 直接修改 v16 源码替换 solve_osworld 和 solve_math，重命名为 mas_v17
 
 ---
 
