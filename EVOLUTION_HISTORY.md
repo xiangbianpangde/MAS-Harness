@@ -593,3 +593,23 @@ from mas_v14_adaptive import solve_math as solver
 ---
 
 ## Current Best: v16.1 @ 0.8680
+
+---
+
+## v16.1 vs v17 Comparison (2026-04-01)
+
+| Version | Overall | MATH-500 | IMO | SWE | OSWorld |
+|---------|---------|----------|-----|-----|---------|
+| v16.1 | 0.8680 | 0.720 | 0.803 | 0.750 | 0.300 |
+| **v17** | **0.8661** | **0.860** ⬆️ | 0.781 | 0.760 | 0.300 |
+
+**Analysis**: 
+- MATH-500 大幅提升 (0.720 → 0.860) ⭐
+- IMO 略降 (0.803 → 0.781)
+- SWE 略升 (0.750 → 0.760)
+- OSWorld 仍然是最大弱点 (0.300)
+
+**v18 建议**: 
+- 保留 v17 的 MATH-500 改进
+- 聚焦 IMO 优化
+- OSWorld 需要不同方法（sandbox/real execution）
