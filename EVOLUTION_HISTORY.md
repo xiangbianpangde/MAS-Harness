@@ -508,3 +508,20 @@ Paradigm shift: Instead of fixed agent topologies, v14 uses a TaskAnalyzer to ex
 
 **Runtime**: 786.5s
 **Status**: No test currently running
+
+---
+
+## v17 - FAILED (Design Flaw)
+
+**Issue**: v17 attempted to patch SOLVER_MAP but v16 imports solvers by name directly, not via SOLVER_MAP
+
+```python
+# v16 approach - imports directly, NOT via SOLVER_MAP:
+from mas_v14_adaptive import solve_math as solver
+
+# So patching SOLVER_MAP has no effect!
+```
+
+**Conclusion**: Need to modify v16's source code directly, not use runtime patching
+**Status**: v16 (0.8577) remains the best
+
