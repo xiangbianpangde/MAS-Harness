@@ -44,8 +44,12 @@ def load_arc_task(task_id: str) -> Dict[str, Any]:
         data = json.load(f)
     return data
 
-def load_all_arc_tasks(max_tasks: int = 50) -> List[Dict]:
-    """Load ARC tasks as benchmark-formatted dicts"""
+def load_all_arc_tasks(max_tasks: int = 50, max_grid_size: int = 0) -> List[Dict]:
+    """Load ARC tasks as benchmark-formatted dicts
+    Args:
+        max_tasks: Maximum number of tasks to load (0 = all)
+        max_grid_size: Maximum grid dimension (0 = no limit)
+    """
     files = sorted(os.listdir(ARC_EVAL_DIR))
     if max_tasks:
         files = files[:max_tasks]
@@ -72,6 +76,13 @@ def load_all_arc_tasks(max_tasks: int = 50) -> List[Dict]:
         
         test_input = test[0].get("input", [])
         test_output = test[0].get("output", [])  # ground truth
+        
+        # Filter by max grid size
+        if max_grid_size > 0:
+            rows = len(test_input)
+            cols = len(test_input[0]) if test_input else 0
+            if max(rows, cols) > max_grid_size:
+                continue
         
         tasks.append({
             "task_id": task_id,

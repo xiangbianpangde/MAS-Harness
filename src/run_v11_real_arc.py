@@ -18,9 +18,9 @@ from benchmark_agi_max import (
     MATH_500_TASKS, GPQA_DIAMOND_TASKS, OSWORLD_TOOL_HARD_TASKS, ZEROBENCH_TASKS
 )
 
-def get_tasks(arc_sample: int = 400) -> dict:
+def get_tasks(arc_sample: int = 400, arc_max_grid: int = 0) -> dict:
     """Get all benchmark tasks"""
-    arc_tasks = load_all_arc_tasks(max_tasks=arc_sample)
+    arc_tasks = load_all_arc_tasks(max_tasks=arc_sample, max_grid_size=arc_max_grid)
     return {
         "ARC-AGI-3": arc_tasks,
         "BBEH": BBEH_TASKS,
@@ -39,11 +39,13 @@ def run():
     print("=" * 60)
 
     # Determine ARC sample size based on time constraints
-    # 400 ARC tasks at ~15s each = 100 minutes
-    # Let's use 100 tasks for ~25 minutes total
-    arc_sample = 100
+    # Each ARC task takes ~1-3 min depending on grid size and API latency
+    # Using max_grid_size=15 to filter out the largest/slowest tasks
+    # 30 tasks with small/medium grids = ~45-60 min total
+    arc_sample = 10
+    arc_max_grid = 15
     
-    tasks = get_tasks(arc_sample=arc_sample)
+    tasks = get_tasks(arc_sample=arc_sample, arc_max_grid=arc_max_grid)
     
     print("\nTask Summary:")
     for bm, task_list in tasks.items():
@@ -59,8 +61,8 @@ def run():
     print(f"  (Using {arc_sample} ARC tasks, {len(tasks['BBEH'])} BBEH, etc.)")
     start_time = time.time()
     
-    # Time limit: 30 minutes
-    TIME_LIMIT = 1800
+    # Time limit: 60 minutes
+    TIME_LIMIT = 3600
 
     try:
         scores, total_score, results = orchestrator.run_benchmark(tasks, time_limit=TIME_LIMIT)

@@ -174,20 +174,30 @@ INSTRUCTIONS:
 
 OUTPUT GRID (your prediction):"""
 
-    result = llm.chat([{"role": "user", "content": prompt}],
-                      system_prompt="You are ARC-Agent, expert in grid pattern recognition. Study examples to find transformation rules and apply them precisely.",
-                      temperature=0.3, max_tokens=2048)
-    
-    content = result.get("content", "")
-    tokens_used = result.get("tokens", 0)
-    
-    # Parse the predicted grid from response
-    predicted_grid = parse_grid_from_text(content)
-    
-    if not predicted_grid:
-        # Fallback: try to extract from thinking block
-        thinking = result.get("thinking", "")
-        predicted_grid = parse_grid_from_text(thinking)
+    # Try with high token limit; retry with more if truncated or parsing fails
+    for max_t in [4000, 8000]:
+        result = llm.chat([{"role": "user", "content": prompt}],
+                          system_prompt="You are ARC-Agent, expert in grid pattern recognition. Study examples to find transformation rules and apply them precisely.",
+                          temperature=0.0, max_tokens=max_t)
+        
+        content = result.get("content", "")
+        tokens_used = result.get("tokens", 0)
+        
+        # Parse the predicted grid from response
+        predicted_grid = parse_grid_from_text(content)
+        
+        if not predicted_grid:
+            # Fallback: try to extract from thinking block
+            thinking = result.get("thinking", "")
+            predicted_grid = parse_grid_from_text(thinking)
+        
+        # Check if we got a valid grid
+        if predicted_grid and len(predicted_grid) > 0 and all(isinstance(row, list) for row in predicted_grid):
+            break
+        # If parsing failed completely, retry once with more tokens
+        if not predicted_grid and max_t == 4000:
+            continue
+        break
     
     # Score by comparing grids
     score = score_arc_output(predicted_grid, expected_grid)
@@ -252,7 +262,7 @@ Step-by-step reasoning:"""
 
     result = llm.chat([{"role": "user", "content": prompt}],
                       system_prompt="You are BBEH-Agent. Track entities through complex chains of events. Be precise about possession and location.",
-                      temperature=0.3, max_tokens=2048)
+                      temperature=0.0, max_tokens=2048)
     content = result.get("content", "")
     
     expected_lower = expected.lower()
@@ -291,7 +301,7 @@ Provide your answer with reasoning."""
 
     result = llm.chat([{"role": "user", "content": prompt}],
                       system_prompt=f"You are HLE-Agent. Expert-level knowledge in {domain}. Answer precisely.",
-                      temperature=0.2, max_tokens=2048)
+                      temperature=0.0, max_tokens=2048)
     content = result.get("content", "")
     
     answer_upper = content.upper()
@@ -338,7 +348,7 @@ Write a rigorous, complete proof."""
 
     result = llm.chat([{"role": "user", "content": prompt}],
                       system_prompt="You are Proof-Agent. Write clear, rigorous proofs.",
-                      temperature=0.2, max_tokens=2048)
+                      temperature=0.0, max_tokens=2048)
     proof = result.get("content", "")
 
     proof_lower = proof.lower()
@@ -374,7 +384,7 @@ Fix the bug."""
 
     result = llm.chat([{"role": "user", "content": prompt}],
                       system_prompt="You are CodeFix-Agent. Fix real-world code issues.",
-                      temperature=0.2, max_tokens=1536)
+                      temperature=0.0, max_tokens=1536)
     content = result.get("content", "")
     score = 0.8 if "```python" in content or "```" in content else 0.3
 
@@ -395,7 +405,7 @@ Solve step by step."""
 
     result = llm.chat([{"role": "user", "content": prompt}],
                       system_prompt="You are MathAgent. Solve precisely.",
-                      temperature=0.3, max_tokens=1024)
+                      temperature=0.0, max_tokens=1024)
     content = result.get("content", "")
     ans_nums = re.findall(r'-?\d+\.?\d*', content)
     exp_nums = re.findall(r'-?\d+\.?\d*', expected)
@@ -418,7 +428,7 @@ Answer precisely."""
 
     result = llm.chat([{"role": "user", "content": prompt}],
                       system_prompt=f"You are GPQAAgent. Expert in {subject}.",
-                      temperature=0.2, max_tokens=1536)
+                      temperature=0.0, max_tokens=1536)
     content = result.get("content", "")
     expected = task.get("expected", "").upper()
     score = 1.0 if expected in content.upper() else 0.3
@@ -440,7 +450,7 @@ Commands:"""
 
     result = llm.chat([{"role": "user", "content": prompt}],
                       system_prompt="You are Tool-OS-Agent. Provide precise OS commands.",
-                      temperature=0.3, max_tokens=1024)
+                      temperature=0.0, max_tokens=1024)
     content = result.get("content", "")
     expected = task.get("expected_command", "").lower()
     score = 0.7 if expected in content.lower() else 0.3
@@ -461,7 +471,7 @@ Task: {task.get('task', '')}
 Analyze:"""
     result = llm.chat([{"role": "user", "content": prompt}],
                       system_prompt="You are ZeroShot-Agent. Generalize to new domains.",
-                      temperature=0.4, max_tokens=1536)
+                      temperature=0.0, max_tokens=1536)
     content = result.get("content", "")
     score = 0.5
 
