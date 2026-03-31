@@ -24,26 +24,23 @@
 
 ---
 
-## 当前状态: 🔴 API UNAVAILABLE
+## 当前状态: ⏸️ IDLE - v16 完成, v17 待测试
 
-**v16.0 结果** (已确认, 2026-04-01 02:22):
+**v16.0 结果** (已验证, 786.5s):
 - Overall: **0.8577** ✅
 - Gen: 15, Runtime: 786.5s
 - Success: 26/34 (76.5%)
 
-**⚠️ CRITICAL: MiniMax API 模型不可用**
-```
-status_code: 2061
-status_msg: "your current token plan not support model, MiniMax-Text-01"
-```
-- API Key 有效但模型不支持
-- 可能原因: 账户余额不足/订阅过期/模型下架
-- 影响: v17 无法运行（获取空响应）
+**弱点**:
+| Category | Score | Weight |
+|----------|-------|--------|
+| OSWorld-Tool-Hard | 0.300 | 2% | ← 重点改进
+| MATH-500 | 0.720 | 8% | ← 改进
+| IMO-ANSWER | 0.803 | 15% | ← 改进
+| SWE-Bench-Pro | 0.750 | 10% | ← 改进
 
-**建议**:
-1. 检查 MiniMax 账户状态
-2. 更新 API Key 或模型名称
-3. 或切换到其他 LLM 提供商
+**问题**: 重复运行 benchmark 时 LLM API 调用挂起 (可能是 rate limit)
+**v17 状态**: mas_v17_clean.py 已创建，imports 测试通过，但实际运行挂起
 
 ---
 
