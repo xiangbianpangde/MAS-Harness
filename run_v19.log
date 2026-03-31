@@ -13,3 +13,60 @@ Task Summary:
   OSWorld-Tool-Hard: 3 tasks
   ZeroBench: 3 tasks
   TOTAL: 34 tasks
+[ARC-AGI-3] 00576224: 1.00 (114.3s)
+[ARC-AGI-3] 009d5c81: 0.87 (43.5s)
+[ARC-AGI-3] 03560426: 0.77 (70.7s)
+[BBEH] long_range_dependency: 1.00 (18.5s)
+[BBEH] multi_step_inference: 1.00 (14.0s)
+[BBEH] temporal_reasoning: 0.60 (25.5s)
+[BBEH] negation_tracking: 1.00 (26.8s)
+[HLE] legal_case_analysis: 1.00 (17.0s)
+[HLE] medical_diagnosis: 1.00 (21.2s)
+[HLE] financial_risk_assessment: 1.00 (26.0s)
+[HLE] legal_contract_interpretation: 1.00 (12.3s)
+[HLE] medical_treatment_selection: 1.00 (31.8s)
+[IMO-ANSWER] number_theory_proof: 0.98 (79.7s)
+[IMO-ANSWER] geometry_proof: 0.98 (77.4s)
+[IMO-ANSWER] combinatorics_proof: 0.83 (74.0s)
+[IMO-ANSWER] algebra_proof: 1.00 (64.2s)
+[IMO-ANSWER] diophantine_equation: 0.78 (81.3s)
+[SWE-Bench-Pro] django_queryset_fix: 0.95 (23.7s)
+[SWE-Bench-Pro] react_state_update: 0.55 (42.1s)
+[SWE-Bench-Pro] python_sort_stability: 0.55 (45.4s)
+[MATH-500] algebra_easy: 1.00 (11.1s)
+[MATH-500] calculus_medium: 1.00 (17.3s)
+[MATH-500] combinatorics_hard: 0.30 (26.0s)
+[MATH-500] number_theory_medium: 1.00 (21.1s)
+[MATH-500] geometry_hard: 1.00 (26.8s)
+[GPQA-Diamond] physical_chemistry: 1.00 (22.0s)
+[GPQA-Diamond] quantum_mechanics: 1.00 (30.7s)
+[GPQA-Diamond] organic_chemistry: 1.00 (37.9s)
+[OSWorld-Tool-Hard] file_operations: 0.30 (5.4s)
+[OSWorld-Tool-Hard] process_management: 0.30 (11.3s)
+[OSWorld-Tool-Hard] network_config: 0.30 (6.8s)
+[ZeroBench] cross_domain_legal_tech: 0.64 (62.7s)
+[ZeroBench] cross_domain_medical_ai: 0.85 (69.0s)
+[ZeroBench] cross_domain_climate_econ: 0.85 (50.1s)
+
+================================================================================
+MAS v19.0 - IMO Technique Focus
+================================================================================
+Runtime: 1307.5s (21.8 min)
+Tasks: 34 | Success: 26 (76.5%)
+
+SCORES:
+  ARC-AGI-3:        0.879
+  BBEH:             0.900
+  HLE:              1.000
+  IMO-ANSWER:       0.915  <- Focus
+  SWE-Bench-Pro:    0.683
+  MATH-500:         0.860
+  GPQA-Diamond:     1.000
+  OSWorld-Tool-Hard:0.300
+  ZeroBench:        0.778
+
+OVERALL: 0.8779
+================================================================================
+
+
+Saved to: /root/.openclaw/workspace-mas/benchmark_results_v19.json
