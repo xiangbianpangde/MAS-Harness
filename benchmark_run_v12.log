@@ -1,0 +1,39 @@
+============================================================
+MAS v12.0 - Enhanced Scoring Benchmark
+============================================================
+
+Loaded 61 tasks:
+  ARC-AGI-3: 30 tasks (weight: 25%)
+  BBEH: 4 tasks (weight: 20%)
+  HLE: 5 tasks (weight: 15%)
+  IMO-ANSWER: 5 tasks (weight: 15%)
+  SWE-Bench-Pro: 3 tasks (weight: 10%)
+  MATH-500: 5 tasks (weight: 8%)
+  GPQA-Diamond: 3 tasks (weight: 4%)
+  OSWorld-Tool-Hard: 3 tasks (weight: 2%)
+  ZeroBench: 3 tasks (weight: 1%)
+
+Running benchmark...
+
+============================================================
+MAS v12.0 Enhanced Scoring Report - Gen 12
+============================================================
+Overall Score: 0.0903
+Best Gen: 12
+Converged: False
+------------------------------------------------------------
+  ARC-AGI-3 (25%):    0.3610
+  BBEH (20%):         0.0000
+  HLE (15%):          0.0000
+  IMO-ANSWER (15%):   0.0000
+  SWE-Bench-Pro (10%): 0.0000
+  MATH-500 (8%):      0.0000
+  GPQA-Diamond (4%):  0.0000
+  OSWorld-Tool-Hard (2%): 0.0000
+  ZeroBench (1%):     0.0000
+------------------------------------------------------------
+  ARC-AGI-3: avg=0.361 success=4/16
+Runtime: 3646.3s
+============================================================
+
+Results saved to /root/.openclaw/workspace-mas/benchmark_results_v12.json
