@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: 🚀 v17 RUNNING (PID 752857)
+## 当前状态: 🚀 v17 RUNNING (PID 752857, started 03:37)
 
 **v16.0 结果** (已验证):
 - Overall: **0.8577** ✅
@@ -42,7 +42,8 @@
 **v17 改进**:
 - OSWorld: Better command matching + improved prompts
 - MATH: Longer max_tokens (2048) + step-by-step prompts + answer extraction
-- 正在后台运行，日志: run_v17_output.log
+- Started: 03:37, expected finish: ~03:50 (like v16's 786s)
+- 日志: run_v17_output.log
 
 ---
 
