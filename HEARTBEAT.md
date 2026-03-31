@@ -24,28 +24,22 @@
 
 ---
 
-## 当前状态: ✅ v16 NEW RECORD: 0.8680
+## 当前状态: ✅ STABLE - No test running
 
-**v16.0 结果** (已验证):
-- Overall: **0.8680** 🏆 NEW BEST!
-- Gen: 15, Runtime: 1146s (19 min)
-- Success: 27/34 (79.4%)
+**Best Result**: v16.1 @ **0.8680** (2026-04-01 06:55)
+- Success Rate: 27/34 (79.4%)
+- Runtime: 1146s
 
-**Category Breakdown**:
-| Category | Score | vs v16 prev |
-|----------|-------|-------------|
-| ARC-AGI-3 | 0.859 | 0.879 |
-| BBEH | 0.900 | - |
-| HLE | 1.000 | - |
-| IMO-ANSWER | 0.787 | 0.803 |
-| SWE-Bench-Pro | 0.817 | **+0.067** ✅ |
-| MATH-500 | 0.860 | **+0.14** ✅ |
-| GPQA-Diamond | 1.000 | - |
-| OSWorld-Tool-Hard | 0.300 | 0.300 |
-| ZeroBench | 0.880 | 0.883 |
+**v17 Result**: 0.8661 (regression, no improvement)
 
-**改进**: MATH-500 +0.14, SWE-Bench +0.067
-**弱点**: OSWorld (0.300), IMO (0.787)
+**弱点分析** (改进困难):
+| Category | Score | Weight | Challenge |
+|----------|-------|--------|-----------|
+| OSWorld | 0.300 | 2% | Hardest - requires real OS interaction |
+| SWE-Bench-Pro | 0.817 | 10% | Variable |
+| IMO-ANSWER | 0.787 | 15% | Hard |
+
+**建议**: OSWorld 需要不同的方法 (如 sandbox)，而非 prompt 优化
 
 ---
 

@@ -550,3 +550,46 @@ from mas_v14_adaptive import solve_math as solver
 
 **Key Improvements**: MATH-500 +0.14, SWE-Bench +0.067
 **Weakness**: OSWorld (0.300) still needs work
+
+---
+
+## v16.1 - Extended Runtime (2026-04-01 06:55)
+**Architecture**: mas_v16_enhanced_scorer.py (longer runtime 1146s)
+**Status**: ✅ IMPROVED
+
+| Category | Score | Change |
+|----------|-------|--------|
+| Overall | **0.8680** | +0.0103 ✅ |
+| MATH-500 | **0.860** | +0.14 ✅ |
+| SWE-Bench-Pro | **0.817** | +0.067 ✅ |
+| IMO-ANSWER | 0.787 | -0.016 |
+| OSWorld-Tool-Hard | 0.300 | 0 |
+
+**Runtime**: 1146s (vs 786s v16)
+
+---
+
+## v17.0 - Clean Focused (RUNNING)
+**Started**: 2026-04-01 06:57
+**Focus**: OSWorld + MATH improvements
+
+---
+
+## v17.0 - Clean Focused (COMPLETED)
+**Date**: 2026-04-01 07:14
+**Status**: ❌ REGRESSION (0.8661 vs v16.1's 0.8680)
+
+| Category | v16.1 | v17 | Change |
+|----------|-------|-----|--------|
+| Overall | **0.8680** | 0.8661 | -0.0019 |
+| MATH-500 | 0.860 | 0.860 | 0 |
+| SWE-Bench-Pro | **0.817** | 0.760 | -0.057 |
+| OSWorld | 0.300 | 0.300 | 0 |
+| IMO | 0.787 | 0.781 | -0.006 |
+| ZeroBench | 0.880 | **0.917** | +0.037 |
+
+**Analysis**: v17 changes didn't improve weak categories; SWE-Bench-Pro regressed
+
+---
+
+## Current Best: v16.1 @ 0.8680
