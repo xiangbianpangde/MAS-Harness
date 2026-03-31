@@ -24,28 +24,28 @@
 
 ---
 
-## 当前状态: ⚠️ v17 CREATED BUT API CALLS HANGING
+## 当前状态: ✅ v16 NEW RECORD: 0.8680
 
-**v16.0 结果** (0.8577 是当前最佳):
-- Overall: 0.8577 ✅
-- Gen: 15, Runtime: 786.5s
-- Success: 26/34 (76.5%)
+**v16.0 结果** (已验证):
+- Overall: **0.8680** 🏆 NEW BEST!
+- Gen: 15, Runtime: 1146s (19 min)
+- Success: 27/34 (79.4%)
 
-**v17 已创建**:
-- src/mas_v17_enhanced_scorer.py ✅ (import 测试通过)
-- 改进的 solve_osworld_v17 和 solve_math_v17 已添加
-- 但实际运行时会卡住（API调用挂起）
+**Category Breakdown**:
+| Category | Score | vs v16 prev |
+|----------|-------|-------------|
+| ARC-AGI-3 | 0.859 | 0.879 |
+| BBEH | 0.900 | - |
+| HLE | 1.000 | - |
+| IMO-ANSWER | 0.787 | 0.803 |
+| SWE-Bench-Pro | 0.817 | **+0.067** ✅ |
+| MATH-500 | 0.860 | **+0.14** ✅ |
+| GPQA-Diamond | 1.000 | - |
+| OSWorld-Tool-Hard | 0.300 | 0.300 |
+| ZeroBench | 0.880 | 0.883 |
 
-**问题诊断**:
-- LLM API 调用可能存在 rate limit 或连接问题
-- v16 能正常运行（786.5s完成），v17卡在初始化
-- 可能是 v17 代码路径与 v16 不同导致
-
-**资源状态**:
-- Disk: 18G (53%) ✅
-- Memory: 158Mi free ⚠️ (偏低)
-
-**下一步**: 在 v16 代码中直接添加改进，而不是创建独立版本
+**改进**: MATH-500 +0.14, SWE-Bench +0.067
+**弱点**: OSWorld (0.300), IMO (0.787)
 
 ---
 

@@ -1,9 +1,9 @@
 ============================================================
-MAS v15.0 Enhanced Benchmark
+MAS v16.0 Enhanced Benchmark
 ============================================================
 
 Task Summary:
-  ARC-AGI-3: 5 tasks
+  ARC-AGI-3: 3 tasks
   BBEH: 4 tasks
   HLE: 5 tasks
   IMO-ANSWER: 5 tasks
@@ -12,31 +12,27 @@ Task Summary:
   GPQA-Diamond: 3 tasks
   OSWorld-Tool-Hard: 3 tasks
   ZeroBench: 3 tasks
-  TOTAL: 36 tasks
-Error in SWE-Bench-Pro: type object 'EnhancedSWEScorer' has no attribute 'FIX_INDATORS'
-Error in SWE-Bench-Pro: type object 'EnhancedSWEScorer' has no attribute 'FIX_INDATORS'
-Error in SWE-Bench-Pro: type object 'EnhancedSWEScorer' has no attribute 'FIX_INDATORS'
-
+  TOTAL: 34 tasks
 
 ============================================================
-MAS v15.0 Enhanced Report
+MAS v16.0 Enhanced Report
 ============================================================
-Overall Score: 0.6716
+Overall Score: 0.8680
 Best Gen: 15
-Success Rate: 25/33 (75.8%)
+Success Rate: 27/34 (79.4%)
 ------------------------------------------------------------
-  ARC-AGI-3 (25%):    0.4000
+  ARC-AGI-3 (25%):    0.8591
   BBEH (20%):         0.9000
   HLE (15%):          1.0000
-  IMO-ANSWER (15%):   0.7884
-  SWE-Bench-Pro (10%): 0.0000
+  IMO-ANSWER (15%):   0.7866
+  SWE-Bench-Pro (10%): 0.8167
   MATH-500 (8%):      0.8600
   GPQA-Diamond (4%):  1.0000
   OSWorld-Tool-Hard (2%): 0.3000
-  ZeroBench (1%):     0.8500
+  ZeroBench (1%):     0.8800
 ------------------------------------------------------------
-Runtime: 1935.3s
+Runtime: 1146.1s
 ============================================================
 
 
-Saved to: /root/.openclaw/workspace-mas/benchmark_results_v15.json
+Saved to: /root/.openclaw/workspace-mas/benchmark_results_v16.json
