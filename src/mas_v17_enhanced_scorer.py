@@ -589,9 +589,11 @@ Provide a comprehensive multi-perspective analysis."""
                             result = solve_math_v17(self.llm, task, features, self.optimizer)
                         elif benchmark_name == "GPQA-Diamond":
                             from mas_v14_adaptive import solve_gpqa as solver
-                            result = solver(self.llm, task)
                         elif benchmark_name == "OSWorld-Tool-Hard":
                             result = solve_osworld_v17(self.llm, task)
+                        else:
+                            continue
+                        result = solver(self.llm, task)
                     
                     all_results.append(result)
                     
