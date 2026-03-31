@@ -24,23 +24,12 @@
 
 ---
 
-## 当前状态: ⚠️ v17 STUCK - Polling LLM API
+## 当前状态: ⏸️ IDLE - v16 最佳 (0.8577), v17 失败
 
-**v16.0 结果** (已验证):
-- Overall: **0.8577** ✅
+**v16.0 结果** ✅ (已验证):
+- Overall: **0.8577**
 - Gen: 15, Runtime: 786.5s
 - Success: 26/34 (76.5%)
-
-**v17 问题分析**:
-- v17 启动后卡在 "TOTAL: 34 tasks" 后无进展
-- strace 显示: `do_poll.constprop.0` - 等待 LLM API 响应
-- 但 v16 可以正常运行，v17 却卡住
-- **根本原因**: v17 的 patch 方式无效（直接 import 而非通过 SOLVER_MAP）
-
-**v17 patch 无效**:
-- orchestrator 使用 `from mas_v14_adaptive import solve_math as solver`
-- 而非 `SOLVER_MAP["MATH-500"]`
-- 所以 patch 不影响实际执行
 
 **弱点**:
 | Category | Score | Weight |
@@ -48,6 +37,12 @@
 | OSWorld-Tool-Hard | 0.300 | 2% | ← 重点改进
 | MATH-500 | 0.720 | 8% | ← 改进
 | IMO-ANSWER | 0.803 | 15% | ← 改进
+| SWE-Bench-Pro | 0.750 | 10% | ← 改进
+
+**v17 状态**: ❌ 失败 (mas_v17_clean.py 无结果输出)
+**原因**: 可能是SOLVER_MAP patch不生效
+
+**下一步**: 分析v17失败原因，或直接基于v16手动改进
 
 ---
 
