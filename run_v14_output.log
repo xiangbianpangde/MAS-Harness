@@ -1,0 +1,46 @@
+============================================================
+MAS v14.0 Adaptive Benchmark
+============================================================
+
+Task Summary:
+  ARC-AGI-3: 5 tasks
+  BBEH: 4 tasks
+  HLE: 5 tasks
+  IMO-ANSWER: 5 tasks
+  SWE-Bench-Pro: 3 tasks
+  MATH-500: 5 tasks
+  GPQA-Diamond: 3 tasks
+  OSWorld-Tool-Hard: 3 tasks
+  ZeroBench: 3 tasks
+  TOTAL: 36 tasks
+
+============================================================
+MAS v14.0 Adaptive Report - Gen 14
+============================================================
+Overall Score: 0.7516
+Best Gen: 14
+Routing: direct=32 standard=4 enhanced=0
+------------------------------------------------------------
+  ARC-AGI-3 (25%):    0.7783
+  BBEH (20%):         0.8750
+  HLE (15%):          0.8000
+  IMO-ANSWER (15%):   0.5000
+  SWE-Bench-Pro (10%): 0.5000
+  MATH-500 (8%):      0.9000
+  GPQA-Diamond (4%):  1.0000
+  OSWorld-Tool-Hard (2%): 1.0000
+  ZeroBench (1%):     0.5000
+------------------------------------------------------------
+  ARC-AGI-3: avg=0.778 success=4/5
+  BBEH: avg=0.875 success=3/4
+  HLE: avg=0.800 success=3/5
+  IMO-ANSWER: avg=0.500 success=0/5
+  SWE-Bench-Pro: avg=0.500 success=0/3
+  MATH-500: avg=0.900 success=4/5
+  GPQA-Diamond: avg=1.000 success=3/3
+  OSWorld-Tool-Hard: avg=1.000 success=3/3
+  ZeroBench: avg=0.500 success=0/3
+Runtime: 786.4s
+============================================================
+
+Saved to: /root/.openclaw/workspace-mas/benchmark_results_v14.json

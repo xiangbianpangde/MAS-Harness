@@ -399,3 +399,26 @@ Paradigm shift: Instead of fixed agent topologies, v14 uses a TaskAnalyzer to ex
 ### Benchmark
 - Running 36-task benchmark (same as v11/v12)
 - Expected to maintain v11's 0.766 score while potentially improving weak areas
+
+---
+
+## v14.0.0 - Adaptive Agent Synthesis
+**Architecture**: mas_v14_adaptive.py - Adaptive routing (direct/standard/enhanced)
+**Date**: 2026-04-01
+**Status**: 🔄 COMPLETED
+
+| Category | Weight | Score | Success |
+|----------|--------|-------|---------|
+| ARC-AGI-3 | 25% | 0.778 | 4/5 |
+| BBEH | 20% | 0.875 | 3/4 |
+| HLE | 15% | 0.800 | 3/5 |
+| IMO-ANSWER | 15% | 0.500 | 0/5 ❌ |
+| SWE-Bench-Pro | 10% | 0.500 | 0/3 ❌ |
+| MATH-500 | 8% | 0.900 | 4/5 |
+| GPQA-Diamond | 4% | 1.000 | 3/3 |
+| OSWorld-Tool-Hard | 2% | 1.000 | 3/3 |
+| ZeroBench | 1% | 0.500 | 0/3 ❌ |
+
+**Summary**: Overall **0.7516**, Success Rate **55.6%** (20/36)
+**Analysis**: 弱项集中在 IMO-ANSWER, SWE-Bench-Pro, ZeroBench
+**vs v11.0 (0.766)**: -1.4% (略低)
