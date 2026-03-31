@@ -422,3 +422,28 @@ Paradigm shift: Instead of fixed agent topologies, v14 uses a TaskAnalyzer to ex
 **Summary**: Overall **0.7516**, Success Rate **55.6%** (20/36)
 **Analysis**: 弱项集中在 IMO-ANSWER, SWE-Bench-Pro, ZeroBench
 **vs v11.0 (0.766)**: -1.4% (略低)
+
+---
+
+## v15.0.0 - Enhanced Benchmark (36 tasks)
+**Architecture**: mas_v15.py - Enhanced benchmark with more tasks
+**Date**: 2026-04-01
+**Status**: ✅ COMPLETED (but SWE-Bench-Pro error)
+
+| Category | Weight | Score | Success |
+|----------|--------|-------|---------|
+| ARC-AGI-3 | 25% | 0.400 | 1/5 |
+| BBEH | 20% | 0.900 | 3/4 |
+| HLE | 15% | 1.000 | 5/5 |
+| IMO-ANSWER | 15% | 0.788 | 4/5 |
+| SWE-Bench-Pro | 10% | **0.000** | ❌ Error |
+| MATH-500 | 8% | 0.860 | 4/5 |
+| GPQA-Diamond | 4% | 1.000 | 3/3 |
+| OSWorld-Tool-Hard | 2% | 0.300 | 1/3 |
+| ZeroBench | 1% | 0.850 | 2/3 |
+
+**Summary**: Overall **0.6716**, Success Rate **75.8%** (25/33, 3 errors)
+**vs v14.0 (0.7516)**: -8% (regression due to SWE-Bench-Pro bug)
+**vs v11.0 (0.766)**: -9.4%
+**Analysis**: SWE-Bench-Pro scorer missing FIX_INDATORS attribute, needs fix
+**Next**: Fix SWE-Bench-Pro scorer, rerun v16

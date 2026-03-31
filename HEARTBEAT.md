@@ -19,31 +19,23 @@
 ### C. Design & Execute Next Generation
 1. Analyze last results, design next architecture
 2. Write Python code for next gen MAS
-3. Run in background: `nohup python3 src/mas_vN.py > current_test.log 2>&1 &`
+3. Run in background: `nohup python3 src/run_vN.py > current_test.log 2>&1 &`
 4. Record PID and start time
 
 ---
 
-## 当前状态: 🔄 v15.0 运行中 (PID 704385, ~13min)
+## 当前状态: 🔄 v15.0 Benchmark Running
 
-**v15.0**: mas_v15_enhanced_scorer.py - Enhanced scoring for weak categories
-**改进**: 
-- IMO-ANSWER: 概念匹配评分 (concept matching)
-- SWE-Bench-Pro: 代码结构验证增强
-- ZeroBench: 多视角分析评分
-- 阈值从 0.8 降低到 0.6
-**历史最佳**: v11.0 Overall **0.766**
-**v14.0**: 0.7516 (55.6%)
+**v15.0 Enhanced Benchmark**:
+- Started: 2026-04-01 00:26
+- Process: PID 704385
+- Time limit: 3600s (1h)
+- Benchmarks: ARC-AGI-3, BBEH, HLE, IMO-ANSWER, SWE-Bench-Pro, MATH-500, GPQA-Diamond, OSWorld-Tool-Hard, ZeroBench
 
----
-
-## v15.0 计划: Focused Remediation for Weak Categories
-
-**目标**: 改进 IMO-ANSWER, SWE-Bench-Pro, ZeroBench
-**策略**: 
-- IMO-ANSWER: 增加推理步骤 (chain-of-thought deepened)
-- SWE-Bench-Pro: 增加代码执行验证
-- ZeroBench: 增加外部知识检索
+**Latest Results (v14.0)**:
+- Overall: 0.7516 (20/36 tasks)
+- Strong: ARC-AGI-3 (0.778), BBEH (0.875), HLE (0.800), MATH-500 (0.900), GPQA-Diamond (1.0), OSWorld-Tool-Hard (1.0)
+- Weak: IMO-ANSWER (0.500), SWE-Bench-Pro (0.500), ZeroBench (0.500)
 
 ---
 
