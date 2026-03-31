@@ -38,3 +38,18 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+### Network Proxy
+- Host: 8.216.20.120
+- Port: 22
+- User: root
+- Pass: Yhn10186@
+
+### SSH Tunnel Usage
+```bash
+# Connect to proxy
+ssh -o StrictHostKeyChecking=no root@8.216.20.120
+
+# Or use as SOCKS5 proxy via SSH
+ssh -D 1080 -C -N root@8.216.20.120
+```
