@@ -1,0 +1,83 @@
+{
+  "ultimate_benchmark_suite": "AGI-Max-Difficulty-v2026",
+  "human_replacement_threshold": 0.8,
+  "expert_level_threshold": 0.95,
+  "current_best_score_target": 0.988,
+  "core_benchmarks": [
+    {
+      "name": "ARC-AGI-3",
+      "metric": "acc",
+      "threshold": 0.8,
+      "weight": 0.25,
+      "description": "抽象推理与模式识别（AGI核心能力）"
+    },
+    {
+      "name": "BBEH",
+      "metric": "acc",
+      "threshold": 0.8,
+      "weight": 0.20,
+      "description": "超长程推理与注意力机制"
+    },
+    {
+      "name": "HLE",
+      "metric": "score_rate",
+      "threshold": 0.8,
+      "weight": 0.15,
+      "description": "人类级别考试（法律/医学/金融）"
+    },
+    {
+      "name": "IMO-ANSWER",
+      "metric": "acc",
+      "threshold": 0.8,
+      "weight": 0.15,
+      "description": "国际数学奥林匹克级别证明"
+    },
+    {
+      "name": "SWE-Bench-Pro",
+      "metric": "resolve_rate",
+      "threshold": 0.8,
+      "weight": 0.10,
+      "description": "真实世界代码库问题修复"
+    },
+    {
+      "name": "MATH-500",
+      "metric": "acc",
+      "threshold": 0.8,
+      "weight": 0.08,
+      "description": "500道数学竞赛题"
+    },
+    {
+      "name": "GPQA-Diamond",
+      "metric": "acc",
+      "threshold": 0.8,
+      "weight": 0.04,
+      "description": "PhD级研究生化学题"
+    },
+    {
+      "name": "OSWorld-Tool-Hard",
+      "metric": "task_completion",
+      "threshold": 0.8,
+      "weight": 0.02,
+      "description": "操作系统工具操作（硬核）"
+    },
+    {
+      "name": "ZeroBench",
+      "metric": "acc",
+      "threshold": 0.8,
+      "weight": 0.01,
+      "description": "零样本跨域推理"
+    }
+  ],
+  "convergence_rule": {
+    "required_stable_generations": 10,
+    "max_allowed_improvement": 0.01
+  },
+  "total_score_formula": "sum( score_bench * weight )",
+  "output_definition": {
+    "total_score": "0~1",
+    "is_human_replaceable": "bool (total_score >= 0.8)",
+    "is_expert_level": "bool (total_score >= 0.95)",
+    "is_converged": "bool (10代稳定且改进<1%)",
+    "best_generation": "int"
+  }
+}

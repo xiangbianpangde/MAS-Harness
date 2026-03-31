@@ -1,0 +1,23 @@
+{
+  "overall_score": 0.2549,
+  "is_human_replaceable": false,
+  "best_generation": 9,
+  "consecutive_stable_gens": 0,
+  "generation": 9,
+  "benchmark_detail": {
+    "ifeval_score": 0.44999999999999996,
+    "tool_decathlon_score": 0.44999999999999996,
+    "swe_bench_score": 0.44999999999999996,
+    "math_reasoning_score": 0.44999999999999996,
+    "truthful_qa_score": 0.44999999999999996,
+    "bbh_score": 0.44999999999999996,
+    "task_completion": 0.0,
+    "tool_execution": 0.44999999999999996,
+    "reasoning_correctness": 0.44999999999999996,
+    "self_correction_rate": 0.5238095238095238,
+    "hallucination_rate": 1.0
+  },
+  "task_count": 21,
+  "session_id": "mas-v9-1774916130",
+  "timestamp": "2026-03-31T08:23:46.105328"
+}
