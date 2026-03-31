@@ -1,13 +1,12 @@
 {
   "generation": 10,
-  "overall_score": 0.6661,
+  "overall_score": 0.7759666666666667,
   "is_human_replaceable": false,
   "is_expert_level": false,
   "is_converged": false,
   "best_generation": 10,
-  "consecutive_stable_gens": 0,
-  "timestamp": "2026-03-31T09:45:00",
-  "runtime_seconds": 1200,
+  "timestamp": "2026-03-31T12:55:40.517652",
+  "runtime_seconds": 851.7698123455048,
   "weights": {
     "ARC-AGI-3": 0.25,
     "BBEH": 0.2,
@@ -20,25 +19,14 @@
     "ZeroBench": 0.01
   },
   "scores": {
-    "ARC-AGI-3": 0.44,
-    "BBEH": 0.85,
+    "ARC-AGI-3": 0.78,
+    "BBEH": 0.925,
     "HLE": 1.0,
-    "IMO-ANSWER": 0.3,
-    "SWE-Bench-Pro": 0.633,
+    "IMO-ANSWER": 0.41,
+    "SWE-Bench-Pro": 0.5666666666666667,
     "MATH-500": 0.86,
     "GPQA-Diamond": 1.0,
-    "OSWorld-Tool-Hard": 0.7,
+    "OSWorld-Tool-Hard": 0.7000000000000001,
     "ZeroBench": 0.5
-  },
-  "task_details": {
-    "ARC-AGI-3": "Pattern recognition tasks - strong on number sequences, weak on visual/grid tasks",
-    "BBEH": "Strong on logical inference, weak on temporal reasoning",
-    "HLE": "Perfect on expert-level exams (law/medicine/finance)",
-    "IMO-ANSWER": "Weak on formal mathematical proofs - needs improvement",
-    "SWE-Bench-Pro": "Good code fix capability",
-    "MATH-500": "Strong on computation, weak on complex combinatorics",
-    "GPQA-Diamond": "Perfect on PhD-level chemistry/physics",
-    "OSWorld-Tool-Hard": "Good OS command generation",
-    "ZeroBench": "Moderate on cross-domain analysis"
   }
 }

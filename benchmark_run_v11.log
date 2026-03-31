@@ -1,0 +1,18 @@
+============================================================
+MAS v11.0 Real-ARC Benchmark
+============================================================
+
+Task Summary:
+  ARC-AGI-3: 100 tasks (weight: 25%)
+  BBEH: 4 tasks (weight: 20%)
+  HLE: 5 tasks (weight: 15%)
+  IMO-ANSWER: 5 tasks (weight: 15%)
+  SWE-Bench-Pro: 3 tasks (weight: 10%)
+  MATH-500: 5 tasks (weight: 8%)
+  GPQA-Diamond: 3 tasks (weight: 4%)
+  OSWorld-Tool-Hard: 3 tasks (weight: 2%)
+  ZeroBench: 3 tasks (weight: 1%)
+  TOTAL: 131 tasks
+
+Running benchmarks...
+  (Using 100 ARC tasks, 4 BBEH, etc.)

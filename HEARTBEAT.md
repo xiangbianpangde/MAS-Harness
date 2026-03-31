@@ -9,7 +9,7 @@
 4. If test process >24 hours: `kill -9` it, record "Deadlock/Timeout"
 
 ### B. Evaluate & Document
-1. If no test running: Check latest benchmark results in `benchmark/results/`
+1. If no test running: Check latest benchmark results in `benchmark_results_v*.json`
 2. Record score in `EVOLUTION_HISTORY.md`
 3. **Convergence Check**: If last 10 iterations improved <1%:
    - Package current architecture
@@ -24,19 +24,17 @@
 
 ---
 
-## 当前状态: 🔄 v10.1 迭代中
+## 当前状态: 🔄 v12.0 基准测试运行中 (~1h 5min)
 
-**最新进度**:
-- v9.1 Control: Overall Score 0.897 ✅
-- v10.0/v10.1 AGI-Max: 0.792 → 官方数据集整合中
-- ARC-AGI: 400任务已下载 ✅
-- BIG-Bench-Hard: 6个BBEH任务已下载 ✅
-- mas-v10-optimize: 已完成 (3h, score=0.792)
-- mas-v10-official-arc: 运行中 (~1h43m)
+**v12.0 架构**: Enhanced Scorers + 30 ARC-AGI samples
+**运行状态**: 
+- PID: 624155, 运行时间: ~1h 5min (started 19:06)
+- 进程状态: 活跃 (等待API响应)
+- 基准测试文件: run_v12.py
+- 结果文件: benchmark_results_v12.json (尚未生成)
 
-**瓶颈**: IMO-ANSWER (41%), SWE-Bench-Pro (57%)
-
-**资源状态**: ✅ 正常 (Disk 21GB, Mem 2.2GB)
+**资源状态**: ✅ 正常 (Disk 20GB, Mem 2.2GB available)
+**v11.0 分数**: Overall 0.766
 
 ---
 
