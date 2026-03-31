@@ -381,3 +381,21 @@ Individual solver tests passed:
 - Run full benchmark with extended timeout (3600s+)
 - Expected to maintain v11 scores on stable benchmarks
 - Targeted improvements should boost OSWorld, MATH, SWE, ZeroBench
+
+---
+
+## v14.0.0 - Adaptive Agent Synthesis
+**Architecture**: mas_v14_adaptive.py - Auto-analyze task features → auto-generate optimal Agent topology + Prompt
+**Status**: 🔄 **IN PROGRESS** - Running benchmark (36 tasks, ~1h expected)
+
+### Key Innovation
+Paradigm shift: Instead of fixed agent topologies, v14 uses a TaskAnalyzer to extract features (needs_code, needs_math, needs_multi_step, etc.) and an AdaptiveRouter to select/construct the optimal agent for each task.
+
+### Changes from v11
+- TaskFeatureVector: Analyze task characteristics before solving
+- AdaptiveRouter: Route tasks to different agent configurations based on features
+- Agent Selector: Choose or composite specialized agents based on task needs
+
+### Benchmark
+- Running 36-task benchmark (same as v11/v12)
+- Expected to maintain v11's 0.766 score while potentially improving weak areas
