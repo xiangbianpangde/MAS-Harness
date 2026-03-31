@@ -24,14 +24,14 @@
 
 ---
 
-## 当前状态: 🚀 READY FOR v17
+## 当前状态: ✅ STABLE - v16 完成, v17 待重新设计
 
-**v16.0 结果** (已完成):
-- Overall: **0.8577** (NEW BEST!)
+**v16.0 结果** (已验证):
+- Overall: **0.8577** ✅
 - Gen: 15, Runtime: 786.5s
 - Success: 26/34 (76.5%)
 
-**弱点分析**:
+**弱点**:
 | Category | Score | Weight |
 |----------|-------|--------|
 | OSWorld-Tool-Hard | 0.300 | 2% | ← 重点改进
@@ -39,7 +39,7 @@
 | IMO-ANSWER | 0.803 | 15% | ← 改进
 | SWE-Bench-Pro | 0.750 | 10% | ← 改进
 
-**建议**: v17 聚焦 OSWorld/MATH/IMO 强化训练
+**下一步**: 设计干净的 v17 (不依赖 exec() hack)
 
 ---
 
