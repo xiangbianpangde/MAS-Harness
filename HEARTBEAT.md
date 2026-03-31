@@ -24,26 +24,29 @@
 
 ---
 
-## 当前状态: 🚀 v17 RUNNING (PID 752857, started 03:37)
+## 当前状态: 🔴 v17 HANGING - Need Debug
 
 **v16.0 结果** (已验证):
 - Overall: **0.8577** ✅
 - Gen: 15, Runtime: 786.5s
 - Success: 26/34 (76.5%)
 
+**v17 问题**: 
+- mas_v17_clean.py 启动后只在 "TOTAL: 34 tasks" 后挂起
+- 进程处于 sleep 状态但无输出
+- 可能原因: LLM API 调用死锁 或 SOLVER_MAP patch 无效
+
 **弱点**:
 | Category | Score | Weight |
 |----------|-------|--------|
-| OSWorld-Tool-Hard | 0.300 | 2% | ← v17改进
-| MATH-500 | 0.720 | 8% | ← v17改进
-| IMO-ANSWER | 0.803 | 15% | ← v17改进
-| SWE-Bench-Pro | 0.750 | 10% | ← v17改进
+| OSWorld-Tool-Hard | 0.300 | 2% | ← 重点改进
+| MATH-500 | 0.720 | 8% | ← 改进
+| IMO-ANSWER | 0.803 | 15% | ← 改进
 
-**v17 改进**:
-- OSWorld: Better command matching + improved prompts
-- MATH: Longer max_tokens (2048) + step-by-step prompts + answer extraction
-- Started: 03:37, expected finish: ~03:50 (like v16's 786s)
-- 日志: run_v17_output.log
+**建议**: 
+1. 检查 mas_v14_adaptive.SOLVER_MAP 是否正确被 patch
+2. 检查 LLM client 是否正常工作
+3. 可能需要完整重写而非 patch 方式
 
 ---
 
