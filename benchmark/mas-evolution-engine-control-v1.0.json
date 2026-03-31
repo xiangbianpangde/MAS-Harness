@@ -1,0 +1,70 @@
+{
+  "benchmark_suite": "mas-evolution-engine-control-v1.0",
+  "version": "1.0.0",
+  "description": "新一代 MAS 评测标准 - 基于行业公认基准",
+  "human_replacement_threshold": 0.8,
+  "overall_quality_weight": {
+    "task_completion": 0.35,
+    "tool_execution": 0.25,
+    "reasoning_correctness": 0.2,
+    "self_correction": 0.1,
+    "no_hallucination": 0.1
+  },
+  "core_benchmarks": [
+    {
+      "name": "IFEval",
+      "metric": "strict_follow_rate",
+      "threshold": 0.8,
+      "description": "指令严格遵循率，达标=可替代人类执行标准化任务",
+      "weight": 0.20
+    },
+    {
+      "name": "Tool Decathlon",
+      "metric": "tool_call_success_rate",
+      "threshold": 0.8,
+      "description": "工具调用成功率，达标=可替代人类操作工具链",
+      "weight": 0.20
+    },
+    {
+      "name": "SWE-bench Lite",
+      "metric": "issue_resolve_rate",
+      "threshold": 0.8,
+      "description": "代码问题修复率，达标=可替代人类完成常规开发",
+      "weight": 0.25
+    },
+    {
+      "name": "GSM8K + MATH",
+      "metric": "solve_rate",
+      "threshold": 0.8,
+      "description": "数学与逻辑解题率，达标=可替代人类推理计算",
+      "weight": 0.15
+    },
+    {
+      "name": "TruthfulQA",
+      "metric": "truthful_rate",
+      "threshold": 0.8,
+      "description": "事实准确率，达标=可替代人类输出可信结果",
+      "weight": 0.10
+    },
+    {
+      "name": "BBH (BIG-Bench Hard)",
+      "metric": "multi_hop_accuracy",
+      "threshold": 0.8,
+      "description": "复杂多跳推理准确率，达标=可替代人类复杂决策",
+      "weight": 0.10
+    }
+  ],
+  "evolution_rules": {
+    "convergence_stop": 10,
+    "convergence_threshold": 0.01,
+    "quality_target": 0.988,
+    "human_replace_declare": "overall_score >= 0.8"
+  },
+  "output_schema": {
+    "overall_score": "float(0~1)",
+    "is_human_replaceable": "bool",
+    "best_generation": "int",
+    "consecutive_stable_gens": "int",
+    "benchmark_detail": "object"
+  }
+}
