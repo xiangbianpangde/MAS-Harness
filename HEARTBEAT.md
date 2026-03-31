@@ -24,17 +24,19 @@
 
 ---
 
-## 当前状态: 🔄 v10.0 AGI-Max 迭代中
+## 当前状态: 🔄 v10.1 迭代中
 
 **最新进度**:
 - v9.1 Control: Overall Score 0.897 ✅
-- v10.0 AGI-Max: 官方数据集整合中
-- ARC-AGI: 400任务已下载
-- mas-v10-optimize: 运行中 (约60分钟)
+- v10.0/v10.1 AGI-Max: 0.792 → 官方数据集整合中
+- ARC-AGI: 400任务已下载 ✅
+- BIG-Bench-Hard: 6个BBEH任务已下载 ✅
+- mas-v10-optimize: 已完成 (3h, score=0.792)
+- mas-v10-official-arc: 运行中 (~1h43m)
 
-**瓶颈**: IMO-ANSWER (30%), ARC-AGI (44%)
+**瓶颈**: IMO-ANSWER (41%), SWE-Bench-Pro (57%)
 
-**资源状态**: ✅ 正常 (Disk 21GB, Mem 771MB)
+**资源状态**: ✅ 正常 (Disk 21GB, Mem 2.2GB)
 
 ---
 
