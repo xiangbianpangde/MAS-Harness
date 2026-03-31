@@ -24,22 +24,23 @@
 
 ---
 
-## 当前状态: ✅ STABLE - No test running
+## 当前状态: 🚀 Ready for v18
 
-**Best Result**: v16.1 @ **0.8680** (2026-04-01 06:55)
-- Success Rate: 27/34 (79.4%)
-- Runtime: 1146s
+**Latest Results**:
+| Version | Overall | MATH-500 | IMO | SWE | OSWorld |
+|---------|---------|----------|-----|-----|---------|
+| v16.1 | 0.8680 | 0.720 | 0.803 | 0.750 | 0.300 |
+| **v17** | **0.8661** | **0.860** ⬆️ | 0.781 | 0.760 | 0.300 |
 
-**v17 Result**: 0.8661 (regression, no improvement)
+**Analysis**: 
+- MATH-500 大幅提升 (0.720 → 0.860) ⭐
+- Slight overall regression due to IMO drop
+- OSWorld 仍然是最大弱点 (0.300)
 
-**弱点分析** (改进困难):
-| Category | Score | Weight | Challenge |
-|----------|-------|--------|-----------|
-| OSWorld | 0.300 | 2% | Hardest - requires real OS interaction |
-| SWE-Bench-Pro | 0.817 | 10% | Variable |
-| IMO-ANSWER | 0.787 | 15% | Hard |
-
-**建议**: OSWorld 需要不同的方法 (如 sandbox)，而非 prompt 优化
+**v18 建议**: 
+- 保留 v17 的 MATH-500 改进
+- 聚焦 IMO 优化 (concept matching)
+- OSWorld 需要不同方法（sandbox），但权重仅 2%
 
 ---
 
