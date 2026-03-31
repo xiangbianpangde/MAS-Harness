@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: ✅ STABLE - v16 完成, v17 待重新设计
+## 当前状态: 🚀 v17 RUNNING (PID 752857)
 
 **v16.0 结果** (已验证):
 - Overall: **0.8577** ✅
@@ -34,12 +34,15 @@
 **弱点**:
 | Category | Score | Weight |
 |----------|-------|--------|
-| OSWorld-Tool-Hard | 0.300 | 2% | ← 重点改进
-| MATH-500 | 0.720 | 8% | ← 改进
-| IMO-ANSWER | 0.803 | 15% | ← 改进
-| SWE-Bench-Pro | 0.750 | 10% | ← 改进
+| OSWorld-Tool-Hard | 0.300 | 2% | ← v17改进
+| MATH-500 | 0.720 | 8% | ← v17改进
+| IMO-ANSWER | 0.803 | 15% | ← v17改进
+| SWE-Bench-Pro | 0.750 | 10% | ← v17改进
 
-**下一步**: 设计干净的 v17 (不依赖 exec() hack)
+**v17 改进**:
+- OSWorld: Better command matching + improved prompts
+- MATH: Longer max_tokens (2048) + step-by-step prompts + answer extraction
+- 正在后台运行，日志: run_v17_output.log
 
 ---
 
