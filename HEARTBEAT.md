@@ -24,18 +24,16 @@
 
 ---
 
-## 当前状态: 🔄 v15.0 Benchmark Running
+## 当前状态: 🔄 v16.0 Benchmark Running
 
-**v15.0 Enhanced Benchmark**:
-- Started: 2026-04-01 00:26
-- Process: PID 704385
+**v16.0 Enhanced Benchmark**:
+- Started: 2026-04-01 02:08
+- Process: PID 730241
 - Time limit: 3600s (1h)
-- Benchmarks: ARC-AGI-3, BBEH, HLE, IMO-ANSWER, SWE-Bench-Pro, MATH-500, GPQA-Diamond, OSWorld-Tool-Hard, ZeroBench
+- Fix: SWE-Bench-Pro typo (FIX_INDATORS → FIX_INDICATORS)
 
-**Latest Results (v14.0)**:
-- Overall: 0.7516 (20/36 tasks)
-- Strong: ARC-AGI-3 (0.778), BBEH (0.875), HLE (0.800), MATH-500 (0.900), GPQA-Diamond (1.0), OSWorld-Tool-Hard (1.0)
-- Weak: IMO-ANSWER (0.500), SWE-Bench-Pro (0.500), ZeroBench (0.500)
+**v15.0 (Error)**: 0.6716 (SWE-Bench-Pro failed)
+**v14.0 (Last Good)**: 0.7516 overall
 
 ---
 
