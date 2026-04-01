@@ -24,9 +24,8 @@
 
 ---
 
-## 当前状态: ✅ v17 BEST (0.8783) - No test running
+## 当前状态: ✅ STABLE - v17 best (0.8783)
 
-**Status**: No test currently running
 **v17 结果** (最佳, 0.8783):
 | Category | Score | Weight |
 |----------|-------|--------|
@@ -40,10 +39,14 @@
 | OSWorld-Tool-Hard | 0.900 | 2% |
 | ZeroBench | 0.900 | 1% |
 
-**v30 失败**: exec() 方式运行 v16 代码，未使用 v17，导致结果错误
-**v29**: 0.8493 (OSWorld 1.0, SWE 0.817, 但 MATH 0.38 退步)
+**v32 结果** (次优, 0.8634):
+- ARC: 0.893 (+0.037) ✅
+- SWE: 0.553 (-0.194) ❌
+- IMO: 0.801 (-0.025) ❌
 
-**建议**: 直接复制 v17 为 v31，做最小修改
+**v31**: 0.857 (OSWorld failed due to import bug)
+
+**结论**: v17 仍为最佳，改进尝试未超越
 
 ---
 
