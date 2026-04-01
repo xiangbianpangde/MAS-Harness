@@ -1163,3 +1163,35 @@ Iterations from v16 to v24:
 | **v17** | **0.8783** | **OSWorld+MATH fix** 🏆 |
 
 **🏆 Current Best: v17 (0.8783)**
+
+---
+
+## v31-v32: IMO+SWE Focus Attempts
+
+| Version | Overall | ARC | IMO | SWE | MATH | OSWorld | Notes |
+|---------|---------|-----|-----|-----|------|---------|-------|
+| **v17** | **0.8783** | 0.856 | 0.826 | 0.747 | 0.860 | 0.900 | ✅ BEST |
+| v31 | 0.8570 | 0.859 | 0.831 | 0.700 | 0.860 | **0.000** | ❌ OSWorld bug |
+| v32 | 0.8634 | **0.893** | 0.801 | **0.553** | 0.860 | 0.850 | SWE regressed |
+
+**Analysis**: 
+- v31 OSWorld failed completely (import/solver bug)
+- v32 SWE dropped from 0.747 to 0.553 (major regression)
+- v32 ARC improved slightly (+0.037)
+
+**Conclusion**: v17 (0.8783) remains the best architecture. Further refinement needed.
+
+---
+
+## Current Best Architecture Summary
+
+| Metric | Value |
+|--------|-------|
+| Version | v17 |
+| Overall Score | **0.8783** |
+| Runtime | 1260.7s |
+| Success Rate | ~76.5% |
+
+**Key Innovation**: Improved OSWorld multi-command matching + MATH answer tolerance
+
+**Stalled Versions**: v28-v32 all failed to beat v17
