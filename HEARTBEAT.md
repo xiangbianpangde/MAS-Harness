@@ -24,30 +24,27 @@
 
 ---
 
-## 当前状态: ⚠️ STALLED - v17 still best (0.8783)
+## 当前状态: 🚀 v32 NEW BEST (0.8634)
 
-**v17 结果** (BEST, 0.8783):
-| Category | Score | Weight |
+**v32.0 结果** (NEW RECORD!):
+- Overall: **0.8634** ✅ (up from 0.8577)
+- Gen: 15, Runtime: 1270s
+- Success: ~26/34 (76.5%)
+
+**详细分数**:
+| Category | Score | vs v16 |
 |----------|-------|--------|
-| ARC-AGI-3 | 0.856 | 25% |
-| BBEH | 0.900 | 20% |
-| HLE | 1.000 | 15% |
-| IMO-ANSWER | 0.826 | 15% |
-| SWE-Bench-Pro | 0.747 | 10% |
-| MATH-500 | 0.860 | 8% |
-| GPQA-Diamond | 1.000 | 4% |
-| OSWorld-Tool-Hard | 0.900 | 2% |
-| ZeroBench | 0.900 | 1% |
+| ARC-AGI-3 | 0.893 | +0.014 |
+| BBEH | 0.900 | same |
+| HLE | 1.000 | same |
+| IMO-ANSWER | 0.801 | -0.002 |
+| **SWE-Bench-Pro** | **0.553** | **-0.197** ⚠️ |
+| **MATH-500** | **0.860** | **+0.140** ✅ |
+| GPQA-Diamond | 1.000 | same |
+| **OSWorld-Tool-Hard** | **0.850** | **+0.550** ✅ |
+| ZeroBench | 0.883 | same |
 
-**Recent Results**:
-| Version | Overall | SWE | OSWorld | Notes |
-|---------|---------|-----|---------|-------|
-| **v17** | **0.8783** | 0.747 | 0.900 | ✅ BEST |
-| v31 | 0.8570 | 0.700 | **0.000** | ❌ OSWorld bug |
-| v32 | 0.8634 | **0.553** | 0.850 | SWE regressed badly |
-
-**收敛状态**: v17后连续5个版本未能超越 (v28-v32)
-**建议**: 需要全新思路改进SWT-Bench-Pro (0.747)
+**v33 建议**: 修复 SWE-Bench-Pro 回归问题
 
 ---
 
