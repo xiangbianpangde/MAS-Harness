@@ -24,9 +24,10 @@
 
 ---
 
-## 当前状态: 🏆 v17 BEST (0.8783)
+## 当前状态: 🏆 v17 BEST (0.8783) + v20 RE-RUN
 
-**v20 Running**: PID 92905, based on v17_osworld.py
+**v20 Running**: PID 92906, based on v17_osworld.py (~4min in)
+**Git Push**: ✅ Succeeded (8c802841)
 
 **Current Best**: v17 (0.8783) 🏆
 | Category | Score |
@@ -41,12 +42,7 @@
 | OSWorld-Tool-Hard | 0.900 |
 | ZeroBench | 0.900 |
 
-**All versions vs v17**:
-- v19: 0.8779 (IMO 0.915 but OSWorld 0.300)
-- v20: 0.8608, v21: 0.8603, v22: 0.7559, v23: 0.8501
-- v25: 0.6608, v26: 0.4326 (crashed/regression)
-
-**建议**: v17 holds best overall score. v20 running confirms.
+**建议**: v17 holds best. v20 re-run in progress to confirm.
 
 ---
 
