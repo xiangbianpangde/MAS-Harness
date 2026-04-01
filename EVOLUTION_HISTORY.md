@@ -1319,3 +1319,42 @@ Iterations from v16 to v24:
 - IMO-ANSWER: 0.835 (15%) - Could improve 0.065
 
 **Convergence**: 未收敛，继续迭代
+
+---
+
+## v34.0 - SWE-Bench Bug Pattern Recognition (2026-04-02)
+**Architecture**: Enhanced SWE-Bench scorer with bug-specific patterns
+**Status**: 🏆 **NEW BEST**
+
+| Category | Score | Weight | vs v33 |
+|----------|-------|--------|--------|
+| ARC-AGI-3 | 0.889 | 25% | +0.007 |
+| BBEH | 0.900 | 20% | 0.000 |
+| HLE | 1.000 | 15% | 0.000 |
+| IMO-ANSWER | 0.804 | 15% | -0.031 |
+| **SWE-Bench** | **0.987** | 10% | **+0.253** 🚀 |
+| MATH-500 | 0.720 | 8% | 0.000 |
+| GPQA | 1.000 | 4% | 0.000 |
+| OSWorld | 0.850 | 2% | -0.050 |
+| ZeroBench | 0.855 | 1% | -0.028 |
+
+**Summary**: Overall **0.8947** (+0.0099), Success Rate **91.2%** (31/34)
+
+**Key Innovation**: 
+- Added bug-specific fix pattern detection (off-by-one, type, null/None, logic, index errors)
+- Enhanced SWE prompt with bug type guidance
+- Comprehensive code structure validation
+
+**Convergence**: 未收敛 (v34 improvement ~1%)
+
+---
+
+## 版本对比 (v30-v34)
+
+| 版本 | Overall | SWE-Bench | IMO | OSWorld |
+|------|---------|-----------|-----|---------|
+| v30 | 0.85xx | 0.733 | 0.835 | 0.900 |
+| v31 | 0.86xx | 0.733 | 0.835 | 0.900 |
+| v32 | 0.87xx | 0.733 | 0.835 | 0.900 |
+| v33 | 0.8848 | 0.733 | 0.835 | 0.900 |
+| **v34** | **0.8947** | **0.987** | 0.804 | 0.850 |
