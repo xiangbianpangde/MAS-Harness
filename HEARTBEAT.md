@@ -24,24 +24,25 @@
 
 ---
 
-## 当前状态: 🧪 v19 Running as v25 Baseline (PID 905299)
+## 当前状态: ⚠️ HIGH VARIANCE DETECTED
 
-**Started**: 13:30 (PYTHONUNBUFFERED=1 nohup)
-**Log**: run_v25_baseline.log
-**Process**: `python3 -u src/mas_v19_imo_focus.py`
+**v19 Re-run Results** (demonstrates LLM variance):
+- Overall: **0.7414** (vs 0.8779 before)
+- IMO: **0.484** (vs 0.915 before!) - massive variance
+- This is NOT a code bug - same code, different LLM outputs
 
-**Best Historical Results**:
+**Historical Best**:
 | Version | Overall | IMO | Notes |
 |---------|---------|-----|-------|
-| **v19** | **0.8779** | **0.915** | Best IMO technique detection |
-| v16 | 0.8680 | 0.803 | Enhanced scorers |
-| v17 | 0.8693 | - | |
-| v20 | 0.8608 | 0.797 | SWE fix attempt |
-| v23 | 0.8501 | 0.676 | |
+| v19 | 0.8779 | 0.915 | Original (lucky run) |
+| v19 re-run | 0.7414 | 0.484 | Same code, variance |
+| v16 | 0.8680 | 0.803 | |
 | v24 | FAILED | - | Multi-agent routing bug |
 
-**v19 弱点**: OSWorld (0.3), SWE (0.683)
-**v25 Goal**: Fix v24 routing + keep v19 IMO technique detection
+**v25 策略**:
+1. LLM评分有方差是正常的
+2. v25需要多次运行取平均
+3. 继续改进代码而非追求单次高分
 
 ---
 
