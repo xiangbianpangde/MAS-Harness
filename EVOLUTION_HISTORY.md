@@ -613,3 +613,68 @@ from mas_v14_adaptive import solve_math as solver
 - 保留 v17 的 MATH-500 改进
 - 聚焦 IMO 优化
 - OSWorld 需要不同方法（sandbox/real execution）
+
+---
+
+## v19.0 - IMO Technique Focus (COMPLETED)
+**Date**: 2026-04-01 07:53
+**Status**: ✅ IMPROVEMENT (0.8779 vs v17's 0.8661)
+
+| Category | v17 | v19 | Change |
+|----------|-------|-----|--------|
+| Overall | 0.8661 | **0.8779** | +0.0118 ✅ |
+| IMO-ANSWER | 0.781 | **0.915** | **+0.134** ⭐ |
+| SWE-Bench-Pro | 0.760 | 0.683 | -0.077 ⚠️ |
+| MATH-500 | 0.860 | 0.860 | 0 |
+| OSWorld | 0.300 | 0.300 | 0 |
+
+**Analysis**: IMO technique detection worked very well (+0.134). SWE regressed due to prompt changes.
+
+---
+
+## v20.0 - SWE Fix + Balance (COMPLETED)
+**Date**: 2026-04-01 08:14
+**Status**: 🏆 **NEW BEST (0.8801)**
+
+| Category | v19 | v20 | Change |
+|----------|-------|-----|--------|
+| Overall | 0.8779 | **0.8801** | +0.0022 ✅ |
+| SWE-Bench-Pro | 0.683 | **0.883** | **+0.200** ⭐ |
+| IMO-ANSWER | 0.915 | 0.797 | -0.118 ⚠️ |
+| MATH-500 | 0.860 | 0.860 | 0 |
+| OSWorld | 0.300 | 0.300 | 0 |
+| ZeroBench | 0.778 | **0.850** | +0.072 |
+
+**Analysis**: SWE fix worked perfectly. IMO traded some accuracy for better SWE. Overall improved to new best!
+
+**Key Insight**: The SWE improvement more than compensated for IMO regression.
+
+---
+
+## Current Best: v20 @ 0.8801
+
+---
+
+## v20 Score Breakdown
+| Benchmark | Weight | Score | Weighted |
+|-----------|--------|-------|----------|
+| ARC-AGI-3 | 0.25 | 0.876 | 0.219 |
+| BBEH | 0.20 | 0.900 | 0.180 |
+| HLE | 0.15 | 1.000 | 0.150 |
+| IMO-ANSWER | 0.15 | 0.797 | 0.120 |
+| SWE-Bench-Pro | 0.10 | 0.883 | 0.088 |
+| MATH-500 | 0.08 | 0.860 | 0.069 |
+| GPQA-Diamond | 0.04 | 1.000 | 0.040 |
+| OSWorld-Tool-Hard | 0.02 | 0.300 | 0.006 |
+| ZeroBench | 0.01 | 0.850 | 0.009 |
+| **TOTAL** | | | **0.880** |
+
+---
+
+## v21 Planning
+**Goal**: Push overall to 0.89+
+**Priority**: 
+1. Try to recover IMO to 0.85+ without hurting SWE
+2. OSWorld still weak but only 2% weight
+3. Consider ensemble or voting for close calls
+
