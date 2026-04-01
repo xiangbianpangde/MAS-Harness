@@ -24,23 +24,29 @@
 
 ---
 
-## 当前状态: 🚀 v30 RUNNING (background)
+## 当前状态: 🚨 v30 RUNNING (API SLOW)
 
-**v30** (IMO+SWE focus):
+**v30** (IMO+SWE focus, PID 126629):
+- Started: 22:47, running ~22 min
 - Based on: v17 (0.8783 best)
 - Changes: Improved IMO technique hints, Better SWE fix detection
-- Run command: `python3 -u src/mas_v30_imo_swe_focus.py`
-- Started: ~22:30
+- Issue: LLM API seems slow, process waiting on network I/O
+- Command: `python3 -u src/mas_v30_imo_swe_focus.py`
 
-**v17 结果** (基准):
-- Overall: 0.8783
-- IMO-ANSWER: 0.826, SWE: 0.747, MATH: 0.860, OSWorld: 0.900
+**v17 结果** (基准, 0.8783):
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.856 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.826 |
+| SWE-Bench-Pro | 0.747 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.900 |
+| ZeroBench | 0.900 |
 
-**v29 结果** (对比):
-- Overall: 0.8493
-- OSWorld: 1.000, SWE: 0.817, BUT MATH: 0.380 (退步!)
-
-**结论**: v17 是最佳基准，v30 基于此改进 IMO+SWE
+**收敛状态**: v17 保持最佳，v30 若超过则发布
 
 ---
 
