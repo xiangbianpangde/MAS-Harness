@@ -1,0 +1,38 @@
+============================================================
+MAS v33.0 Enhanced Benchmark
+============================================================
+
+Task Summary:
+  ARC-AGI-3: 3 tasks
+  BBEH: 4 tasks
+  HLE: 5 tasks
+  IMO-ANSWER: 5 tasks
+  SWE-Bench-Pro: 3 tasks
+  MATH-500: 5 tasks
+  GPQA-Diamond: 3 tasks
+  OSWorld-Tool-Hard: 3 tasks
+  ZeroBench: 3 tasks
+  TOTAL: 34 tasks
+
+============================================================
+MAS v33.0 Enhanced Report
+============================================================
+Overall Score: 0.8848
+Best Gen: 15
+Success Rate: 30/34 (88.2%)
+------------------------------------------------------------
+  ARC-AGI-3 (25%):    0.8824
+  BBEH (20%):         0.9000
+  HLE (15%):          1.0000
+  IMO-ANSWER (15%):   0.8350
+  SWE-Bench-Pro (10%): 0.7333
+  MATH-500 (8%):      0.8600
+  GPQA-Diamond (4%):  1.0000
+  OSWorld-Tool-Hard (2%): 0.9000
+  ZeroBench (1%):     0.8833
+------------------------------------------------------------
+Runtime: 950.0s
+============================================================
+
+
+Saved to: /root/.openclaw/workspace-mas/benchmark_results_v33.json

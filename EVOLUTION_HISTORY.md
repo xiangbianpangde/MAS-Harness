@@ -1273,3 +1273,26 @@ Iterations from v16 to v24:
 - Better technique hints for IMO
 - More structured proof format
 - Enhanced SWE context and prompts
+
+---
+
+## v33 - IMO+SWE Focus (2026-04-02)
+**Architecture**: mas_v33_imo_swe.py
+**Status**: ✅ **NEW BEST**
+
+| Category | Score | Weight | vs v17 |
+|----------|-------|--------|--------|
+| ARC-AGI-3 | 0.882 | 25% | +0.003 |
+| BBEH | 0.900 | 20% | 0.000 |
+| HLE | 1.000 | 15% | 0.000 |
+| IMO-ANSWER | **0.835** | 15% | **+0.044** |
+| SWE-Bench-Pro | **0.733** | 10% | **+0.013** |
+| MATH-500 | **0.860** | 8% | **+0.000** |
+| GPQA-Diamond | 1.000 | 4% | 0.000 |
+| OSWorld-Tool-Hard | **0.900** | 2% | **+0.050** |
+| ZeroBench | 0.883 | 1% | ~0 |
+
+**Overall**: **0.8848** ✅ (NEW BEST!)
+**Previous Best**: v17 = 0.8750 (+0.0098 improvement)
+**Runtime**: 950s
+**Status**: 未收敛，还有改进空间
