@@ -24,23 +24,28 @@
 
 ---
 
-## 当前状态: 🚀 v25 RUNNING (PID 915705)
+## 当前状态: ✅ IDLE - v16 仍为最佳
 
-**Status**: Connected to LLM API, waiting for response (not stuck)
+**无测试运行中**
 
-**Best Results**:
-| Version | Overall | IMO | OSWorld |
-|---------|---------|-----|---------|
-| v20 | **0.8608** | 0.797 | 0.300 |
-| v21 | 0.8603 | 0.803 | 0.300 |
-| v23 | 0.8501 | 0.676 | 0.300 |
-| v19 | 0.7414 | 0.484 | 0.300 |
-| v24 | CRASHED | - | - |
+**最佳结果**:
+| Version | Overall | IMO | OSWorld | Status |
+|---------|---------|-----|---------|--------|
+| **v16** | **0.8680** | 0.803 | 0.300 | 🏆 BEST |
+| v20 | 0.8608 | 0.797 | 0.300 | |
+| v21 | 0.8603 | 0.803 | 0.300 | |
+| v23 | 0.8501 | 0.676 | 0.300 | |
+| v19 | 0.7414 | 0.484 | 0.300 | |
+| v25 | FAILED | - | - | ❌ Crashed |
 
-**v25 Focus**: Supervisor routing fix for IMO tasks
-**Started**: 14:15, running ~3min
+**v25 分析**:
+- 基于 v19 supervisor routing 修复，但 IMO 任务 0.25 分（极差）
+- 原因：Supervisor 路由逻辑问题
+- v24 也 crashed
+- 结论：v16 稳定版仍是最佳
 
-**Note**: Output may be delayed due to LLM API wait time
+**收敛状态**: 未收敛，v17-v25 均未能突破 v16
+**建议**: 回到 v16 架构，尝试不同方向（如增加 OSWorld 训练）
 
 ---
 
