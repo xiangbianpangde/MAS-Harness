@@ -24,23 +24,21 @@
 
 ---
 
-## 当前状态: ⚠️ v27 Running (v17_clean)
+## 当前状态: 🔴 NEEDS DESIGN
 
-**v17 结果** (已验证): 0.8692 🏆 BEST
-- ARC-AGI-3: 0.862 | BBEH: 0.900 | HLE: 1.000 | IMO: 0.806
-- MATH: 0.860 | SWE: 0.790 | GPQA: 1.000 | OSWorld: 0.300 | ZeroBench: 0.900
+**Best: v17 (enhanced_scorer) @ 0.8692** 🏆
 
-**版本历史**:
-| Version | Overall | Status |
-|---------|---------|--------|
-| v17 | **0.8692** | 🏆 BEST |
-| v20 | 0.8608 | |
-| v21 | 0.8603 | |
-| v23 | 0.8501 | |
-| v26 | 0.4326 | ❌ broken |
+**问题**:
+- v17_clean produced 0.2845 (wrong code path)
+- v26 produced 0.4326 (broken logic after copy)
+- v27 finished with 0.2845 (same as v17_clean)
 
-**v27**: Running v17_clean (should reproduce v17)
-**v26 Issue**: Copy-paste broke solver delegation logic
+**结论**: mas_v17_enhanced_scorer.py 是正确的最佳版本
+
+**建议**:
+1. 基于 mas_v17_enhanced_scorer.py 设计 v28
+2. 修复 OSWorld (0.300) 和 IMO (0.806) 作为主要改进点
+3. 不要轻易复制代码，要理解后再修改
 
 ---
 
