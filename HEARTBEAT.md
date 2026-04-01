@@ -24,28 +24,16 @@
 
 ---
 
-## 当前状态: ✅ STABLE - No test running
+## 当前状态: 🔄 v25 Running
 
-**BEST: v17 @ 0.8692** 🏆
+**v25 特性**: Self-Consistency Voting
+- IMO任务生成3个答案
+- 投票选择最一致的答案
+- 基于v20架构
 
-**v28 CRASHED**: `features` not defined in MATH-500 solver
-- Bug in solve_math function - references undefined `features` variable
-- v28 killed, v17 remains best
+**运行时间**: 预计30-40分钟
 
-**v17 Results** (0.8692 - to beat):
-| Category | Score |
-|----------|-------|
-| ARC-AGI-3 | 0.862 |
-| BBEH | 0.900 |
-| HLE | 1.000 |
-| IMO-ANSWER | 0.806 |
-| SWE-Bench-Pro | 0.790 |
-| MATH-500 | 0.860 |
-| GPQA-Diamond | 1.000 |
-| OSWorld-Tool-Hard | 0.300 |
-| ZeroBench | 0.900 |
-
-**Next**: Fix v28 MATH-500 bug and rerun, OR use v17 as base for new improvement
+**历史最佳**: v20 @ 0.8801
 
 ---
 
