@@ -1,0 +1,30 @@
+============================================================
+MAS v24.0 - Multi-Agent Supervisor (New Paradigm)
+============================================================
+
+Task Summary:
+  ARC-AGI-3: 3 tasks
+  BBEH: 4 tasks
+  HLE: 5 tasks
+  IMO-ANSWER: 5 tasks
+  SWE-Bench-Pro: 3 tasks
+  MATH-500: 5 tasks
+  GPQA-Diamond: 3 tasks
+  OSWorld-Tool-Hard: 3 tasks
+  ZeroBench: 3 tasks
+  TOTAL: 34 tasks
+[ARC-AGI-3] 00576224 -> ARC-Agent-v3: 1.00 (16.7s)
+[ARC-AGI-3] 009d5c81 -> ARC-Agent-v3: 0.00 (364.0s)
+[ARC-AGI-3] 03560426 -> ARC-Agent-v3: 0.81 (53.9s)
+[BBEH] long_range_dependency -> BBEH-Agent-v3: 1.00 (12.4s)
+[BBEH] multi_step_inference -> BBEH-Agent-v3: 1.00 (18.0s)
+[BBEH] temporal_reasoning -> BBEH-Agent-v3: 0.60 (37.7s)
+[BBEH] negation_tracking -> BBEH-Agent-v3: 1.00 (24.0s)
+[HLE] legal_case_analysis -> HLE-Agent-v3: 1.00 (31.7s)
+[HLE] medical_diagnosis -> HLE-Agent-v3: 1.00 (27.6s)
+[HLE] financial_risk_assessment -> HLE-Agent-v3: 1.00 (24.6s)
+[HLE] legal_contract_interpreta -> HLE-Agent-v3: 1.00 (9.5s)
+[HLE] medical_treatment_selecti -> HLE-Agent-v3: 1.00 (23.4s)
+[IMO-ANSWER] number_theory_proof -> AgentA-IMO: 0.90 (733.6s)
+[IMO-ANSWER] geometry_proof -> AgentC-GENERAL: 0.20 (58.4s)
+[IMO-ANSWER] combinatorics_proof -> AgentC-GENERAL: 0.20 (55.8s)

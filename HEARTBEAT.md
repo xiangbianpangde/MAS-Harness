@@ -24,30 +24,33 @@
 
 ---
 
-## 当前状态: ⏸️ v24 Ready - No Test Running
+## 当前状态: 🛑 No Test Running
 
-**v20 Re-run Results** (验证):
-- Overall: **0.8608** (21.3 min runtime)
-- Success: 27/34 (79.4%)
+**Latest Results**:
+| Version | Overall | Key Findings |
+|---------|---------|--------------|
+| v20 | 0.8801 (original) / 0.8608 (re-run) | SWE variance confirmed |
+| v24 | FAILED | Multi-agent routing issue - AgentC got wrong tasks |
 
-| Category | Score | Status |
+**v20 Best Breakdown**:
+| Category | Score | Weight |
 |----------|-------|--------|
-| ARC-AGI-3 | 0.879 | ✅ |
-| BBEH | 0.900 | ✅ |
-| HLE | 1.000 | ✅ |
-| IMO-ANSWER | 0.781 | ⚠️ |
-| SWE-Bench-Pro | 0.703 | ⚠️ |
-| MATH-500 | 0.860 | ✅ |
-| GPQA-Diamond | 1.000 | ✅ |
-| OSWorld-Tool-Hard | **0.300** | ❌ |
-| ZeroBench | 0.867 | ✅ |
+| ARC-AGI-3 | 0.879 | 25% |
+| BBEH | 0.900 | 20% |
+| HLE | 1.000 | 15% |
+| IMO-ANSWER | 0.797 | 15% |
+| SWE-Bench-Pro | 0.883 | 10% |
+| MATH-500 | 0.860 | 8% |
+| GPQA-Diamond | 1.000 | 4% |
+| OSWorld-Tool-Hard | **0.300** | 2% |
+| ZeroBench | 0.867 | 1% |
 
-**v20 Original**: 0.8801 | **v20 Re-run**: 0.8608 (variation)
+**v24 Multi-Agent Observations**:
+- Supervisor routing showed promise: AgentA-IMO got 0.90 on number_theory_proof
+- But AgentC-GENERAL got only 0.20 on IMO tasks (wrong routing)
+- v24 crashed after IMO tasks - needs debugging
 
-**v24 Multi-Agent Supervisor**: 
-- New paradigm: Supervisor routes to Agent_A/B/C
-- Ready to test but never ran successfully (no output)
-- 需要调试 v24 的输出问题
+**建议**: v24 有潜力但需要调试。v20 仍是当前最佳。
 
 ---
 

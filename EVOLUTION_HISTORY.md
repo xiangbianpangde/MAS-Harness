@@ -889,3 +889,25 @@ Iterations from v16 to v24:
 - **Success**: 27/34 (79.4%)
 - **Key Finding**: SWE regression in re-run (0.703 vs 0.883), system has variance
 - **OSWorld**: Still 0.300 (all 3 tasks)
+
+---
+
+## v24 Multi-Agent Supervisor - Analysis (2026-04-01 13:11)
+
+**Status**: ❌ Crashed during IMO tasks
+
+**Observations**:
+1. Supervisor routing does work - correctly identified AgentA for IMO tasks
+2. But AgentC-GENERAL was also assigned IMO tasks and scored 0.20
+3. Routing logic issue: some IMO tasks went to wrong agent type
+
+**What went wrong**:
+- AgentC (general reasoning) got geometry_proof and combinatorics_proof
+- AgentA (IMO specialist) only got number_theory_proof (0.90)
+- The supervisor routing wasn't consistent
+
+**Lesson**: The multi-agent paradigm has potential but needs:
+1. Better routing logic for IMO tasks
+2. Better error handling (process crashed instead of recovering)
+
+**Next**: Debug v24 or revert to v20 approach

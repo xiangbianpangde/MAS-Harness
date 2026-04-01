@@ -90,6 +90,51 @@ class EnhancedMathScorer:
         # Combine
         final_score = min(1.0, score + min(0.30, concept_bonus))
         return final_score
+    
+    @classmethod
+    def score_math(cls, response: str, expected: str) -> float:
+        """Score MATH-500 style problems using number extraction and matching."""
+        import re
+        
+        def extract_answer(text):
+            # Try boxed format first
+            boxed = re.findall(r'\\boxed\s*\{([^}]+)\}', text)
+            if boxed:
+                return [b.strip() for b in boxed]
+            # Try answer: format
+            ans_match = re.findall(r'(?:answer|result|solution)[:\s]+([A-Za-z0-9.\-]+)', text, re.I)
+            if ans_match:
+                return [a.strip() for a in ans_match]
+            # Extract numbers
+            nums = re.findall(r'-?\d+\.?\d*', text)
+            return nums
+        
+        resp_nums = extract_answer(response)
+        exp_nums = extract_answer(expected)
+        
+        # Score with partial matching
+        score = 0.2  # Base score
+        if exp_nums and resp_nums:
+            # Exact match any
+            if any(en in resp_nums for en in exp_nums):
+                score = 1.0
+            # Partial number match
+            else:
+                try:
+                    exp_floats = set(float(n) for n in exp_nums if re.match(r'-?\d+\.?\d*', n))
+                    resp_floats = set(float(n) for n in resp_nums if re.match(r'-?\d+\.?\d*', n))
+                    if exp_floats & resp_floats:
+                        score = 1.0
+                    else:
+                        for ef in exp_floats:
+                            for rf in resp_floats:
+                                if ef != 0 and abs(ef - rf) / abs(ef) < 0.001:
+                                    score = 1.0
+                                    break
+                except:
+                    pass
+        
+        return score
 
 
 class EnhancedSWEScorer:
