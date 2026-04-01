@@ -24,30 +24,23 @@
 
 ---
 
-## 当前状态: ✅ READY FOR NEXT DESIGN
+## 当前状态: 🚀 v28 Running (OSWorld semantic scoring fix)
 
 **BEST: v17_enhanced_scorer.py @ 0.8692** 🏆
 
-**v17 Scores**:
-| Category | Score |
-|----------|-------|
-| ARC-AGI-3 | 0.862 |
-| BBEH | 0.900 |
-| HLE | 1.000 |
-| IMO-ANSWER | 0.806 |
-| SWE-Bench-Pro | 0.790 |
-| MATH-500 | 0.860 |
-| GPQA-Diamond | 1.000 |
-| OSWorld-Tool-Hard | 0.300 | ← PRIMARY TARGET
-| ZeroBench | 0.900 |
+**v28**: SemanticOSWorldSolver replaces ImprovedOSWorldSolver
+- Based on v17_enhanced_scorer (0.8692)
+- Focus: Improve OSWorld scoring from 0.300 using semantic component matching
 
-**Failed versions** (don't use without fixes):
-- v17_clean: 0.2845 (wrong code path)
-- v18: N/A
-- v19: 0.7414 (regression)
-- v20-26: 0.43-0.77 (various issues, v26 has `features` not defined bug)
+**v28 Scores**: NOT YET COMPLETE (process hanging on run)
 
-**Next Step**: Design v28 based on v17_enhanced_scorer.py, focus on fixing OSWorld
+**Previous Best**:
+| Version | Overall |
+|---------|---------|
+| v17_enhanced | **0.8692** |
+| v20 | 0.8608 |
+| v19 | 0.8779 (from log) |
+| v21 | 0.8603 |
 
 ---
 
