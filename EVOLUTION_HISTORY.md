@@ -968,3 +968,26 @@ Iterations from v16 to v24:
 **Remaining Weakness**: OSWorld (0.300)
 
 **Conclusion**: v17_enhanced_scorer.py is the best version. Future work should focus on OSWorld.
+
+---
+
+## v28 Attempted (2026-04-01)
+
+**Status**: ❌ CRASHED - `features` not defined in MATH-500 solver
+
+**Error**: `Error in MATH-500: name 'features' is not defined`
+
+**Root Cause**: v28 solve_math function references `features` variable without passing it properly
+
+**Partial Results**: 
+- ARC-AGI-3: ✅
+- BBEH: ✅
+- HLE: ✅
+- IMO-ANSWER: ✅
+- SWE-Bench-Pro: ✅
+- MATH-500: ❌ (crash)
+- GPQA: partial
+- OSWorld: not reached
+- ZeroBench: not reached
+
+**Conclusion**: v17 (0.8692) remains the best. v28 has a bug that needs fixing.

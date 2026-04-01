@@ -24,21 +24,28 @@
 
 ---
 
-## 当前状态: 🔄 v28 RUNNING (slow but working)
+## 当前状态: ✅ STABLE - No test running
 
 **BEST: v17 @ 0.8692** 🏆
 
-**v28 Status**: NOT hanging - it was just slow!
-- Processes multiple tasks: seen 3 ARC tasks + 4 BBEH tasks processed
-- Each task takes ~20-30s for LLM calls
-- Full run estimated: 34 tasks × ~25s = ~15 minutes minimum
+**v28 CRASHED**: `features` not defined in MATH-500 solver
+- Bug in solve_math function - references undefined `features` variable
+- v28 killed, v17 remains best
 
-**v28 Debug Findings**:
-- "Hangs" after TOTAL due to slow LLM API calls
-- stdout buffering caused delay in seeing output
-- With `PYTHONUNBUFFERED=1`, can see progress
+**v17 Results** (0.8692 - to beat):
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.862 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.806 |
+| SWE-Bench-Pro | 0.790 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.300 |
+| ZeroBench | 0.900 |
 
-**Status**: v28 running in background
+**Next**: Fix v28 MATH-500 bug and rerun, OR use v17 as base for new improvement
 
 ---
 
