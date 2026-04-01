@@ -24,22 +24,29 @@
 
 ---
 
-## 当前状态: 🚀 v28 RUNNING (PID 88421)
+## 当前状态: 🛑 STOPPED - Need manual restart
 
-**v28 started**: 2026-04-01 20:19
-**Code**: mas_v28_osworld_fix.py
+**Current Best**: v17 (0.8783) 🏆
+**Runtime**: 1260.7s | Success: 30/34 (88.2%)
 
-**Current Best**:
-| Version | Overall | Status |
-|---------|---------|--------|
-| **v17** | **0.8783** | **🏆 BEST** |
-| v20 | 0.8607 | |
-| v21 | 0.8603 | |
-| v23 | 0.8501 | |
-| v26 | 0.4326 | ❌ Crashed |
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.856 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.826 |
+| SWE-Bench-Pro | 0.747 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.900 |
+| ZeroBench | 0.900 |
 
-**v26 Analysis**: Catastrophic regression - multiple categories dropped simultaneously
-**v28 Focus**: OSWorld fix attempt (v17 already had good OSWorld at 0.9)
+**Issues**:
+- v28 crashed: `name 'features' is not defined` bug
+- v26 crashed: Catastrophic regression (0.4326)
+- v16 run stuck at start (no output)
+
+**To Resume**: Run `cd /root/.openclaw/workspace-mas && nohup python3 src/mas_v16_enhanced_scorer.py > run_v16_live.log 2>&1 &`
 
 ---
 
