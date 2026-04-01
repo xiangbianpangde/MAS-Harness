@@ -1,0 +1,72 @@
+============================================================
+MAS v22.0 - Ensemble (v19 IMO + v20 SWE)
+============================================================
+
+Task Summary:
+  ARC-AGI-3: 3 tasks
+  BBEH: 4 tasks
+  HLE: 5 tasks
+  IMO-ANSWER: 5 tasks
+  SWE-Bench-Pro: 3 tasks
+  MATH-500: 5 tasks
+  GPQA-Diamond: 3 tasks
+  OSWorld-Tool-Hard: 3 tasks
+  ZeroBench: 3 tasks
+  TOTAL: 34 tasks
+[ARC-AGI-3] 00576224: 1.00 (30.8s)
+[ARC-AGI-3] 009d5c81: 0.00 (364.7s)
+[ARC-AGI-3] 03560426: 0.82 (41.1s)
+[BBEH] long_range_dependency: 1.00 (11.8s)
+[BBEH] multi_step_inference: 1.00 (16.5s)
+[BBEH] temporal_reasoning: 0.60 (19.2s)
+[BBEH] negation_tracking: 1.00 (15.9s)
+[HLE] legal_case_analysis: 1.00 (17.7s)
+[HLE] medical_diagnosis: 1.00 (14.7s)
+[HLE] financial_risk_assessment: 1.00 (18.5s)
+[HLE] legal_contract_interpretation: 1.00 (10.0s)
+[HLE] medical_treatment_selection: 1.00 (27.9s)
+[IMO-ANSWER] number_theory_proof: 0.85 (64.5s)
+[IMO-ANSWER] geometry_proof: 0.90 (67.1s)
+[IMO-ANSWER] combinatorics_proof: 0.65 (61.5s)
+[IMO-ANSWER] algebra_proof: 0.80 (77.5s)
+[IMO-ANSWER] diophantine_equation: 0.73 (85.7s)
+[SWE-Bench-Pro] django_queryset_fix: 0.95 (16.3s)
+[SWE-Bench-Pro] react_state_update: 0.72 (59.0s)
+[SWE-Bench-Pro] python_sort_stability: 0.90 (64.9s)
+[MATH-500] algebra_easy: 0.30 (1.0s)
+[MATH-500] calculus_medium: 1.00 (25.5s)
+[MATH-500] combinatorics_hard: 0.30 (0.6s)
+[MATH-500] number_theory_medium: 0.30 (0.7s)
+[MATH-500] geometry_hard: 0.30 (1.4s)
+[GPQA-Diamond] physical_chemistry: 0.30 (0.6s)
+[GPQA-Diamond] quantum_mechanics: 0.30 (0.6s)
+[GPQA-Diamond] organic_chemistry: 1.00 (55.9s)
+[OSWorld-Tool-Hard] file_operations: 0.30 (3.9s)
+[OSWorld-Tool-Hard] process_management: 0.30 (12.9s)
+[OSWorld-Tool-Hard] network_config: 0.30 (8.3s)
+[ZeroBench] cross_domain_legal_tech: 0.71 (80.7s)
+[ZeroBench] cross_domain_medical_ai: 0.85 (74.1s)
+[ZeroBench] cross_domain_climate_econ: 0.85 (68.8s)
+
+================================================================================
+MAS v22.0 - Ensemble (v19 IMO + v20 SWE)
+================================================================================
+Runtime: 1420.5s (23.7 min)
+Tasks: 34 | Success: 23 (67.6%)
+
+SCORES:
+  ARC-AGI-3:        0.607
+  BBEH:             0.900
+  HLE:              1.000
+  IMO-ANSWER:       0.786  <- v19 style
+  SWE-Bench-Pro:    0.857  <- v20 style
+  MATH-500:         0.440
+  GPQA-Diamond:     0.533
+  OSWorld-Tool-Hard:0.300
+  ZeroBench:        0.803
+
+OVERALL: 0.7559
+================================================================================
+
+
+Saved to: /root/.openclaw/workspace-mas/benchmark_results_v22.json
