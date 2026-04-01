@@ -24,23 +24,18 @@
 
 ---
 
-## 当前状态: 🚀 v28 Running (OSWorld semantic scoring fix)
+## 当前状态: ⚠️ v28 HANGING (needs debugging)
 
 **BEST: v17_enhanced_scorer.py @ 0.8692** 🏆
 
-**v28**: SemanticOSWorldSolver replaces ImprovedOSWorldSolver
-- Based on v17_enhanced_scorer (0.8692)
-- Focus: Improve OSWorld scoring from 0.300 using semantic component matching
+**v28 Issue**: Script hangs after "TOTAL: 34 tasks" - never enters run_benchmark
+- Inline Python test works (completes in ~13s for 1 task)
+- Full script hangs at orchestrator creation or shortly after
+- Not a resource issue (memory/disk fine)
 
-**v28 Scores**: NOT YET COMPLETE (process hanging on run)
+**Status**: No test running
 
-**Previous Best**:
-| Version | Overall |
-|---------|---------|
-| v17_enhanced | **0.8692** |
-| v20 | 0.8608 |
-| v19 | 0.8779 (from log) |
-| v21 | 0.8603 |
+**Action**: Debug why full script hangs vs inline execution
 
 ---
 
