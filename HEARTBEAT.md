@@ -24,18 +24,19 @@
 
 ---
 
-## 当前状态: ⚠️ v28 HANGING (needs debugging)
+## 当前状态: 🔍 v28 DEBUGGING (stdout buffering issue)
 
-**BEST: v17_enhanced_scorer.py @ 0.8692** 🏆
+**BEST: v17 @ 0.8692** 🏆
 
-**v28 Issue**: Script hangs after "TOTAL: 34 tasks" - never enters run_benchmark
-- Inline Python test works (completes in ~13s for 1 task)
-- Full script hangs at orchestrator creation or shortly after
-- Not a resource issue (memory/disk fine)
+**v28 Issue**: Script hangs after "TOTAL: 34 tasks" when run directly
+- Inline test with 1-2 tasks WORKS (completes in ~13s)
+- Full script (34 tasks) hangs - but process stays alive
+- With `python3 -u` and `PYTHONUNBUFFERED=1`, shows "TOTAL: 34 tasks" then hangs
+- No crash, no error - just hangs silently
 
-**Status**: No test running
+**Status**: No test currently running
 
-**Action**: Debug why full script hangs vs inline execution
+**Analysis**: Likely an stdout buffering issue causing the script to appear to hang when run in background with nohup. The actual LLM calls may still be happening but output is not visible.
 
 ---
 

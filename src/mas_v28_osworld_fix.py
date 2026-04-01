@@ -726,6 +726,8 @@ if __name__ == "__main__":
     print(f"  TOTAL: {sum(len(v) for v in tasks.values())} tasks")
     
     orch = MASOrchestratorV17()
+    sys.stdout.flush()
+    print("DEBUG: About to create orch", flush=True)
     start = time.time()
     TIME_LIMIT = 3600
     
