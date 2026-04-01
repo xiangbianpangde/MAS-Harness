@@ -24,33 +24,24 @@
 
 ---
 
-## 当前状态: 🛑 No Test Running
+## 当前状态: 🧪 v19 Running (v25 baseline)
 
-**Latest Results**:
-| Version | Overall | Key Findings |
-|---------|---------|--------------|
-| v20 | 0.8801 (original) / 0.8608 (re-run) | SWE variance confirmed |
-| v24 | FAILED | Multi-agent routing issue - AgentC got wrong tasks |
+**Running**: `python3 src/mas_v19_imo_focus.py` (PID 903469)
+**Log**: run_v25_baseline.log
+**Start time**: 13:27
 
-**v20 Best Breakdown**:
-| Category | Score | Weight |
-|----------|-------|--------|
-| ARC-AGI-3 | 0.879 | 25% |
-| BBEH | 0.900 | 20% |
-| HLE | 1.000 | 15% |
-| IMO-ANSWER | 0.797 | 15% |
-| SWE-Bench-Pro | 0.883 | 10% |
-| MATH-500 | 0.860 | 8% |
-| GPQA-Diamond | 1.000 | 4% |
-| OSWorld-Tool-Hard | **0.300** | 2% |
-| ZeroBench | 0.867 | 1% |
+**Best Historical Results**:
+| Version | Overall | IMO | Notes |
+|---------|---------|-----|-------|
+| **v19** | **0.8779** | **0.915** | Best IMO technique detection |
+| v16 | 0.8680 | 0.803 | Enhanced scorers |
+| v17 | 0.8693 | - | |
+| v20 | 0.8608 | 0.797 | SWE fix attempt |
+| v23 | 0.8501 | 0.676 | |
+| v24 | FAILED | - | Multi-agent routing bug |
 
-**v24 Multi-Agent Observations**:
-- Supervisor routing showed promise: AgentA-IMO got 0.90 on number_theory_proof
-- But AgentC-GENERAL got only 0.20 on IMO tasks (wrong routing)
-- v24 crashed after IMO tasks - needs debugging
-
-**建议**: v24 有潜力但需要调试。v20 仍是当前最佳。
+**v19 弱点**: OSWorld (0.3), SWE (0.683)
+**v25 Goal**: Fix v24 routing + keep v19 IMO technique detection
 
 ---
 
