@@ -24,26 +24,20 @@
 
 ---
 
-## 当前状态: ⚠️ STUCK - Multiple runs failing at ARC-AGI-3
+## 当前状态: 🏆 v17 BEST (0.8783)
 
-**Issue**: v20, v28 all stuck at "Solving ARC-AGI-3" - no output after task summary
-**Killed**: v20_proper (95606) after 14min stuck
+**版本对比**:
+| Version | Overall | OSWorld | MATH-500 | IMO |
+|---------|---------|---------|----------|-----|
+| **v17** | **0.8783** | 0.900 | 0.860 | 0.826 |
+| v29 | 0.8493 | 1.000 | **0.380** | 0.789 |
 
-**Current Best**: v17 (0.8783) 🏆
-**v20+**: Multiple runs failing/stuck, no valid new results
+**v29 问题**: MATH-500 从 0.86 降到 0.38，整体反而下降
+**结论**: v17 仍是最佳架构
 
-**Recent Results**:
-| Version | Score | Status |
-|---------|-------|--------|
-| v17 | 0.8783 🏆 | Valid |
-| v20 | 0.8608 | Valid (old run) |
-| v23 | 0.8501 | Valid |
-| v25 | 0.6608 | Low |
-| v26 | 0.4326 | Very low |
-| v28 | FAILED | Stuck |
-| v20_new | FAILED | Stuck |
-
-**建议**: Debug why ARC-AGI-3 solving hangs. Check arc_loader.py
+**待改进方向**:
+- 保持 v17 的 MATH-500 能力
+- 尝试提升 OSWorld (当前 0.9)
 
 ---
 

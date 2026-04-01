@@ -1089,3 +1089,41 @@ Iterations from v16 to v24:
 ---
 
 ## Current Best: v17.0 (0.8783)
+
+---
+
+## v17-v28: Extended Evolution (2026-04-01)
+
+| Version | Overall Score | Notes |
+|---------|---------------|-------|
+| v16 | 0.8577 | Baseline extended benchmark |
+| **v17** | **0.8783** | ✅ **NEW BEST** - OSWorld improved (0.3→0.9) |
+| v19 | 0.7414 | Regression |
+| v20 | 0.8608 | Recovery |
+| v21 | 0.8603 | |
+| v22 | 0.7559 | Regression |
+| v23 | 0.8501 | Recovery |
+| v25 | 0.6608 | Regression |
+| v26 | 0.4326 | ❌ Major regression |
+| v28 | ERROR | features not defined |
+
+### v17 Key Improvements
+- OSWorld: 0.300 → **0.900** (biggest gain)
+- MATH-500: 0.720 → **0.860**
+- Overall: 0.8577 → **0.8783**
+
+### v28 Bug
+`name 'features' is not defined` in MATH-500 solver
+
+---
+
+## v28-v29: Bug Fixes but Regression
+
+| Version | Overall | OSWorld | MATH-500 | IMO | Notes |
+|---------|---------|---------|----------|-----|-------|
+| **v17** | **0.8783** | 0.900 | 0.860 | 0.826 | ✅ BEST |
+| v28 | ERROR | - | - | - | features bug |
+| v29 | 0.8493 | 1.000 | **0.380** | 0.789 | ❌ MATH regressed |
+
+**Analysis**: v29 fixed v28's features bug but OSWorld improvements came at cost of MATH-500 degradation.
+**Conclusion**: v17 remains the best architecture (0.8783)
