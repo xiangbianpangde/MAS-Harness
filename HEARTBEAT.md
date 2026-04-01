@@ -24,10 +24,10 @@
 
 ---
 
-## 当前状态: 🏆 v17 BEST (0.8783) + v20 RE-RUN
+## 当前状态: 🏆 v17 BEST (0.8783) - No test running
 
-**v20 Running**: PID 92906, based on v17_osworld.py (~4min in)
-**Git Push**: ✅ Succeeded (8c802841)
+**v20 re-run FAILED**: New run (20:35) was killed by `head -60` pipe
+**Previous v20**: 0.8608 (12:55) - still valid
 
 **Current Best**: v17 (0.8783) 🏆
 | Category | Score |
@@ -42,7 +42,16 @@
 | OSWorld-Tool-Hard | 0.900 |
 | ZeroBench | 0.900 |
 
-**建议**: v17 holds best. v20 re-run in progress to confirm.
+**Recent Results**:
+| Version | Score |
+|---------|-------|
+| v17 | 0.8783 🏆 |
+| v20 | 0.8608 |
+| v23 | 0.8501 |
+| v25 | 0.6608 |
+| v26 | 0.4326 |
+
+**建议**: Re-run v20 without `head -60` pipe
 
 ---
 
