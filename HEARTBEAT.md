@@ -24,25 +24,24 @@
 
 ---
 
-## 当前状态: ⚠️ HIGH VARIANCE DETECTED
+## 当前状态: 🚀 v25 RUNNING (PID 913900)
 
-**v19 Re-run Results** (demonstrates LLM variance):
-- Overall: **0.7414** (vs 0.8779 before)
-- IMO: **0.484** (vs 0.915 before!) - massive variance
-- This is NOT a code bug - same code, different LLM outputs
+**最近结果排名**:
+| Version | Overall | IMO | Key |
+|---------|---------|-----|-----|
+| v20 | **0.8608** | 0.781 | Best recent |
+| v23 | 0.8501 | - | |
+| v21 | 0.8603 | - | |
+| v19 | 0.7414 | 0.484 | Variance |
+| v22 | 0.7559 | - | |
+| v25 | RUNNING | - | IMO technique focus |
 
-**Historical Best**:
-| Version | Overall | IMO | Notes |
-|---------|---------|-----|-------|
-| v19 | 0.8779 | 0.915 | Original (lucky run) |
-| v19 re-run | 0.7414 | 0.484 | Same code, variance |
-| v16 | 0.8680 | 0.803 | |
-| v24 | FAILED | - | Multi-agent routing bug |
+**v25 改进点**:
+- IMO 2-stage: technique detection + specialized solver
+- Better concept matching
+- Based on v19 architecture
 
-**v25 策略**:
-1. LLM评分有方差是正常的
-2. v25需要多次运行取平均
-3. 继续改进代码而非追求单次高分
+**v20 vs v16**: v20 (0.8608) ≈ v16 (0.8680), slight regression
 
 ---
 
