@@ -24,3 +24,104 @@ Task Summary:
 [HLE] medical_diagnosis: 1.00 (18.6s)
 [HLE] financial_risk_assessment: 1.00 (22.9s)
 [HLE] legal_contract_interpretation: 1.00 (13.0s)
+[HLE] medical_treatment_selection: 1.00 (25.4s)
+Error in IMO-ANSWER: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 322, in run_benchmark
+    result = self.imo_solver.solve(task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in solve
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in <genexpr>
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                    ^^^^^
+AttributeError: 'str' object has no attribute 'get'
+Error in IMO-ANSWER: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 322, in run_benchmark
+    result = self.imo_solver.solve(task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in solve
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in <genexpr>
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                    ^^^^^
+AttributeError: 'str' object has no attribute 'get'
+Error in IMO-ANSWER: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 322, in run_benchmark
+    result = self.imo_solver.solve(task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in solve
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in <genexpr>
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                    ^^^^^
+AttributeError: 'str' object has no attribute 'get'
+Error in IMO-ANSWER: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 322, in run_benchmark
+    result = self.imo_solver.solve(task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in solve
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in <genexpr>
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                    ^^^^^
+AttributeError: 'str' object has no attribute 'get'
+Error in IMO-ANSWER: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 322, in run_benchmark
+    result = self.imo_solver.solve(task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in solve
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace-mas/src/mas_v25_voting.py", line 151, in <genexpr>
+    tokens_used=sum(s.get("tokens", 0) for s in solutions),
+                    ^^^^^
+AttributeError: 'str' object has no attribute 'get'
+[SWE-Bench-Pro] django_queryset_fix: 0.95 (16.2s)
+[SWE-Bench-Pro] react_state_update: 0.55 (42.3s)
+[SWE-Bench-Pro] python_sort_stability: 0.41 (49.4s)
+[MATH-500] algebra_easy: 1.00 (9.9s)
+[MATH-500] calculus_medium: 1.00 (11.3s)
+[MATH-500] combinatorics_hard: 0.30 (23.4s)
+[MATH-500] number_theory_medium: 1.00 (25.5s)
+[MATH-500] geometry_hard: 1.00 (26.2s)
+[GPQA-Diamond] physical_chemistry: 1.00 (16.7s)
+[GPQA-Diamond] quantum_mechanics: 1.00 (30.9s)
+[GPQA-Diamond] organic_chemistry: 1.00 (38.5s)
+[OSWorld-Tool-Hard] file_operations: 0.30 (2.7s)
+[OSWorld-Tool-Hard] process_management: 0.30 (8.4s)
+[OSWorld-Tool-Hard] network_config: 0.30 (9.4s)
+[ZeroBench] cross_domain_legal_tech: 0.95 (47.6s)
+[ZeroBench] cross_domain_medical_ai: 0.85 (55.5s)
+[ZeroBench] cross_domain_climate_econ: 0.90 (60.6s)
+
+================================================================================
+MAS v25.0 - Self-Consistency Voting
+================================================================================
+Runtime: 2165.8s (36.1 min)
+Tasks: 29 | Success: 20 (69.0%)
+
+SCORES:
+  ARC-AGI-3:        0.573
+  BBEH:             0.900
+  HLE:              1.000
+  IMO-ANSWER:       0.000  <- Self-consistency voting
+  SWE-Bench-Pro:    0.637
+  MATH-500:         0.860
+  GPQA-Diamond:     1.000
+  OSWorld-Tool-Hard:0.300
+  ZeroBench:        0.900
+
+OVERALL: 0.6608
+================================================================================
+
+
+Saved to: /root/.openclaw/workspace-mas/benchmark_results_v25.json
