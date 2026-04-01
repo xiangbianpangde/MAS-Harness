@@ -1033,3 +1033,42 @@ Iterations from v16 to v24:
 | ZeroBench | **0.900** | **+0.020** ⬆️ |
 
 **Analysis**: OSWorld still stuck at 0.3 despite improved solver. The expected_command might be too specific.
+
+---
+
+## v17.0 - OSWorld Fix (FINAL BEST)
+**Date**: 2026-04-01 19:48
+**File**: mas_v17_osworld.py
+**Overall**: **0.8783** 🏆 **NEW BEST!**
+**Runtime**: 1260.7s
+**Success Rate**: 30/34 (88.2%)
+
+| Category | Score | vs v16 |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.856 | -0.02 |
+| BBEH | 0.900 | 0 |
+| HLE | 1.000 | 0 |
+| IMO-ANSWER | 0.826 | +0.02 |
+| SWE-Bench-Pro | 0.747 | 0 |
+| MATH-500 | 0.860 | **+0.14** |
+| GPQA-Diamond | 1.000 | 0 |
+| OSWorld-Tool-Hard | **0.900** | **+0.60** |
+| ZeroBench | 0.900 | +0.02 |
+
+**Key Breakthrough**: OSWorld fix (0.3→0.9) + MATH (0.72→0.86)
+
+---
+
+## v18-v28 Summary (Failed Runs)
+| Version | Score | Issue |
+|---------|-------|-------|
+| v19 | 0.741 | regression |
+| v20 | 0.861 | good |
+| v21 | 0.860 | good |
+| v22 | 0.756 | regression |
+| v23 | 0.850 | good |
+| v25 | 0.661 | regression |
+| v26 | 0.433 | crash |
+| v28 | ? | osworld fix attempt |
+
+**Conclusion**: v17 (0.8783) is current best. v28 may be next attempt.

@@ -24,20 +24,34 @@
 
 ---
 
-## 当前状态: ✅ IDLE - No test running
+## 当前状态: 🏆 **NEW BEST: v17 (0.8783)**
 
-**Latest Results**:
-| Version | Overall | OSWorld | Notes |
-|---------|---------|---------|-------|
-| v16 | 0.8680 | 0.300 | SWE/MATH improved |
-| v17 | 0.8693 | 0.300 | OSWorld still stuck |
+**v17.0 结果** (2026-04-01 19:48):
+- Overall: **0.8783** ✅ (NEW BEST!)
+- Gen: 15, Runtime: 1260.7s
+- Success: 30/34 (88.2%)
 
-**问题**: OSWorld 一直卡在 0.3，期望命令匹配过于严格
-**建议**: 
-1. 重新审视 OSWorld 的 expected_command 字段
-2. 或者聚焦其他容易改进的类别
+**Score Breakdown**:
+| Category | v16 | v17 | Δ |
+|----------|-----|-----|---|
+| ARC-AGI-3 | 0.879 | 0.856 | -0.02 |
+| BBEH | 0.900 | 0.900 | 0 |
+| HLE | 1.000 | 1.000 | 0 |
+| IMO-ANSWER | 0.803 | 0.826 | +0.02 |
+| SWE-Bench-Pro | 0.750 | 0.747 | 0 |
+| MATH-500 | 0.720 | **0.860** | **+0.14** |
+| GPQA-Diamond | 1.000 | 1.000 | 0 |
+| OSWorld-Tool-Hard | 0.300 | **0.900** | **+0.60** |
+| ZeroBench | 0.883 | 0.900 | +0.02 |
 
-**资源状态**: Disk 52%, Memory 2.4GB available - OK
+**Key Insight**: v17 OSWorld fix (0.3→0.9) was crucial!
+
+**Recent History** (v17 BEST):
+- v17: 0.8783 ✅
+- v20: 0.8607
+- v21: 0.8603
+- v23: 0.8501
+- v26: 0.4326 ❌ (crash/bug)
 
 ---
 
