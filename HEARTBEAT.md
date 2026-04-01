@@ -24,20 +24,25 @@
 
 ---
 
-## 当前状态: 🔄 v17 Re-check Running
+## 当前状态: ✅ v19 Completed
 
-**v17 Results** (0.8661):
-- MATH-500: 0.860 ⬆️ (big improvement)
-- IMO: 0.781 (slight regression)
-- OSWorld: 0.300 (unchanged)
+**Latest Results**:
+| Version | Overall | MATH-500 | IMO | SWE | OSWorld |
+|---------|---------|----------|-----|-----|---------|
+| v16.1 | 0.8680 | 0.720 | 0.803 | 0.750 | 0.300 |
+| v17 | 0.8661 | 0.860 | 0.781 | 0.760 | 0.300 |
+| **v19** | **0.8779** ⬆️ | 0.860 | **0.915** ⬆️ | 0.683 | 0.300 |
 
-**v18 Changes** (IMO Focus):
-- Increased max_tokens to 3072 for detailed proofs
-- Better technique hints from expected answer
-- Enhanced concept matching in scoring
-- Better proof structure scoring
+**Analysis**: 
+- IMO 大幅提升 (0.781 → 0.915) ⭐⭐⭐
+- Overall improvement (0.8661 → 0.8779)
+- SWE-Bench-Pro regressed (0.76 → 0.683) ⚠️
+- OSWorld 仍然是最大弱点 (0.300)
 
-**Running**: v17 re-check @ 07:28 (expected ~17min)
+**v20 建议**: 
+- 保留 v19 的 IMO 改进
+- 修复 SWE-Bench-Pro 回归问题
+- OSWorld 需要不同方法，但权重仅 2%
 
 ---
 
