@@ -24,23 +24,15 @@
 
 ---
 
-## 当前状态: 🔄 v25 Running (Self-Consistency Voting)
+## 当前状态: ✅ v25 Failed - v20 Still Best
 
-**v25 PID**: 64268 | Started: 18:45 | Elapsed: ~9min
-**Status**: Running, ~12/34 tasks completed
-**Runtime limit**: 3600s
+**Latest Results**:
+| Version | Overall | IMO | SWE | Notes |
+|---------|---------|-----|-----|-------|
+| v20 | **0.8801** ⭐ | 0.797 | 0.883 | **BEST** |
+| v25 | 0.6608 | 0.000 | 0.637 | Bug in voting |
 
-**历史排名** (Top 5):
-| Version | Overall | Key Feature |
-|---------|---------|-------------|
-| v17 | **0.8693** | Current best |
-| v16 | 0.8680 | Enhanced scorers |
-| v20 | 0.8608 | Supervisor routing |
-| v21 | 0.8603 | Supervisor routing |
-| v23 | 0.8501 | Memory-enhanced |
-
-**v25**: Self-consistency voting (3 votes, majority wins)
-**弱点**: OSWorld-Tool-Hard (0.300) still lowest
+**v25 失败原因**: IMO self-consistency代码bug导致IMO=0.0
 
 ---
 
