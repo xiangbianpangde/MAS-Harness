@@ -931,3 +931,40 @@ Iterations from v16 to v24:
 | v23 | 0.8501 | 0.676 | 0.300 | - |
 
 **Note**: v24 crashed, v25 attempting fix
+
+---
+
+## v17.0 Enhanced Scorer - CURRENT BEST (2026-04-01)
+
+**Architecture**: mas_v17_enhanced_scorer.py
+**Status**: ✅ **BEST RESULT**
+
+| Version | Overall Score | Key Achievement |
+|---------|---------------|-----------------|
+| v16 | 0.8577 | Good baseline |
+| **v17 Enhanced** | **0.8692** | **🏆 NEW BEST** |
+| v18 | N/A | (not run?) |
+| v19 | 0.7414 | Regression |
+| v20-26 | 0.43-0.73 | Various regressions |
+
+### v17 Enhanced Detailed Results (34 tasks)
+| Category | Score | Weight |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.862 | 25% |
+| BBEH | 0.900 | 20% |
+| HLE | 1.000 | 15% |
+| IMO-ANSWER | 0.806 | 15% |
+| SWE-Bench-Pro | 0.790 | 10% |
+| MATH-500 | 0.860 | 8% |
+| GPQA-Diamond | 1.000 | 4% |
+| OSWorld-Tool-Hard | 0.300 | 2% |
+| ZeroBench | 0.900 | 1% |
+
+**Key Improvements over v16**:
+- MATH-500: 0.720 → 0.860 (+0.14)
+- SWE-Bench-Pro: 0.750 → 0.790 (+0.04)
+- Overall: 0.8577 → 0.8692 (+0.0115)
+
+**Remaining Weakness**: OSWorld (0.300)
+
+**Conclusion**: v17_enhanced_scorer.py is the best version. Future work should focus on OSWorld.

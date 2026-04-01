@@ -24,21 +24,30 @@
 
 ---
 
-## 当前状态: 🔴 NEEDS DESIGN
+## 当前状态: ✅ READY FOR NEXT DESIGN
 
-**Best: v17 (enhanced_scorer) @ 0.8692** 🏆
+**BEST: v17_enhanced_scorer.py @ 0.8692** 🏆
 
-**问题**:
-- v17_clean produced 0.2845 (wrong code path)
-- v26 produced 0.4326 (broken logic after copy)
-- v27 finished with 0.2845 (same as v17_clean)
+**v17 Scores**:
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.862 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.806 |
+| SWE-Bench-Pro | 0.790 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.300 | ← PRIMARY TARGET
+| ZeroBench | 0.900 |
 
-**结论**: mas_v17_enhanced_scorer.py 是正确的最佳版本
+**Failed versions** (don't use without fixes):
+- v17_clean: 0.2845 (wrong code path)
+- v18: N/A
+- v19: 0.7414 (regression)
+- v20-26: 0.43-0.77 (various issues, v26 has `features` not defined bug)
 
-**建议**:
-1. 基于 mas_v17_enhanced_scorer.py 设计 v28
-2. 修复 OSWorld (0.300) 和 IMO (0.806) 作为主要改进点
-3. 不要轻易复制代码，要理解后再修改
+**Next Step**: Design v28 based on v17_enhanced_scorer.py, focus on fixing OSWorld
 
 ---
 
