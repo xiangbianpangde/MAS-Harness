@@ -24,34 +24,26 @@
 
 ---
 
-## 当前状态: 🏆 v17 BEST (0.8783) - No test running
+## 当前状态: ⚠️ STUCK - Multiple runs failing at ARC-AGI-3
 
-**v20 re-run FAILED**: New run (20:35) was killed by `head -60` pipe
-**Previous v20**: 0.8608 (12:55) - still valid
+**Issue**: v20, v28 all stuck at "Solving ARC-AGI-3" - no output after task summary
+**Killed**: v20_proper (95606) after 14min stuck
 
 **Current Best**: v17 (0.8783) 🏆
-| Category | Score |
-|----------|-------|
-| ARC-AGI-3 | 0.856 |
-| BBEH | 0.900 |
-| HLE | 1.000 |
-| IMO-ANSWER | 0.826 |
-| SWE-Bench-Pro | 0.747 |
-| MATH-500 | 0.860 |
-| GPQA-Diamond | 1.000 |
-| OSWorld-Tool-Hard | 0.900 |
-| ZeroBench | 0.900 |
+**v20+**: Multiple runs failing/stuck, no valid new results
 
 **Recent Results**:
-| Version | Score |
-|---------|-------|
-| v17 | 0.8783 🏆 |
-| v20 | 0.8608 |
-| v23 | 0.8501 |
-| v25 | 0.6608 |
-| v26 | 0.4326 |
+| Version | Score | Status |
+|---------|-------|--------|
+| v17 | 0.8783 🏆 | Valid |
+| v20 | 0.8608 | Valid (old run) |
+| v23 | 0.8501 | Valid |
+| v25 | 0.6608 | Low |
+| v26 | 0.4326 | Very low |
+| v28 | FAILED | Stuck |
+| v20_new | FAILED | Stuck |
 
-**建议**: Re-run v20 without `head -60` pipe
+**建议**: Debug why ARC-AGI-3 solving hangs. Check arc_loader.py
 
 ---
 
