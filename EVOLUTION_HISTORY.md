@@ -1127,3 +1127,39 @@ Iterations from v16 to v24:
 
 **Analysis**: v29 fixed v28's features bug but OSWorld improvements came at cost of MATH-500 degradation.
 **Conclusion**: v17 remains the best architecture (0.8783)
+
+---
+
+## v17.0.0 - Focused Weak Category Improvement ⭐
+**Architecture**: mas_v17_focused.py (Improved OSWorld + MATH solvers)
+**Date**: 2026-04-01
+**Status**: ✅ **IMPROVEMENT** (+0.021 overall)
+
+| Category | v16 | v17 | Delta |
+|----------|-----|-----|-------|
+| ARC-AGI-3 | 0.879 | 0.856 | -0.023 |
+| BBEH | 0.900 | 0.900 | 0.000 |
+| HLE | 1.000 | 1.000 | 0.000 |
+| IMO-ANSWER | 0.803 | 0.826 | +0.023 |
+| SWE-Bench-Pro | 0.750 | 0.747 | -0.003 |
+| **MATH-500** | 0.720 | **0.860** | **+0.140** 🎉 |
+| GPQA-Diamond | 1.000 | 1.000 | 0.000 |
+| **OSWorld-Tool-Hard** | 0.300 | **0.900** | **+0.600** 🎉 |
+| ZeroBench | 0.883 | 0.900 | +0.017 |
+
+**Summary**: Overall **0.8783** (+0.021 vs v16)
+**Key Fix**: Improved OSWorld multi-command matching + MATH answer tolerance
+**Runtime**: 1260.7s
+
+---
+
+## Version Comparison (v10-v17)
+
+| Version | Overall | Key Change |
+|---------|---------|------------|
+| v10 | 0.7759 | Extended 9-category |
+| v14 | 0.7516 | Recovery |
+| v16 | 0.8577 | FIX typo |
+| **v17** | **0.8783** | **OSWorld+MATH fix** 🏆 |
+
+**🏆 Current Best: v17 (0.8783)**
