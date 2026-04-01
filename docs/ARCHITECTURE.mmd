@@ -1,0 +1,118 @@
+# MAS v20 Architecture - Mermaid Diagram
+
+```mermaid
+graph TB
+    subgraph MAS["MAS Orchestrator v20"]
+        LLM["LLM Client<br/>MiniMax API"]
+        
+        subgraph IMO["IMO Solver (v19 Style)"]
+            Detector["IMOTechniqueDetector"]
+            IMO_Solver["IMOSolverV22"]
+            IMO_Scorer["EnhancedMathScorer"]
+        end
+        
+        subgraph SWE["SWE Solver (v20 Style)"]
+            SWE_Solver["SWESolverV22"]
+            SWE_Scorer["EnhancedSWEScorer"]
+        end
+        
+        subgraph Others["Other Solvers (v14)"]
+            ARC["solve_arc_real"]
+            BBEH["solve_bbeh"]
+            HLE["solve_hle"]
+            MATH["solve_math"]
+            GPQA["solve_gpqa"]
+            OS["solve_osworld"]
+            Zero["solve_zerobench"]
+        end
+    end
+    
+    LLM --> Detector
+    LLM --> SWE_Solver
+    LLM --> ARC
+    LLM --> BBEH
+    LLM --> HLE
+    LLM --> MATH
+    LLM --> GPQA
+    LLM --> OS
+    LLM --> Zero
+    
+    Detector --> IMO_Solver
+    IMO_Solver --> IMO_Scorer
+    
+    SWE_Solver --> SWE_Scorer
+    
+    style LLM fill:#f9f,stroke:#333,stroke-width:2px
+    style IMO_Scorer fill:#9f9,stroke:#333
+    style SWE_Scorer fill:#9f9,stroke:#333
+    style Detector fill:#ff9,stroke:#333
+```
+
+```mermaid
+graph LR
+    subgraph IMO_Techniques["IMO Technique Detection"]
+        E["Expected Answer"]
+        K["Keyword Matching"]
+        T["8 Techniques"]
+        
+        E --> K
+        K --> T
+        
+        T --> C["contradiction"]
+        T --> I["induction"]
+        T --> M["modular"]
+        T --> G["geometric"]
+        T --> Q["inequality"]
+        T --> F["functional"]
+        T --> N["number_theory"]
+        T --> B["combinatorial"]
+    end
+    
+    style E fill:#f96,stroke:#333
+    style K fill:#ff9,stroke:#333
+    style T fill:#9f9,stroke:#333
+```
+
+```mermaid
+pie title Benchmark Weights
+    "ARC-AGI-3 (25%)" : 25
+    "BBEH (20%)" : 20
+    "HLE (15%)" : 15
+    "IMO-ANSWER (15%)" : 15
+    "SWE-Bench-Pro (10%)" : 10
+    "MATH-500 (8%)" : 8
+    "GPQA-Diamond (4%)" : 4
+    "OSWorld (2%)" : 2
+    "ZeroBench (1%)" : 1
+```
+
+```mermaid
+graph TB
+    subgraph Scores["v20 Scores"]
+        ARC["ARC-AGI-3: 0.876"]
+        BBEH["BBEH: 0.900"]
+        HLE["HLE: 1.000"]
+        IMO["IMO: 0.797"]
+        SWE["SWE: 0.883"]
+        MATH["MATH: 0.860"]
+        GPQA["GPQA: 1.000"]
+        OS["OSWorld: 0.300"]
+        Zero["ZeroBench: 0.850"]
+    end
+    
+    TOTAL["OVERALL: 0.8801 ★"]
+    
+    ARC --> TOTAL
+    BBEH --> TOTAL
+    HLE --> TOTAL
+    IMO --> TOTAL
+    SWE --> TOTAL
+    MATH --> TOTAL
+    GPQA --> TOTAL
+    OS --> TOTAL
+    Zero --> TOTAL
+    
+    style TOTAL fill:#9f9,stroke:#333,stroke-width:4px
+    style HLE fill:#9f9,stroke:#333
+    style GPQA fill:#9f9,stroke:#333
+```
