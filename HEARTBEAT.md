@@ -24,11 +24,11 @@
 
 ---
 
-## 当前状态: 🧪 v19 Running (v25 baseline)
+## 当前状态: 🧪 v19 Running as v25 Baseline (PID 905299)
 
-**Running**: `python3 src/mas_v19_imo_focus.py` (PID 903469)
+**Started**: 13:30 (PYTHONUNBUFFERED=1 nohup)
 **Log**: run_v25_baseline.log
-**Start time**: 13:27
+**Process**: `python3 -u src/mas_v19_imo_focus.py`
 
 **Best Historical Results**:
 | Version | Overall | IMO | Notes |
