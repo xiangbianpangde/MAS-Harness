@@ -1072,3 +1072,20 @@ Iterations from v16 to v24:
 | v28 | ? | osworld fix attempt |
 
 **Conclusion**: v17 (0.8783) is current best. v28 may be next attempt.
+
+---
+
+## v26 (2026-04-01 16:46) - ❌ CRASH/REGRESSION
+**Overall**: 0.4326 (catastrophic regression)
+**Analysis**: Multiple categories dropped simultaneously - likely architecture bug
+- ARC-AGI-3: 0.333 (v17: 0.856)
+- HLE: 0.52 (v17: 1.000)
+- IMO-ANSWER: 0.327 (v17: 0.826)
+- MATH-500: 0.32 (v17: 0.860)
+
+**Root cause**: Unknown - v26 code issue
+**Status**: Must rollback/fix before continuing
+
+---
+
+## Current Best: v17.0 (0.8783)

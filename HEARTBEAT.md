@@ -24,34 +24,22 @@
 
 ---
 
-## 当前状态: 🏆 **NEW BEST: v17 (0.8783)**
+## 当前状态: 🚀 v28 RUNNING (PID 88421)
 
-**v17.0 结果** (2026-04-01 19:48):
-- Overall: **0.8783** ✅ (NEW BEST!)
-- Gen: 15, Runtime: 1260.7s
-- Success: 30/34 (88.2%)
+**v28 started**: 2026-04-01 20:19
+**Code**: mas_v28_osworld_fix.py
 
-**Score Breakdown**:
-| Category | v16 | v17 | Δ |
-|----------|-----|-----|---|
-| ARC-AGI-3 | 0.879 | 0.856 | -0.02 |
-| BBEH | 0.900 | 0.900 | 0 |
-| HLE | 1.000 | 1.000 | 0 |
-| IMO-ANSWER | 0.803 | 0.826 | +0.02 |
-| SWE-Bench-Pro | 0.750 | 0.747 | 0 |
-| MATH-500 | 0.720 | **0.860** | **+0.14** |
-| GPQA-Diamond | 1.000 | 1.000 | 0 |
-| OSWorld-Tool-Hard | 0.300 | **0.900** | **+0.60** |
-| ZeroBench | 0.883 | 0.900 | +0.02 |
+**Current Best**:
+| Version | Overall | Status |
+|---------|---------|--------|
+| **v17** | **0.8783** | **🏆 BEST** |
+| v20 | 0.8607 | |
+| v21 | 0.8603 | |
+| v23 | 0.8501 | |
+| v26 | 0.4326 | ❌ Crashed |
 
-**Key Insight**: v17 OSWorld fix (0.3→0.9) was crucial!
-
-**Recent History** (v17 BEST):
-- v17: 0.8783 ✅
-- v20: 0.8607
-- v21: 0.8603
-- v23: 0.8501
-- v26: 0.4326 ❌ (crash/bug)
+**v26 Analysis**: Catastrophic regression - multiple categories dropped simultaneously
+**v28 Focus**: OSWorld fix attempt (v17 already had good OSWorld at 0.9)
 
 ---
 
