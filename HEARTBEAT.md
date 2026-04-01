@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: 🚀 v25 RUNNING (PID 913900)
+## 当前状态: 🚀 v25 RUNNING (PID 915703)
 
 **最近结果排名**:
 | Version | Overall | IMO | Key |
@@ -36,12 +36,12 @@
 | v22 | 0.7559 | - | |
 | v25 | RUNNING | - | IMO technique focus |
 
+**注意**: python3 -u 使用无缓冲输出，避免输出被buffer住
+
 **v25 改进点**:
 - IMO 2-stage: technique detection + specialized solver
 - Better concept matching
 - Based on v19 architecture
-
-**v20 vs v16**: v20 (0.8608) ≈ v16 (0.8680), slight regression
 
 ---
 
