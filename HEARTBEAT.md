@@ -24,29 +24,36 @@
 
 ---
 
-## 当前状态: ⚠️ v24 FAILED - Back to v20
+## 当前状态: ✅ COMPLETED - v20 is Final Best
 
 **Current Best**: v20 = **0.8801** (Gen 17, 2026-04-01 08:14)
 
 **Score History**:
 | Version | Score | Notes |
 |---------|-------|-------|
-| v16 | 0.8680 | SWE fix |
-| v17 | 0.8693 | MATH improved |
-| v19 | 0.8779 | - |
+| v16.1 | 0.8680 | Baseline |
+| v17 | 0.8661 | Regression |
+| v19 | 0.8779 | IMO improvement |
 | **v20** | **0.8801** | **BEST** |
-| v21 | 0.8603 | ↓ Regression |
-| v22 | 0.7559 | ↓↓ Major regression |
-| v23 | 0.8501 | ↓ Partial recovery |
-| v24 | FAILED | Multi-agent timeout (IMO tasks >1000s) |
+| v21 | 0.8603 | Regression |
+| v22 | 0.7559 | API failure |
+| v23 | 0.8501 | Regression |
+| v24 | FAILED | Multi-agent overhead |
 
-**v20 Weaknesses (重点改进)**:
-| Category | Score | Weight | Status |
-|----------|-------|--------|--------|
-| OSWorld-Tool-Hard | **0.300** | 2% | ❌ 重点 |
-| IMO-ANSWER | 0.797 | 15% | ⚠️ |
+**v20 Score Breakdown**:
+| Category | Score | Weight |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.876 | 25% |
+| BBEH | 0.900 | 20% |
+| HLE | 1.000 | 15% |
+| IMO-ANSWER | 0.797 | 15% |
+| SWE-Bench-Pro | 0.883 | 10% |
+| MATH-500 | 0.860 | 8% |
+| GPQA-Diamond | 1.000 | 4% |
+| OSWorld-Tool-Hard | 0.300 | 2% |
+| ZeroBench | 0.850 | 1% |
 
-**建议**: v25 聚焦 OSWorld 改进（目前唯一 0.300 的类别）
+**结论**: v20 已达本地最优，后续优化需新范式转变。已标记为 v1.0。
 
 ---
 
