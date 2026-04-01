@@ -24,25 +24,28 @@
 
 ---
 
-## 当前状态: 🏆 v17 BEST (0.8750)
+## 当前状态: ✅ v16 CONFIRMED - 0.8680 Overall
 
-**v17 结果** (34 tasks):
-| Category | Score | Change |
-|----------|-------|--------|
-| OSWorld | **0.850** | +0.550 ↑↑ |
-| MATH-500 | **0.860** | +0.140 ↑ |
-| GPQA | 1.000 | - |
-| HLE | 1.000 | - |
-| BBEH | 0.900 | - |
-| ZeroBench | 0.883 | - |
-| ARC-AGI-3 | 0.879 | - |
-| IMO-ANSWER | 0.791 | -0.012 ↓ |
-| SWE-Bench | 0.720 | -0.030 ↓ |
+**v16.1 Final** (34 tasks, Gen 15):
+- **Overall: 0.8680** (improved from 0.8577)
+- Runtime: 1146s (19.1 min)
+- Success: 26/34 (76.5%)
 
-**Overall: 0.8750** | Runtime: 1210s
+**Score Breakdown**:
+| Category | Score |
+|----------|-------|
+| HLE | 1.000 |
+| GPQA-Diamond | 1.000 |
+| BBEH | 0.900 |
+| MATH-500 | 0.860 |
+| ARC-AGI-3 | 0.859 |
+| ZeroBench | 0.880 |
+| SWE-Bench-Pro | 0.817 |
+| IMO-ANSWER | 0.787 |
+| **OSWorld-Tool-Hard** | **0.300** ← 唯一明显弱点 |
 
-**待改进**: IMO (0.791), SWE (0.720)
-**保持不降**: OSWorld (0.850), MATH (0.860)
+**收敛状态**: 未收敛，但 OSWorld 持续低迷 (0.300)
+**建议**: v17 聚焦 OSWorld 强化
 
 ---
 

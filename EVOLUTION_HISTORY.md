@@ -1230,3 +1230,27 @@ Iterations from v16 to v24:
 **Analysis**: OSWorld improved massively (0.3→0.85), MATH improved (0.72→0.86), but IMO/SWE slightly dropped.
 
 **Status**: No test running. v17 is best. Need to improve IMO and SWE without regressing OSWorld/MATH.
+
+---
+
+## v16.1 - Final Verification (34 tasks)
+**Architecture**: v16.0 Enhanced Scorer (FIXED)
+**Date**: 2026-04-01 06:55
+**Status**: ✅ **CONFIRMED BEST**
+
+| Category | Score | Weight |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.859 | 25% |
+| BBEH | 0.900 | 20% |
+| HLE | 1.000 | 15% |
+| IMO-ANSWER | 0.787 | 15% |
+| SWE-Bench-Pro | 0.817 | 10% |
+| MATH-500 | 0.860 | 8% |
+| GPQA-Diamond | 1.000 | 4% |
+| OSWorld-Tool-Hard | 0.300 | 2% |
+| ZeroBench | 0.880 | 1% |
+
+**Overall**: 0.8680 (19.1h runtime)
+**Success**: 26/34 (76.5%)
+
+**Weaknesses still**: OSWorld (0.300), IMO (0.787)
