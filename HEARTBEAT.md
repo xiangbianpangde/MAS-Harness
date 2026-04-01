@@ -24,24 +24,23 @@
 
 ---
 
-## 当前状态: 🚀 v25 RUNNING (PID 915703)
+## 当前状态: 🚀 v25 RUNNING (PID 915705)
 
-**最近结果排名**:
-| Version | Overall | IMO | Key |
-|---------|---------|-----|-----|
-| v20 | **0.8608** | 0.781 | Best recent |
-| v23 | 0.8501 | - | |
-| v21 | 0.8603 | - | |
-| v19 | 0.7414 | 0.484 | Variance |
-| v22 | 0.7559 | - | |
-| v25 | RUNNING | - | IMO technique focus |
+**Status**: Connected to LLM API, waiting for response (not stuck)
 
-**注意**: python3 -u 使用无缓冲输出，避免输出被buffer住
+**Best Results**:
+| Version | Overall | IMO | OSWorld |
+|---------|---------|-----|---------|
+| v20 | **0.8608** | 0.797 | 0.300 |
+| v21 | 0.8603 | 0.803 | 0.300 |
+| v23 | 0.8501 | 0.676 | 0.300 |
+| v19 | 0.7414 | 0.484 | 0.300 |
+| v24 | CRASHED | - | - |
 
-**v25 改进点**:
-- IMO 2-stage: technique detection + specialized solver
-- Better concept matching
-- Based on v19 architecture
+**v25 Focus**: Supervisor routing fix for IMO tasks
+**Started**: 14:15, running ~3min
+
+**Note**: Output may be delayed due to LLM API wait time
 
 ---
 

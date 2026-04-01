@@ -911,3 +911,23 @@ Iterations from v16 to v24:
 2. Better error handling (process crashed instead of recovering)
 
 **Next**: Debug v24 or revert to v20 approach
+
+---
+
+## v25 (Fixed Supervisor) - Status Update (2026-04-01 14:18)
+
+**Current Status**: RUNNING (PID 915705)
+- Connected to LLM API (8.153.111.26:443 ESTAB)
+- Waiting for response, not stuck
+- v25 is based on v19 code with supervisor routing fix
+
+**Recent completed versions**:
+| Version | Overall | IMO | OSWorld | Notes |
+|---------|---------|-----|---------|-------|
+| v19 | 0.7414 | 0.484 | 0.300 | IMO focus (baseline) |
+| v20 | 0.8608 | 0.797 | 0.300 | Best recent |
+| v21 | 0.8603 | 0.803 | 0.300 | - |
+| v22 | 0.7559 | 0.803 | 0.300 | Regression |
+| v23 | 0.8501 | 0.676 | 0.300 | - |
+
+**Note**: v24 crashed, v25 attempting fix
