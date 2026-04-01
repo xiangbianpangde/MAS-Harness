@@ -14,3 +14,13 @@ Task Summary:
   ZeroBench: 3 tasks
   TOTAL: 34 tasks
 [ARC-AGI-3] 00576224: 1.00 (107.0s)
+[ARC-AGI-3] 009d5c81: 0.00 (264.5s)
+[ARC-AGI-3] 03560426: 0.72 (46.9s)
+[BBEH] long_range_dependency: 1.00 (17.3s)
+[BBEH] multi_step_inference: 1.00 (15.8s)
+[BBEH] temporal_reasoning: 0.60 (33.5s)
+[BBEH] negation_tracking: 1.00 (23.3s)
+[HLE] legal_case_analysis: 1.00 (15.9s)
+[HLE] medical_diagnosis: 1.00 (18.6s)
+[HLE] financial_risk_assessment: 1.00 (22.9s)
+[HLE] legal_contract_interpretation: 1.00 (13.0s)

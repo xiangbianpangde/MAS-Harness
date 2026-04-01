@@ -26,8 +26,9 @@
 
 ## 当前状态: 🔄 v25 Running (Self-Consistency Voting)
 
-**v25 PID**: 64268 | Started: 18:45 | Elapsed: ~3min
-**Status**: ARC-AGI-3 task 1 done (1.00), continuing...
+**v25 PID**: 64268 | Started: 18:45 | Elapsed: ~9min
+**Status**: Running, ~12/34 tasks completed
+**Runtime limit**: 3600s
 
 **历史排名** (Top 5):
 | Version | Overall | Key Feature |
@@ -38,11 +39,8 @@
 | v21 | 0.8603 | Supervisor routing |
 | v23 | 0.8501 | Memory-enhanced |
 
-**v28 Bug**: `features` not defined in solve_math_v17 call (line 619)
-- 原因: `features` variable out of scope
-- Fix: Need to pass proper `features` from task analysis
-
-**v26 Regression**: 0.4326 (代码/配置错误)
+**v25**: Self-consistency voting (3 votes, majority wins)
+**弱点**: OSWorld-Tool-Hard (0.300) still lowest
 
 ---
 
