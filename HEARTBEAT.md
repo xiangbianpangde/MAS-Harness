@@ -24,27 +24,25 @@
 
 ---
 
-## 当前状态: 🚀 v32 NEW BEST (0.8634)
+## 当前状态: 🏆 v17 BEST (0.8750)
 
-**v32.0 结果** (NEW RECORD!):
-- Overall: **0.8634** ✅ (up from 0.8577)
-- Gen: 15, Runtime: 1270s
-- Success: ~26/34 (76.5%)
-
-**详细分数**:
-| Category | Score | vs v16 |
+**v17 结果** (34 tasks):
+| Category | Score | Change |
 |----------|-------|--------|
-| ARC-AGI-3 | 0.893 | +0.014 |
-| BBEH | 0.900 | same |
-| HLE | 1.000 | same |
-| IMO-ANSWER | 0.801 | -0.002 |
-| **SWE-Bench-Pro** | **0.553** | **-0.197** ⚠️ |
-| **MATH-500** | **0.860** | **+0.140** ✅ |
-| GPQA-Diamond | 1.000 | same |
-| **OSWorld-Tool-Hard** | **0.850** | **+0.550** ✅ |
-| ZeroBench | 0.883 | same |
+| OSWorld | **0.850** | +0.550 ↑↑ |
+| MATH-500 | **0.860** | +0.140 ↑ |
+| GPQA | 1.000 | - |
+| HLE | 1.000 | - |
+| BBEH | 0.900 | - |
+| ZeroBench | 0.883 | - |
+| ARC-AGI-3 | 0.879 | - |
+| IMO-ANSWER | 0.791 | -0.012 ↓ |
+| SWE-Bench | 0.720 | -0.030 ↓ |
 
-**v33 建议**: 修复 SWE-Bench-Pro 回归问题
+**Overall: 0.8750** | Runtime: 1210s
+
+**待改进**: IMO (0.791), SWE (0.720)
+**保持不降**: OSWorld (0.850), MATH (0.860)
 
 ---
 

@@ -1195,3 +1195,38 @@ Iterations from v16 to v24:
 **Key Innovation**: Improved OSWorld multi-command matching + MATH answer tolerance
 
 **Stalled Versions**: v28-v32 all failed to beat v17
+
+---
+
+## v17-v32: Continued Evolution (2026-04-01)
+
+| Version | Overall | Key Changes |
+|---------|---------|-------------|
+| v17 | **0.8750** | OSWorld 0.3→0.85, MATH 0.72→0.86 |
+| v19 | 0.7414 | Regression |
+| v20 | 0.8608 | Combined approach |
+| v22 | 0.7559 | Regression |
+| v25 | 0.6608 | IMO focus |
+| v26 | 0.4326 | Major regression |
+| v29 | 0.8493 | Fixed |
+| v31 | 0.8570 | Clean version |
+| v32 | 0.8634 | Minor improvement |
+
+**Best**: v17 (0.8750 overall)
+
+**v17 Details**:
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.879 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.791 |
+| SWE-Bench-Pro | 0.720 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | **0.850** |
+| ZeroBench | 0.883 |
+
+**Analysis**: OSWorld improved massively (0.3→0.85), MATH improved (0.72→0.86), but IMO/SWE slightly dropped.
+
+**Status**: No test running. v17 is best. Need to improve IMO and SWE without regressing OSWorld/MATH.
