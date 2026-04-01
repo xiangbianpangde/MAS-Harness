@@ -24,26 +24,24 @@
 
 ---
 
-## 当前状态: ✅ v20 NEW BEST (0.8801)
+## 当前状态: ✅ v21 Completed (Regression)
 
 **Latest Results**:
-| Version | Overall | MATH-500 | IMO | SWE | OSWorld |
-|---------|---------|----------|-----|-----|---------|
-| v16.1 | 0.8680 | 0.720 | 0.803 | 0.750 | 0.300 |
-| v17 | 0.8661 | 0.860 | 0.781 | 0.760 | 0.300 |
-| v19 | 0.8779 | 0.860 | 0.915 | 0.683 | 0.300 |
-| **v20** | **0.8801** ⭐ | 0.860 | 0.797 | **0.883** ⭐ | 0.300 |
+| Version | Overall | IMO | SWE | Notes |
+|---------|---------|-----|-----|-------|
+| v19 | 0.8779 | 0.915 | 0.683 | IMO focus |
+| **v20** | **0.8801** ⭐ | 0.797 | 0.883 | Best overall |
+| v21 | 0.8603 | 0.805 | 0.650 | Regression |
 
 **Analysis**: 
-- **NEW BEST: 0.8801** 🎉
-- SWE 大幅提升 (0.683 → 0.883) ⭐
-- IMO 略降 (0.915 → 0.797) due to prompt trade-off
-- OSWorld 仍然是最大弱点 (0.300)
+- v20 remains the best at **0.8801**
+- IMO/SWE trade-off observed
+- Need ensemble or adaptive approach
 
-**v21 建议**: 
-- 保持 v20 的 SWE 改进
-- 尝试恢复 IMO 到 0.9+
-- 考虑 OSWorld 特殊处理（权重仅 2%）
+**v22 建议**: 
+- Use v20 as base
+- Try ensemble: v20 SWE + v19 IMO together
+- Or use adaptive routing based on task type
 
 ---
 

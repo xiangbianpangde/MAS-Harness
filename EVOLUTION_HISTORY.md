@@ -678,3 +678,41 @@ from mas_v14_adaptive import solve_math as solver
 2. OSWorld still weak but only 2% weight
 3. Consider ensemble or voting for close calls
 
+
+---
+
+## v21.0 - Balanced IMO + SWE (COMPLETED)
+**Date**: 2026-04-01 08:44
+**Status**: ❌ REGRESSION (0.8603 vs v20's 0.8801)
+
+| Category | v20 | v21 | Change |
+|----------|-------|-----|--------|
+| Overall | **0.8801** | 0.8603 | -0.0198 ❌ |
+| IMO-ANSWER | 0.797 | **0.805** | +0.008 ✅ |
+| SWE-Bench-Pro | **0.883** | 0.650 | -0.233 ❌ |
+| ZeroBench | 0.850 | **0.917** | +0.067 ✅ |
+
+**Analysis**: IMO improved slightly but SWE regressed badly. Shows trade-off between optimizing for different categories. v20 remains the best.
+
+---
+
+## Current Best: v20 @ 0.8801
+
+---
+
+## Key Insights
+1. v19: IMO technique detection worked (+0.134 on IMO)
+2. v20: SWE prompt fix worked (+0.200 on SWE) but IMO regressed
+3. v21: IMO recovered slightly but SWE dropped significantly
+4. **Trade-off**: IMO and SWE seem to compete for "reasoning capacity"
+
+---
+
+## v22 Planning
+**Goal**: Find balance or use ensemble approach
+**Options**:
+1. Use v20's SWE prompt (known good)
+2. Use v19's IMO technique detection (known good)
+3. Try ensemble: run both and pick better
+4. Focus on improving weak categories (OSWorld 0.300)
+
