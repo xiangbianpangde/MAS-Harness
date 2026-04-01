@@ -24,11 +24,11 @@
 
 ---
 
-## 当前状态: 🛑 STOPPED - Need manual restart
+## 当前状态: 🏆 v17 BEST (0.8783)
+
+**v20 Running**: PID 92905, based on v17_osworld.py
 
 **Current Best**: v17 (0.8783) 🏆
-**Runtime**: 1260.7s | Success: 30/34 (88.2%)
-
 | Category | Score |
 |----------|-------|
 | ARC-AGI-3 | 0.856 |
@@ -41,12 +41,12 @@
 | OSWorld-Tool-Hard | 0.900 |
 | ZeroBench | 0.900 |
 
-**Issues**:
-- v28 crashed: `name 'features' is not defined` bug
-- v26 crashed: Catastrophic regression (0.4326)
-- v16 run stuck at start (no output)
+**All versions vs v17**:
+- v19: 0.8779 (IMO 0.915 but OSWorld 0.300)
+- v20: 0.8608, v21: 0.8603, v22: 0.7559, v23: 0.8501
+- v25: 0.6608, v26: 0.4326 (crashed/regression)
 
-**To Resume**: Run `cd /root/.openclaw/workspace-mas && nohup python3 src/mas_v16_enhanced_scorer.py > run_v16_live.log 2>&1 &`
+**建议**: v17 holds best overall score. v20 running confirms.
 
 ---
 
