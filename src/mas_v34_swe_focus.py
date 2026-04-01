@@ -660,7 +660,7 @@ Provide a comprehensive multi-perspective analysis."""
                         elif benchmark_name == "GPQA-Diamond":
                             from mas_v14_adaptive import solve_gpqa as solver
                         elif benchmark_name == "OSWorld-Tool-Hard":
-                            from mas_v34_imo_swe import solve_osworld_v17 as solver
+                            solver = solve_osworld_v17
                         else:
                             continue
                         result = solver(self.llm, task)

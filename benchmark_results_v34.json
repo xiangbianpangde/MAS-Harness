@@ -1,0 +1,32 @@
+{
+  "generation": 15,
+  "overall_score": 0.8946655782312926,
+  "is_human_replaceable": true,
+  "is_expert_level": false,
+  "is_converged": false,
+  "best_generation": 0,
+  "timestamp": "2026-04-02T02:58:15",
+  "runtime_seconds": 1164.5746014118195,
+  "weights": {
+    "ARC-AGI-3": 0.25,
+    "BBEH": 0.2,
+    "HLE": 0.15,
+    "IMO-ANSWER": 0.15,
+    "SWE-Bench-Pro": 0.1,
+    "MATH-500": 0.08,
+    "GPQA-Diamond": 0.04,
+    "OSWorld-Tool-Hard": 0.02,
+    "ZeroBench": 0.01
+  },
+  "scores": {
+    "ARC-AGI-3": 0.8891156462585034,
+    "BBEH": 0.9,
+    "HLE": 1.0,
+    "IMO-ANSWER": 0.8038000000000001,
+    "SWE-Bench-Pro": 0.9866666666666667,
+    "MATH-500": 0.72,
+    "GPQA-Diamond": 1.0,
+    "OSWorld-Tool-Hard": 0.85,
+    "ZeroBench": 0.855
+  }
+}
