@@ -24,24 +24,29 @@
 
 ---
 
-## 当前状态: ✅ v24 Failed - v20 Still Best
+## 当前状态: ⚠️ v24 FAILED - Back to v20
 
-**Latest Results**:
-| Version | Overall | IMO | SWE | Notes |
-|---------|---------|-----|-----|-------|
-| v20 | **0.8801** ⭐ | 0.797 | 0.883 | **BEST** |
-| v21 | 0.8603 | 0.805 | 0.650 | Regression |
-| v22 | 0.7559 | 0.786 | 0.857 | API failure |
-| v23 | 0.8501 | 0.676 | 0.790 | Prompt hurt |
-| v24 | FAILED | - | - | Multi-agent overhead |
+**Current Best**: v20 = **0.8801** (Gen 17, 2026-04-01 08:14)
 
-**Analysis**: 
-- **v20 remains the best at 0.8801**
-- All optimization attempts (v21-v23) failed
-- Multi-agent paradigm (v24) failed due to overhead
-- **Convergence achieved**: v20 is the local optimum
+**Score History**:
+| Version | Score | Notes |
+|---------|-------|-------|
+| v16 | 0.8680 | SWE fix |
+| v17 | 0.8693 | MATH improved |
+| v19 | 0.8779 | - |
+| **v20** | **0.8801** | **BEST** |
+| v21 | 0.8603 | ↓ Regression |
+| v22 | 0.7559 | ↓↓ Major regression |
+| v23 | 0.8501 | ↓ Partial recovery |
+| v24 | FAILED | Multi-agent timeout (IMO tasks >1000s) |
 
-**Recommendation**: Accept v20 as final architecture. Further optimization unlikely without new paradigm.
+**v20 Weaknesses (重点改进)**:
+| Category | Score | Weight | Status |
+|----------|-------|--------|--------|
+| OSWorld-Tool-Hard | **0.300** | 2% | ❌ 重点 |
+| IMO-ANSWER | 0.797 | 15% | ⚠️ |
+
+**建议**: v25 聚焦 OSWorld 改进（目前唯一 0.300 的类别）
 
 ---
 

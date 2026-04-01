@@ -830,3 +830,33 @@ Iterations from v16 to v24:
 
 **Recommendation**: Accept v20 as the final architecture for this paradigm.
 
+
+---
+
+## v16-v23: Continued Evolution (2026-04-01)
+
+| Version | Overall Score | Key Changes |
+|---------|---------------|-------------|
+| v16 | 0.8577 → 0.8680 | SWE-Bench fix (FIX_INDICATORS) |
+| v17 | **0.8693** | MATH-500 improved (0.72→0.86), OSWorld still 0.30 |
+| v19 | 0.8779 | Continued improvement |
+| v20 | **0.8801** | **NEW BEST** (Gen 17) |
+| v21 | 0.8603 | ↓ Regression |
+| v22 | 0.7559 | ↓ Major regression |
+| v23 | 0.8501 | ↓ Partial recovery |
+
+**v20 Best Breakdown**:
+| Category | Score | Weight |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.876 | 25% |
+| BBEH | 0.900 | 20% |
+| HLE | 1.000 | 15% |
+| IMO-ANSWER | 0.797 | 15% |
+| SWE-Bench-Pro | **0.883** | 10% |
+| MATH-500 | 0.860 | 8% |
+| GPQA-Diamond | 1.000 | 4% |
+| OSWorld-Tool-Hard | **0.300** | 2% |
+| ZeroBench | 0.850 | 1% |
+
+**Weaknesses Remaining**: OSWorld (0.300), IMO (0.797)
+**Status**: v20 is current best; need to focus on OSWorld
