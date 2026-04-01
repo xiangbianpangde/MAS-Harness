@@ -1,0 +1,72 @@
+============================================================
+MAS v23.0 - IMO Refinement
+============================================================
+
+Task Summary:
+  ARC-AGI-3: 3 tasks
+  BBEH: 4 tasks
+  HLE: 5 tasks
+  IMO-ANSWER: 5 tasks
+  SWE-Bench-Pro: 3 tasks
+  MATH-500: 5 tasks
+  GPQA-Diamond: 3 tasks
+  OSWorld-Tool-Hard: 3 tasks
+  ZeroBench: 3 tasks
+  TOTAL: 34 tasks
+[ARC-AGI-3] 00576224: 1.00 (26.8s)
+[ARC-AGI-3] 009d5c81: 0.87 (127.4s)
+[ARC-AGI-3] 03560426: 0.72 (203.9s)
+[BBEH] long_range_dependency: 1.00 (27.1s)
+[BBEH] multi_step_inference: 1.00 (13.4s)
+[BBEH] temporal_reasoning: 0.60 (19.5s)
+[BBEH] negation_tracking: 1.00 (19.8s)
+[HLE] legal_case_analysis: 1.00 (23.3s)
+[HLE] medical_diagnosis: 1.00 (22.2s)
+[HLE] financial_risk_assessment: 1.00 (35.3s)
+[HLE] legal_contract_interpretation: 1.00 (14.7s)
+[HLE] medical_treatment_selection: 1.00 (36.4s)
+[IMO-ANSWER] number_theory_proof: 0.90 (84.3s)
+[IMO-ANSWER] geometry_proof: 0.68 (66.4s)
+[IMO-ANSWER] combinatorics_proof: 0.70 (84.2s)
+[IMO-ANSWER] algebra_proof: 0.85 (79.9s)
+[IMO-ANSWER] diophantine_equation: 0.25 (182.3s)
+[SWE-Bench-Pro] django_queryset_fix: 0.95 (19.4s)
+[SWE-Bench-Pro] react_state_update: 0.42 (47.5s)
+[SWE-Bench-Pro] python_sort_stability: 1.00 (57.7s)
+[MATH-500] algebra_easy: 1.00 (16.2s)
+[MATH-500] calculus_medium: 1.00 (19.8s)
+[MATH-500] combinatorics_hard: 0.30 (32.5s)
+[MATH-500] number_theory_medium: 1.00 (33.1s)
+[MATH-500] geometry_hard: 1.00 (32.6s)
+[GPQA-Diamond] physical_chemistry: 1.00 (44.2s)
+[GPQA-Diamond] quantum_mechanics: 1.00 (36.6s)
+[GPQA-Diamond] organic_chemistry: 1.00 (34.4s)
+[OSWorld-Tool-Hard] file_operations: 0.30 (7.2s)
+[OSWorld-Tool-Hard] process_management: 0.30 (13.2s)
+[OSWorld-Tool-Hard] network_config: 0.30 (9.8s)
+[ZeroBench] cross_domain_legal_tech: 0.90 (71.7s)
+[ZeroBench] cross_domain_medical_ai: 0.90 (65.7s)
+[ZeroBench] cross_domain_climate_econ: 1.00 (52.4s)
+
+================================================================================
+MAS v23.0 - IMO Refinement
+================================================================================
+Runtime: 1660.8s (27.7 min)
+Tasks: 34 | Success: 26 (76.5%)
+
+SCORES:
+  ARC-AGI-3:        0.862
+  BBEH:             0.900
+  HLE:              1.000
+  IMO-ANSWER:       0.676  <- Target: 0.85+
+  SWE-Bench-Pro:    0.790  <- Keep: 0.88+
+  MATH-500:         0.860
+  GPQA-Diamond:     1.000
+  OSWorld-Tool-Hard:0.300
+  ZeroBench:        0.933
+
+OVERALL: 0.8501
+================================================================================
+
+
+Saved to: /root/.openclaw/workspace-mas/benchmark_results_v23.json
