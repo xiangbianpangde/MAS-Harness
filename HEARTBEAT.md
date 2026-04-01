@@ -24,19 +24,21 @@
 
 ---
 
-## 当前状态: 🔍 v28 DEBUGGING (stdout buffering issue)
+## 当前状态: 🔄 v28 RUNNING (slow but working)
 
 **BEST: v17 @ 0.8692** 🏆
 
-**v28 Issue**: Script hangs after "TOTAL: 34 tasks" when run directly
-- Inline test with 1-2 tasks WORKS (completes in ~13s)
-- Full script (34 tasks) hangs - but process stays alive
-- With `python3 -u` and `PYTHONUNBUFFERED=1`, shows "TOTAL: 34 tasks" then hangs
-- No crash, no error - just hangs silently
+**v28 Status**: NOT hanging - it was just slow!
+- Processes multiple tasks: seen 3 ARC tasks + 4 BBEH tasks processed
+- Each task takes ~20-30s for LLM calls
+- Full run estimated: 34 tasks × ~25s = ~15 minutes minimum
 
-**Status**: No test currently running
+**v28 Debug Findings**:
+- "Hangs" after TOTAL due to slow LLM API calls
+- stdout buffering caused delay in seeing output
+- With `PYTHONUNBUFFERED=1`, can see progress
 
-**Analysis**: Likely an stdout buffering issue causing the script to appear to hang when run in background with nohup. The actual LLM calls may still be happening but output is not visible.
+**Status**: v28 running in background
 
 ---
 

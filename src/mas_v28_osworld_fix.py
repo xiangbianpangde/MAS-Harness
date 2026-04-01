@@ -446,10 +446,12 @@ class MASOrchestratorV17:
     """MAS v15 with enhanced scorers for weak categories."""
     
     def __init__(self):
+        print("DEBUG: __init__ started", flush=True)
         self.llm = V14LLM(
             api_key="sk-cp-ZNEhSAB4-p-nraTwKzWoeLCpFPE-wY8If5v_1qxUvnW4_h0ryAunuH9_Vn-SItYx-D1AGFdRhD_6fn_9LhkpWG2yy6kUeRZBEjq8aFCUpruT5aFlM-Y5KDc",
             base_url="https://api.minimax.chat/v1/text/chatcompletion_v2"
         )
+        print("DEBUG: LLM created", flush=True)
         self.analyzer = TaskAnalyzer()
         self.optimizer = PromptOptimizer()
         self.consecutive_stable_gens = 0
@@ -580,6 +582,7 @@ Provide a comprehensive multi-perspective analysis."""
     
     def run_benchmark(self, tasks: Dict, time_limit: int = 3600) -> Tuple[BenchmarkScores, float, List[TaskResult]]:
         """Run benchmark with v15 enhancements."""
+        print("DEBUG: run_benchmark started", flush=True)
         scores = BenchmarkScores()
         all_results = []
         start_time = time.time()
@@ -594,6 +597,7 @@ Provide a comprehensive multi-perspective analysis."""
                     break
                 
                 try:
+                    print(f"DEBUG: Solving {benchmark_name}...", flush=True)
                     if benchmark_name == "IMO-ANSWER":
                         result = self.solve_imo_v15(task)
                     elif benchmark_name == "SWE-Bench-Pro":
@@ -603,8 +607,10 @@ Provide a comprehensive multi-perspective analysis."""
                     else:
                         # Delegate to v14 handlers
                         from mas_v14_adaptive import solve_imo, solve_swe, solve_zerobench
+                        print(f"DEBUG: Importing solver for {benchmark_name}...", flush=True)
                         if benchmark_name == "ARC-AGI-3":
                             from mas_v14_adaptive import solve_arc_real as solver
+                            print("DEBUG: solve_arc_real imported", flush=True)
                         elif benchmark_name == "BBEH":
                             from mas_v14_adaptive import solve_bbeh as solver
                         elif benchmark_name == "HLE":
@@ -725,9 +731,11 @@ if __name__ == "__main__":
         print(f"  {bm}: {len(tl)} tasks")
     print(f"  TOTAL: {sum(len(v) for v in tasks.values())} tasks")
     
+    print("DEBUG: Before orch creation", flush=True)
     orch = MASOrchestratorV17()
+    print("DEBUG: orch created", flush=True)
     sys.stdout.flush()
-    print("DEBUG: About to create orch", flush=True)
+    print("DEBUG: Starting benchmark...", flush=True)
     start = time.time()
     TIME_LIMIT = 3600
     
