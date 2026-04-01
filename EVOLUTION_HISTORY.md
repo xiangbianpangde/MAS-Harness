@@ -788,3 +788,45 @@ from mas_v14_adaptive import solve_math as solver
 ## v24 Planning
 **Recommendation**: Accept v20 as the best. Further optimization likely won't improve without paradigm shift.
 
+
+---
+
+## v24.0 - Multi-Agent Supervisor - FAILED
+**Date**: 2026-04-01 10:18
+**Status**: ❌ FAILURE (Paradigm exploration)
+
+Multi-agent supervisor approach failed:
+- Massive overhead from supervisor routing
+- Tasks taking 860-1000+ seconds each
+- ARC tasks got 0.00 due to routing issues
+- Never completed
+
+**Conclusion**: Single agent with specialized prompts (v20) is superior.
+
+---
+
+## Current Best: v20 @ 0.8801
+
+---
+
+## Summary: v20 is the optimal architecture
+
+Iterations from v16 to v24:
+- v16.1: 0.8680 (baseline)
+- v17: 0.8661 (regression)
+- v19: 0.8779 (IMO improvement)
+- v20: **0.8801** ⭐ (best - SWE fix + IMO balance)
+- v21: 0.8603 (regression)
+- v22: 0.7559 (API failure)
+- v23: 0.8501 (prompt refinement failed)
+- v24: FAILED (paradigm shift attempt failed)
+
+**Key Learnings**:
+1. IMO technique detection works (v19 got 0.915 on IMO)
+2. SWE step-prompt works (v20 got 0.883 on SWE)
+3. Combining approaches or changing prompts hurts more than helps
+4. Multi-agent adds overhead without benefit
+5. v20 is a local optimum that's hard to improve
+
+**Recommendation**: Accept v20 as the final architecture for this paradigm.
+
