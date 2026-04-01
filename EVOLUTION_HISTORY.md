@@ -716,3 +716,43 @@ from mas_v14_adaptive import solve_math as solver
 3. Try ensemble: run both and pick better
 4. Focus on improving weak categories (OSWorld 0.300)
 
+
+---
+
+## v22.0 - Ensemble (v19 IMO + v20 SWE) - FAILED
+**Date**: 2026-04-01 09:09
+**Status**: ❌ FAILURE (0.7559 vs v20's 0.8801)
+
+| Category | v20 | v22 | Change |
+|----------|-------|-----|--------|
+| Overall | **0.8801** | 0.7559 | -0.1242 ❌ |
+| IMO-ANSWER | 0.797 | 0.786 | -0.011 |
+| SWE-Bench-Pro | 0.883 | 0.857 | -0.026 |
+| MATH-500 | **0.860** | 0.440 | -0.420 ❌ |
+| GPQA-Diamond | **1.000** | 0.533 | -0.467 ❌ |
+
+**Analysis**: API rate limiting or errors caused MATH/GPQA/ARC to fail. Non-IMO/SWE tasks got 0.30 with 0.6s times (fallback scores). Ensemble approach too aggressive.
+
+---
+
+## Current Best: v20 @ 0.8801
+
+---
+
+## Key Learnings
+1. v19: IMO technique detection (+0.134 on IMO)
+2. v20: SWE step-prompt (+0.200 on SWE)  
+3. v21: IMO improved slightly, SWE regressed badly
+4. v22: Ensemble failed due to API issues
+
+**Conclusion**: v20 is the best. Don't try to optimize everything at once.
+
+---
+
+## v23 Planning
+**Goal**: Stick with v20 architecture, try small refinements
+**Options**:
+1. Keep v20 as-is (0.8801)
+2. Try small IMO prompt tweaks
+3. Focus on improving OSWorld (only 2% weight though)
+
