@@ -24,29 +24,26 @@
 
 ---
 
-## 当前状态: 🚨 v30 RUNNING (API SLOW)
+## 当前状态: ✅ v17 BEST (0.8783) - No test running
 
-**v30** (IMO+SWE focus, PID 126629):
-- Started: 22:47, running ~22 min
-- Based on: v17 (0.8783 best)
-- Changes: Improved IMO technique hints, Better SWE fix detection
-- Issue: LLM API seems slow, process waiting on network I/O
-- Command: `python3 -u src/mas_v30_imo_swe_focus.py`
+**Status**: No test currently running
+**v17 结果** (最佳, 0.8783):
+| Category | Score | Weight |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.856 | 25% |
+| BBEH | 0.900 | 20% |
+| HLE | 1.000 | 15% |
+| IMO-ANSWER | 0.826 | 15% |
+| SWE-Bench-Pro | 0.747 | 10% |
+| MATH-500 | 0.860 | 8% |
+| GPQA-Diamond | 1.000 | 4% |
+| OSWorld-Tool-Hard | 0.900 | 2% |
+| ZeroBench | 0.900 | 1% |
 
-**v17 结果** (基准, 0.8783):
-| Category | Score |
-|----------|-------|
-| ARC-AGI-3 | 0.856 |
-| BBEH | 0.900 |
-| HLE | 1.000 |
-| IMO-ANSWER | 0.826 |
-| SWE-Bench-Pro | 0.747 |
-| MATH-500 | 0.860 |
-| GPQA-Diamond | 1.000 |
-| OSWorld-Tool-Hard | 0.900 |
-| ZeroBench | 0.900 |
+**v30 失败**: exec() 方式运行 v16 代码，未使用 v17，导致结果错误
+**v29**: 0.8493 (OSWorld 1.0, SWE 0.817, 但 MATH 0.38 退步)
 
-**收敛状态**: v17 保持最佳，v30 若超过则发布
+**建议**: 直接复制 v17 为 v31，做最小修改
 
 ---
 
