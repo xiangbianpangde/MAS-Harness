@@ -24,16 +24,25 @@
 
 ---
 
-## 当前状态: 🔄 v25 Running
+## 当前状态: 🔄 v25 Running (Self-Consistency Voting)
 
-**v25 特性**: Self-Consistency Voting
-- IMO任务生成3个答案
-- 投票选择最一致的答案
-- 基于v20架构
+**v25 PID**: 64268 | Started: 18:45 | Elapsed: ~3min
+**Status**: ARC-AGI-3 task 1 done (1.00), continuing...
 
-**运行时间**: 预计30-40分钟
+**历史排名** (Top 5):
+| Version | Overall | Key Feature |
+|---------|---------|-------------|
+| v17 | **0.8693** | Current best |
+| v16 | 0.8680 | Enhanced scorers |
+| v20 | 0.8608 | Supervisor routing |
+| v21 | 0.8603 | Supervisor routing |
+| v23 | 0.8501 | Memory-enhanced |
 
-**历史最佳**: v20 @ 0.8801
+**v28 Bug**: `features` not defined in solve_math_v17 call (line 619)
+- 原因: `features` variable out of scope
+- Fix: Need to pass proper `features` from task analysis
+
+**v26 Regression**: 0.4326 (代码/配置错误)
 
 ---
 
