@@ -991,3 +991,45 @@ Iterations from v16 to v24:
 - ZeroBench: not reached
 
 **Conclusion**: v17 (0.8692) remains the best. v28 has a bug that needs fixing.
+
+---
+
+## v16.1 - Enhanced Benchmark (Re-run)
+**Date**: 2026-04-01
+**Overall**: **0.8680** (improved from 0.8577)
+**Runtime**: 1146s
+
+| Category | Score | Change |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.859 | -0.020 |
+| BBEH | 0.900 | same |
+| HLE | 1.000 | same |
+| IMO-ANSWER | 0.787 | -0.016 |
+| SWE-Bench-Pro | **0.817** | **+0.067** ⬆️ |
+| MATH-500 | **0.860** | **+0.140** ⬆️ |
+| GPQA-Diamond | 1.000 | same |
+| OSWorld-Tool-Hard | 0.300 | same |
+| ZeroBench | 0.880 | -0.003 |
+
+**Key**: MATH-500 and SWE-Bench-Pro improved significantly!
+
+---
+
+## v17.0 - OSWorld Focus
+**Date**: 2026-04-01 (17:04)
+**Overall**: **0.8693** (slightly improved from v16's 0.8680)
+**Runtime**: 1418s
+
+| Category | Score | Change |
+|----------|-------|--------|
+| ARC-AGI-3 | 0.862 | +0.003 |
+| BBEH | 0.900 | same |
+| HLE | 1.000 | same |
+| IMO-ANSWER | 0.806 | +0.020 |
+| SWE-Bench-Pro | 0.790 | -0.027 |
+| MATH-500 | 0.860 | same |
+| GPQA-Diamond | 1.000 | same |
+| OSWorld-Tool-Hard | 0.300 | same | ← no improvement
+| ZeroBench | **0.900** | **+0.020** ⬆️ |
+
+**Analysis**: OSWorld still stuck at 0.3 despite improved solver. The expected_command might be too specific.
