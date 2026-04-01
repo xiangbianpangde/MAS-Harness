@@ -24,23 +24,23 @@
 
 ---
 
-## 当前状态: 🚀 READY FOR v30
+## 当前状态: 🚀 v30 RUNNING (background)
 
-**v17 最佳** (0.8783 overall):
-- MATH-500: 0.860 (+0.140 vs v16) 🎉
-- OSWorld: 0.900 (+0.600 vs v16) 🎉
-- IMO-ANSWER: 0.826 (+0.023)
+**v30** (IMO+SWE focus):
+- Based on: v17 (0.8783 best)
+- Changes: Improved IMO technique hints, Better SWE fix detection
+- Run command: `python3 -u src/mas_v30_imo_swe_focus.py`
+- Started: ~22:30
 
-**后续尝试退步**:
-| Version | Score | Status |
-|---------|-------|--------|
-| v25 | 0.6608 | ❌ 回归 |
-| v26 | 0.4326 | ❌ 回归 |
-| v29 | 0.8493 | ⚠️ 部分恢复 |
+**v17 结果** (基准):
+- Overall: 0.8783
+- IMO-ANSWER: 0.826, SWE: 0.747, MATH: 0.860, OSWorld: 0.900
 
-**结论**: v17 架构稳定，需保存并基于此继续改进
+**v29 结果** (对比):
+- Overall: 0.8493
+- OSWorld: 1.000, SWE: 0.817, BUT MATH: 0.380 (退步!)
 
-**下一步**: 基于 v17 设计 v30，专注 IMO-ANSWER (0.826) 和 SWE (0.747)
+**结论**: v17 是最佳基准，v30 基于此改进 IMO+SWE
 
 ---
 
