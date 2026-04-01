@@ -1358,3 +1358,36 @@ Iterations from v16 to v24:
 | v32 | 0.87xx | 0.733 | 0.835 | 0.900 |
 | v33 | 0.8848 | 0.733 | 0.835 | 0.900 |
 | **v34** | **0.8947** | **0.987** | 0.804 | 0.850 |
+
+---
+
+## v17-v34: Enhanced Benchmark Evolution (2026-04-01 ~ 2026-04-02)
+
+| Version | Overall Score | Key Changes |
+|---------|---------------|-------------|
+| v16 | 0.8680 | Enhanced scorers |
+| v17 | 0.8750 | OSWorld improvement attempt |
+| v25 | 0.6608 | ❌ Regression |
+| v26 | 0.4326 | ❌ Major regression |
+| v29 | 0.8493 | Recovery |
+| v31 | 0.8570 | Clean version |
+| v32 | 0.8634 | Fixed |
+| v33 | 0.8848 | IMO + SWE focus |
+| **v34** | **0.8947** | **🏆 NEW BEST** - SWE-Bench 0.987 (+0.253) |
+
+### v34 Detailed Results (34 tasks, 91.2% success)
+| Category | Score | Weight | Change |
+|----------|-------|--------|--------|
+| ARC-AGI-3 | 0.889 | 25% | +0.007 |
+| BBEH | 0.900 | 20% | 0.000 |
+| HLE | 1.000 | 15% | 0.000 |
+| IMO-ANSWER | 0.804 | 15% | -0.031 |
+| SWE-Bench | **0.987** | 10% | **+0.253** 🚀 |
+| MATH-500 | 0.720 | 8% | 0.000 |
+| GPQA | 1.000 | 4% | 0.000 |
+| OSWorld | 0.850 | 2% | -0.050 |
+| ZeroBench | 0.855 | 1% | -0.028 |
+
+**Runtime**: 1164.6s
+**Success Rate**: 91.2% (31/34)
+**Status**: No test running, ready for v35
