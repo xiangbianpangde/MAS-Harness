@@ -24,36 +24,30 @@
 
 ---
 
-## 当前状态: ✅ COMPLETED - v20 is Final Best
+## 当前状态: ⏸️ v24 Ready - No Test Running
 
-**Current Best**: v20 = **0.8801** (Gen 17, 2026-04-01 08:14)
+**v20 Re-run Results** (验证):
+- Overall: **0.8608** (21.3 min runtime)
+- Success: 27/34 (79.4%)
 
-**Score History**:
-| Version | Score | Notes |
-|---------|-------|-------|
-| v16.1 | 0.8680 | Baseline |
-| v17 | 0.8661 | Regression |
-| v19 | 0.8779 | IMO improvement |
-| **v20** | **0.8801** | **BEST** |
-| v21 | 0.8603 | Regression |
-| v22 | 0.7559 | API failure |
-| v23 | 0.8501 | Regression |
-| v24 | FAILED | Multi-agent overhead |
-
-**v20 Score Breakdown**:
-| Category | Score | Weight |
+| Category | Score | Status |
 |----------|-------|--------|
-| ARC-AGI-3 | 0.876 | 25% |
-| BBEH | 0.900 | 20% |
-| HLE | 1.000 | 15% |
-| IMO-ANSWER | 0.797 | 15% |
-| SWE-Bench-Pro | 0.883 | 10% |
-| MATH-500 | 0.860 | 8% |
-| GPQA-Diamond | 1.000 | 4% |
-| OSWorld-Tool-Hard | 0.300 | 2% |
-| ZeroBench | 0.850 | 1% |
+| ARC-AGI-3 | 0.879 | ✅ |
+| BBEH | 0.900 | ✅ |
+| HLE | 1.000 | ✅ |
+| IMO-ANSWER | 0.781 | ⚠️ |
+| SWE-Bench-Pro | 0.703 | ⚠️ |
+| MATH-500 | 0.860 | ✅ |
+| GPQA-Diamond | 1.000 | ✅ |
+| OSWorld-Tool-Hard | **0.300** | ❌ |
+| ZeroBench | 0.867 | ✅ |
 
-**结论**: v20 已达本地最优，后续优化需新范式转变。已标记为 v1.0。
+**v20 Original**: 0.8801 | **v20 Re-run**: 0.8608 (variation)
+
+**v24 Multi-Agent Supervisor**: 
+- New paradigm: Supervisor routes to Agent_A/B/C
+- Ready to test but never ran successfully (no output)
+- 需要调试 v24 的输出问题
 
 ---
 

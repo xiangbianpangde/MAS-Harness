@@ -860,3 +860,32 @@ Iterations from v16 to v24:
 
 **Weaknesses Remaining**: OSWorld (0.300), IMO (0.797)
 **Status**: v20 is current best; need to focus on OSWorld
+
+---
+
+## v21-v23: Oscillation and Regression
+
+| Version | Overall | IMO | SWE | OSWorld | Notes |
+|---------|---------|-----|-----|---------|-------|
+| v20 | **0.8801** | 0.797 | 0.883 | 0.300 | Best overall |
+| v21 | 0.8603 | 0.803 | 0.817 | 0.300 | IMO improved, SWE regressed |
+| v22 | 0.7559 | 0.803 | 0.750 | 0.300 | Major SWE regression |
+| v23 | 0.8501 | 0.676 | 0.790 | 0.300 | IMO dropped significantly |
+
+**Analysis**: Fine-tuning prompts causes oscillation between categories. Need paradigm shift.
+
+---
+
+## v24.0 - Multi-Agent Supervisor (NEW PARADIGM)
+**Architecture**: Supervisor + Agent_A/B/C routing
+**Status**: Ready to test
+**Based on**: v20 (0.8801) + new multi-agent routing idea
+
+---
+
+## v20 Re-run Verification (2026-04-01 12:34)
+- **Overall**: 0.8608 (vs original 0.8801)
+- **Runtime**: 1275.6s (21.3 min)
+- **Success**: 27/34 (79.4%)
+- **Key Finding**: SWE regression in re-run (0.703 vs 0.883), system has variance
+- **OSWorld**: Still 0.300 (all 3 tasks)
