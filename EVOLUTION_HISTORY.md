@@ -756,3 +756,35 @@ from mas_v14_adaptive import solve_math as solver
 2. Try small IMO prompt tweaks
 3. Focus on improving OSWorld (only 2% weight though)
 
+
+---
+
+## v23.0 - IMO Prompt Refinement - FAILED
+**Date**: 2026-04-01 09:42
+**Status**: ❌ FAILURE (0.8501 vs v20's 0.8801)
+
+| Category | v20 | v23 | Change |
+|----------|-------|-----|--------|
+| Overall | **0.8801** | 0.8501 | -0.0300 ❌ |
+| IMO-ANSWER | 0.797 | 0.676 | -0.121 ❌ |
+| SWE-Bench-Pro | 0.883 | 0.790 | -0.093 ❌ |
+
+**Analysis**: Prompt changes were counterproductive. v20's prompts are optimal.
+
+---
+
+## Current Best: v20 @ 0.8801
+
+---
+
+## Key Learnings
+1. v20 architecture is optimal for current benchmark
+2. Prompt refinements tend to hurt rather than help
+3. IMO and SWE are sensitive to prompt changes
+4. v20's balance is hard to improve upon
+
+---
+
+## v24 Planning
+**Recommendation**: Accept v20 as the best. Further optimization likely won't improve without paradigm shift.
+
