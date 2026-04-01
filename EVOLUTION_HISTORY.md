@@ -1254,3 +1254,22 @@ Iterations from v16 to v24:
 **Success**: 26/34 (76.5%)
 
 **Weaknesses still**: OSWorld (0.300), IMO (0.787)
+
+---
+
+## v17 - v32 Evolution Summary (2026-04-01)
+
+| Version | Overall | Key Changes |
+|---------|---------|-------------|
+| v16 | 0.8577 | Baseline with improved OSWorld |
+| **v17** | **0.8750** | **NEW BEST** - OSWorld 0.300→0.850, MATH 0.720→0.860 |
+| v25 | 0.6608 | ❌ Regression |
+| v29 | 0.8493 | Slight regression |
+| v31 | 0.8570 | Back to v16 level |
+| v32 | 0.8634 | Slight improvement over v16 |
+| v33 | 🔄 Running | IMO/SWE focused improvements |
+
+**v33 Focus**: Improve IMO (0.791) and SWE (0.720) solvers with:
+- Better technique hints for IMO
+- More structured proof format
+- Enhanced SWE context and prompts
