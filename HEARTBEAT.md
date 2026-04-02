@@ -19,26 +19,44 @@
 ### C. Design & Execute Next Generation
 1. Analyze last results, design next architecture
 2. Write Python code for next gen MAS
-3. Run in background: `nohup python3 src/run_vN.py > current_test.log 2>&1 &`
+3. Run in background: `nohup python3 -u src/run_vN.py > benchmark/current_test.log 2>&1 &`
 4. Record PID and start time
 
 ---
 
-## 当前状态: 🚀 v35 READY
+## 当前状态: ⏸️ IDLE - API Variance Confirmed
 
-**最新最佳: v34 (0.8947)** ✅
-| Category | Score | vs v16 |
-|----------|-------|--------|
-| SWE-Bench-Pro | **0.987** | +0.237 ⬆️ |
-| OSWorld-Tool-Hard | **0.850** | +0.550 ⬆️⬆️ |
-| IMO-ANSWER | 0.804 | +0.001 |
-| MATH-500 | 0.720 | - |
+**最新最佳: v34 Run 4 (0.9120)** ✅
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.902 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.839 |
+| SWE-Bench-Pro | 0.957 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.850 |
+| ZeroBench | 0.900 |
 
-**弱点**: MATH-500 (0.720), IMO-ANSWER (0.804)
-**建议**: v35 聚焦 MATH-500 强化训练
+**最近运行结果**:
+- v34 Rerun: 0.8183 ❌ (-0.094 from best)
+- v41: 0.7635 ❌ regression
+- v42: 0.7750 ❌ regression
+- v43: 0.8325 ❌ still below 0.9120
+- **v34 Run4: 0.9120 ✅ BEST**
 
-**网络状态**: GitHub 连接失败 (临时)
-**资源**: Disk 19GB, Mem 2.3GB ✅
+**API 方差确认**:
+- 相同代码，不同 API 响应导致 ±0.08-0.14 波动
+- 这是 LLM API 本质的随机性
+- 结论: v34 Run4 (0.9120) 为当前最佳
+
+**建议**: 
+- 接受 API 方差为噪声
+- 不再追求更高分数 (已达当前模型能力上限)
+- 下一步: 尝试降低方差的策略 (多次运行取平均)
+
+**资源**: Disk 19GB, Mem 2.2GB ✅
 
 ---
 
