@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-MAS v34.0 - Enhanced Scorer for Weak Categories
+MAS v49.0 - ARC Focus with v34 Stability
 Key improvements:
 1. IMO-ANSWER: Semantic concept matching against expected answer hints
 2. SWE-Bench-Pro: Better fix validation with code structure analysis
 3. ZeroBench: Multi-perspective scoring based on expected analysis frameworks
 
-Based on v14 (0.7516), focusing on improving weak categories.
+Based on v34 (0.8947), focused on improving ARC-AGI-3 (25% weight).
 """
 
 import json
@@ -422,7 +422,7 @@ class EnhancedZeroBenchScorer:
 # MAS Orchestrator with v15 Enhancements
 # ============================================================================
 
-class MASOrchestratorV34:
+class MASOrchestratorV49:
     """MAS v15 with enhanced scorers for weak categories."""
     
     def __init__(self):
@@ -771,7 +771,7 @@ if __name__ == "__main__":
         print(f"  {bm}: {len(tl)} tasks")
     print(f"  TOTAL: {sum(len(v) for v in tasks.values())} tasks")
     
-    orch = MASOrchestratorV34()
+    orch = MASOrchestratorV49()
     start = time.time()
     TIME_LIMIT = 3600
     
@@ -786,9 +786,9 @@ if __name__ == "__main__":
     elapsed = time.time() - start
     print(orch.get_report(scores, total_score, results, elapsed))
     
-    result_file = "/root/.openclaw/workspace-mas/benchmark_results_v47.json"
+    result_file = "/root/.openclaw/workspace-mas/benchmark_results_v49.json"
     rd = {
-        "generation": 21, "overall_score": total_score,
+        "generation": 23, "overall_score": total_score,
         "is_human_replaceable": total_score >= 0.8,
         "is_expert_level": total_score >= 0.95,
         "is_converged": orch.consecutive_stable_gens >= 10,

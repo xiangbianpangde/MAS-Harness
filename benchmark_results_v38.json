@@ -1,12 +1,12 @@
 {
   "generation": 15,
-  "overall_score": 0.8209389115646258,
+  "overall_score": 0.8776989115646259,
   "is_human_replaceable": true,
   "is_expert_level": false,
   "is_converged": false,
   "best_generation": 0,
-  "timestamp": "2026-04-03T00:51:29",
-  "runtime_seconds": 1280.9413316249847,
+  "timestamp": "2026-04-02T09:19:22",
+  "runtime_seconds": 1278.4120652675629,
   "weights": {
     "ARC-AGI-3": 0.25,
     "BBEH": 0.2,
@@ -19,14 +19,14 @@
     "ZeroBench": 0.01
   },
   "scores": {
-    "ARC-AGI-3": 0.6224489795918368,
+    "ARC-AGI-3": 0.8891156462585034,
     "BBEH": 0.9,
-    "HLE": 1.0,
-    "IMO-ANSWER": 0.7924,
-    "SWE-Bench-Pro": 0.8166666666666665,
-    "MATH-500": 0.86,
+    "HLE": 0.8400000000000001,
+    "IMO-ANSWER": 0.7887999999999998,
+    "SWE-Bench-Pro": 0.9866666666666667,
+    "MATH-500": 0.8400000000000001,
     "GPQA-Diamond": 1.0,
     "OSWorld-Tool-Hard": 0.85,
-    "ZeroBench": 0.9
+    "ZeroBench": 0.8233333333333334
   }
 }

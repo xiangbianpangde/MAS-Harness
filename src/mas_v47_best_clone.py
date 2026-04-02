@@ -786,9 +786,9 @@ if __name__ == "__main__":
     elapsed = time.time() - start
     print(orch.get_report(scores, total_score, results, elapsed))
     
-    result_file = "/root/.openclaw/workspace-mas/benchmark_results_v47.json"
+    result_file = "/root/.openclaw/workspace-mas/benchmark_results_v34.json"
     rd = {
-        "generation": 21, "overall_score": total_score,
+        "generation": 15, "overall_score": total_score,
         "is_human_replaceable": total_score >= 0.8,
         "is_expert_level": total_score >= 0.95,
         "is_converged": orch.consecutive_stable_gens >= 10,
