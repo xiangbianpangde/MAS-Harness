@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: 🔄 v34 RERUN (PID: 620568, started 07:28)
+## 当前状态: 🔄 v34 RERUN (PID: 625836, started 07:49)
 
 **历史最佳**: v34 Run4 (0.9120) 🏆
 
@@ -32,16 +32,17 @@
 | Version | Score | Notes |
 |---------|-------|-------|
 | v34 Run4 | 0.9120 | Best stable |
+| v47 | 0.8997 | Latest |
 | v48 | 0.8896 | |
 | v49 | 0.8952 | |
-| v47 | 0.8250 | ARC-AGI variance (0.56) |
+| v47 (early) | 0.8250 | ARC-AGI variance |
 
 **问题**: v34 instability on ARC-AGI visual tasks (0.56-0.90 range)
 
-**v51状态: mas_v51_self_verify.py 已修复 (LLMClient args added)
+**v51状态**: mas_v51_self_verify.py exists (not run successfully yet)
 
 **策略**: 
-- Running v34 again to get stable high score
+- Running v34 to get stable high score
 - LLM variance causes ~1-2% fluctuation on visual tasks
 - Need to stabilize ARC-AGI handling
 
