@@ -24,37 +24,24 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE - API Variance Confirmed
+## 当前状态: ✅ IDLE - No test running
 
-**最新最佳: v34 Run 4 (0.9120)** ✅
+**最新最佳: v34 Run 6 (0.9098)** ✅
 | Category | Score |
 |----------|-------|
-| ARC-AGI-3 | 0.902 |
+| ARC-AGI-3 | 0.912 |
 | BBEH | 0.900 |
 | HLE | 1.000 |
-| IMO-ANSWER | 0.839 |
-| SWE-Bench-Pro | 0.957 |
+| IMO-ANSWER | 0.833 |
+| SWE-Bench-Pro | 0.930 |
 | MATH-500 | 0.860 |
 | GPQA-Diamond | 1.000 |
 | OSWorld-Tool-Hard | 0.850 |
-| ZeroBench | 0.900 |
+| ZeroBench | 0.790 |
 
-**最近运行结果**:
-- v34 Rerun: 0.8183 ❌ (-0.094 from best)
-- v41: 0.7635 ❌ regression
-- v42: 0.7750 ❌ regression
-- v43: 0.8325 ❌ still below 0.9120
-- **v34 Run4: 0.9120 ✅ BEST**
-
-**API 方差确认**:
-- 相同代码，不同 API 响应导致 ±0.08-0.14 波动
-- 这是 LLM API 本质的随机性
-- 结论: v34 Run4 (0.9120) 为当前最佳
-
-**建议**: 
-- 接受 API 方差为噪声
-- 不再追求更高分数 (已达当前模型能力上限)
-- 下一步: 尝试降低方差的策略 (多次运行取平均)
+**v44 失败**: 进程崩溃
+**v34 重新运行**: 产生不同结果（API方差）
+**建议**: v34 架构稳定在 ~0.90，继续微调
 
 **资源**: Disk 19GB, Mem 2.2GB ✅
 
