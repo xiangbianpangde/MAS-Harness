@@ -485,7 +485,10 @@ def run_benchmark():
     start_time = time.time()
     
     # Initialize LLM
-    llm = LLMClient()
+    llm = LLMClient(
+        api_key="sk-cp-ZNEhSAB4-p-nraTwKzWoeLCpFPE-wY8If5v_1qxUvnW4_h0ryAunuH9_Vn-SItYx-D1AGFdRhD_6fn_9LhkpWG2yy6kUeRZBEjq8aFCUpruT5aFlM-Y5KDc",
+        base_url="https://api.minimax.chat/v1/text/chatcompletion_v2"
+    )
     
     # Load benchmarks
     benchmarks = {}
