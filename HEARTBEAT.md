@@ -26,20 +26,19 @@
 
 ## 当前状态: 🔄 v55 RUNNING (PID: 96739, started 03:14)
 
-**历史最佳**: v52 **0.9166** 🏆
+**历史最佳**: v52 **0.9166** 🏆 (2026-04-10 00:32)
 
 **近期结果**:
 | Version | Score | Notes |
 |---------|-------|-------|
-| v52 | **0.9166** 🏆 | Best overall |
-| v54 | 0.8945 | Regressed |
-| v53 | 0.8151 | IMO=0.12 ❌, MATH=1.0 ✅ |
-| v55 | RUNNING | v52 + MATH verify |
+| v52 | **0.9166** 🏆 | Best ever |
+| v52 RUN2 | 0.9036 | Good |
+| v54 | 0.8945 | |
+| v53 | 0.8151 | IMO broke (0.12) |
 
-**关键发现**:
-- MATH verification WORKS: 0.86 → 1.0 (+0.14)
-- IMO validation BROKE: 0.84 → 0.12 (-0.72) → REJECT
-- v55策略: v52 core + MATH verification only
+**v53问题**: IMO-ANSWER dropped to 0.12 - my v53 solve_imo_v53 changes broke it
+
+**v55设计**: v52核心 + v53 MATH验证 (IMO来自v52，不是v53)
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 
