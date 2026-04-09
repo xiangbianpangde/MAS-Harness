@@ -247,7 +247,10 @@ class MASOrchestratorV53:
     """MAS v53 - Hybrid Ensemble combining v34 stability with v52 voting."""
     
     def __init__(self):
-        self.llm = LLMClient()
+        self.llm = LLMClient(
+            api_key="sk-cp-ZNEhSAB4-p-nraTwKzWoeLCpFPE-wY8If5v_1qxUvnW4_h0ryAunuH9_Vn-SItYx-D1AGFdRhD_6fn_9LhkpWG2yy6kUeRZBEjq8aFCUpruT5aFlM-Y5KDc",
+            base_url="https://api.minimax.chat/v1/text/chatcompletion_v2"
+        )
         self.consecutive_stable_gens = 0
         self.best_generation = 0
         
