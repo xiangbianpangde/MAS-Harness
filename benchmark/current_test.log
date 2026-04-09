@@ -1,5 +1,5 @@
 ============================================================
-MAS v52.0 ARC-Voting Benchmark
+MAS v55.0 - v52 Core + MATH Verification
 ============================================================
 
 Task Summary:
@@ -13,4 +13,3 @@ Task Summary:
   OSWorld-Tool-Hard: 3 tasks
   ZeroBench: 3 tasks
   TOTAL: 34 tasks
-  NOTE: ARC-AGI uses 3-vote voting for stability
