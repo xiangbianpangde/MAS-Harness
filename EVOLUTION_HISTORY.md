@@ -2623,3 +2623,26 @@ Recent attempts (v40-v43) to improve all failed.
 **Success Rate**: 91.2% (31/34 tasks)
 
 **Conclusion**: v34 performs consistently around 0.89-0.90 range. v34 Run4 (0.9120) was likely optimal run.
+
+## v34 Run5 (2026-04-09 22:48)
+
+**Status**: ❌ LOW - Overall **0.7595** (-0.1525 from best)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | **0.333** ❌ (1/3) |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.824 |
+| SWE-Bench-Pro | 0.873 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.900 |
+| ZeroBench | 0.850 |
+
+**Runtime**: 2001s (~33.4 min)
+**Success Rate**: 88.2% (30/34 tasks)
+
+**Root Cause**: ARC-AGI-3 = 0.333 (1/3 tasks). Classic API variance on visual tasks.
+
+**Conclusion**: v34 + MiniMax API on ARC-AGI has high variance (0.16-0.90 range). Non-visual categories stable. Need v52 with stabilized ARC handling or ensemble voting.

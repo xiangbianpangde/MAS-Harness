@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: 🔄 v34 RERUN (PID: 19295, started 22:14)
+## 当前状态: 🔄 v52 ARC-VOTING (PID: 28355, started 22:49)
 
 **历史最佳**: v34 Run4 (0.9120) 🏆
 
@@ -32,19 +32,15 @@
 | Version | Score | Notes |
 |---------|-------|-------|
 | v34 Run4 | 0.9120 | Best stable |
-| v47 | 0.8997 | Latest |
+| v47 | 0.8997 | |
 | v48 | 0.8896 | |
 | v49 | 0.8952 | |
-| v47 (early) | 0.8250 | ARC-AGI variance |
+| **v34 Run5** | **0.7595** | ARC-AGI=0.333 ❌ |
 
-**问题**: v34 instability on ARC-AGI visual tasks (0.56-0.90 range)
-
-**v51状态**: mas_v51_self_verify.py exists (not run successfully yet)
-
-**策略**: 
-- Running v34 to get stable high score
-- LLM variance causes ~1-2% fluctuation on visual tasks
-- Need to stabilize ARC-AGI handling
+**v52 核心改进**:
+- ARC-AGI: 3次独立调用，多样化prompt/temperature，多数投票
+- 其他类别: 完全继承v34 (稳定)
+- 目标: 解决ARC-AGI 0.16-0.90 variance问题
 
 **资源**: Disk 19GB ✅, Mem 2.4GB ✅
 
