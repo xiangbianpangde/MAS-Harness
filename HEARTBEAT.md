@@ -24,21 +24,20 @@
 
 ---
 
-## 当前状态: 🔄 v52 Running (PID: 87588, started 02:41)
+## 当前状态: 🔄 v52 RERUN (PID: 87588, started 02:41)
 
-**历史最佳**: v52 **0.9166** 🏆 (2026-04-10 00:32)
+**历史最佳**: v52 **0.9166** 🏆 (run2, 00:32 today)
 
 **近期结果**:
 | Version | Score | Notes |
 |---------|-------|-------|
-| v52 (00:32) | **0.9166** 🏆 | Best ever |
-| v54 | 0.8945 | ARC-AGI=0.882 |
-| v52 (02:40) | 0.8687 | New run |
-| v53 | 0.8151 | IMO-ANSWER=0.12 ❌ |
+| **v52** | **0.9166** 🏆 | run2, ARC-AGI=0.9233 |
+| v52 run1 | 0.9076 | |
+| v54 | 0.8945 | |
+| v53 | 0.8151 | CRASHED - IMO=0.12 disaster |
+| v34 Run4 | 0.9120 | |
 
-**v53问题**: IMO solver crashed (0.12 score) - v53 IMO enhancement broke something
-
-**v54结果**: Decent but not better than v52
+**v52 run3**: Currently running (started 02:41)
 
 **资源**: Disk 19GB ✅, Mem 2.4GB ✅
 
