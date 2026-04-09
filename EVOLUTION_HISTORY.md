@@ -2743,3 +2743,26 @@ Recent attempts (v40-v43) to improve all failed.
 
 ## v54 Design:
 Keep v52 core + MATH verification but revert IMO to v34 style
+
+## v54 Mixed Strategy (2026-04-10 01:48)
+
+**Status**: ⚠️ REGRESSION - Overall **0.8945** (-0.0221 from v52)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.8824 |
+| BBEH | 0.9000 |
+| HLE | 1.0000 |
+| IMO-ANSWER | 0.8486 |
+| SWE-Bench-Pro | **0.8167** ❌ |
+| MATH-500 | 0.8600 |
+| GPQA-Diamond | 1.0000 |
+| OSWorld-Tool-Hard | 0.8500 |
+| ZeroBench | 0.9167 |
+
+**Runtime**: 1281s (~21.4 min)
+**Success Rate**: 88.2% (30/34 tasks)
+
+**Root Cause**: SWE-Bench-Pro dropped significantly (0.8167 vs 0.9633 in v52)
+
+**Conclusion**: Mixed strategy caused regression. v52 remains best architecture. Need to preserve v52's approach.
