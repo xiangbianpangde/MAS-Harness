@@ -88,12 +88,15 @@ WORKING:"""
         score += 0.3
     
     return TaskResult(
+        task_id=task.get("task_id", "unknown"),
+        benchmark="IMO-ANSWER",
+        task_name=task.get("name", "imo"),
         success=score > 0.5,
-        answer=answer[:200],
+        final_output=answer[:200],
         score=min(1.0, score),
-        thinking=thinking[:2000],
+        reasoning_trace=thinking[:2000],
         tokens_used=tokens,
-        latency=time.time() - start
+        time_seconds=time.time() - start
     )
 
 # ============================================================================
@@ -145,12 +148,15 @@ Solve step by step. Format your final answer as: \\boxed{{ANSWER}}"""
         score += 0.3
     
     return TaskResult(
+        task_id=task.get("task_id", "unknown"),
+        benchmark="MATH-500",
+        task_name=task.get("name", "math"),
         success=score > 0.5,
-        answer=answer[:200],
+        final_output=answer[:200],
         score=min(1.0, score),
-        thinking=thinking1[:2000],
+        reasoning_trace=thinking1[:2000],
         tokens_used=tokens,
-        latency=time.time() - start
+        time_seconds=time.time() - start
     )
 
 # ============================================================================
@@ -220,7 +226,12 @@ OUTPUT GRID (your prediction):"""
     
     # Majority voting
     if not all_predictions:
-        return TaskResult(success=False, answer="", score=0.0, tokens_used=tokens_used, latency=time.time()-start)
+        return TaskResult(
+            task_id=task_id, benchmark="ARC-AGI-3",
+            task_name=task.get("name", "arc"),
+            success=False, final_output="", score=0.0,
+            tokens_used=tokens_used, time_seconds=time.time()-start
+        )
     
     # Use best score from votes
     best_idx = all_scores.index(max(all_scores)) if all_scores else 0
@@ -231,12 +242,14 @@ OUTPUT GRID (your prediction):"""
     answer = str(best_grid) if best_grid else ""
     
     return TaskResult(
+        task_id=task_id, benchmark="ARC-AGI-3",
+        task_name=task.get("name", "arc"),
         success=final_score >= 0.75,
-        answer=answer[:500],
+        final_output=answer[:500],
         score=final_score,
-        thinking=f"v53 voting: {len(all_predictions)} votes, best={final_score:.3f}",
+        reasoning_trace=f"v53 voting: {len(all_predictions)} votes, best={final_score:.3f}",
         tokens_used=tokens_used,
-        latency=time.time() - start
+        time_seconds=time.time() - start
     )
 
 # ============================================================================
