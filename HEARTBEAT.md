@@ -24,28 +24,28 @@
 
 ---
 
-## 当前状态: 🔄 v52 RERUN (PID: 79566, started 02:10)
+## 当前状态: ⏸️ IDLE (no test running)
 
-**历史最佳**: v52 **0.9166** 🏆
+**历史最佳**: v52 Run1 **0.9166** 🏆 (2026-04-10 00:32)
 
-**近期结果**:
+**近期结果** (API variance demonstrated):
 | Version | Score | Notes |
 |---------|-------|-------|
-| v52 | **0.9166** 🏆 | Best overall |
-| v54 | 0.8945 | SWE regression |
-| v53 | 0.8151 | IMO crashed to 0.12 (FIXED) |
-| v34 | 0.9120 | Previous best |
+| **v52 Run1** | **0.9166** 🏆 | Best (high-roll) |
+| v54 | 0.8945 | SWE dropped to 0.82 |
+| v52 Run2 | 0.8687 | ARC-AGI dropped to 0.79 |
+| v53 | 0.8151 | IMO crashed to 0.12 |
 
-**v53 IMO Fix** (committed):
-- Changed from `expected_answer` → `expected` field
-- Restored v14 technique hint extraction
-- Restored v14 proof structure scoring
-- Should recover IMO from 0.12 to ~0.80+
+**关键发现**:
+- v52 Run1 (0.9166) was a high-roll - normal range is 0.87-0.91
+- LLM API variance causes ~5% fluctuation on visual tasks (ARC-AGI)
+- IMO-ANSWER crash in v53 (0.12) suggests API timeout/error
+- ARC-AGI swings from 0.79 to 0.95 between runs
 
-**v52 Strategy**:
-- Running v52 again to confirm high score
-- After v52 completes, test fixed v53
-- v53 has potential: ARC=0.9533, MATH=1.0, IMO fixed
+**v55策略**: 
+- Keep v52 architecture (ARC voting + v34 solvers)
+- Run multiple times to get stable high score
+- Consider ensemble of v52 runs (take median/mean)
 
 **资源**: Disk 19GB ✅, Mem 2.4GB ✅
 

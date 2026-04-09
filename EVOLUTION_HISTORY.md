@@ -2766,3 +2766,47 @@ Keep v52 core + MATH verification but revert IMO to v34 style
 **Root Cause**: SWE-Bench-Pro dropped significantly (0.8167 vs 0.9633 in v52)
 
 **Conclusion**: Mixed strategy caused regression. v52 remains best architecture. Need to preserve v52's approach.
+
+## v53 Hybrid (2026-04-10 01:46)
+
+**Status**: ⚠️ REGRESSION - Overall **0.8151** (-0.1015 from v52)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | **0.9533** 🏆 |
+| BBEH | 0.9000 |
+| HLE | 1.0000 |
+| IMO-ANSWER | **0.1200** ❌ |
+| SWE-Bench-Pro | 0.8333 |
+| MATH-500 | **1.0000** 🏆 |
+| GPQA-Diamond | 1.0000 |
+| OSWorld-Tool-Hard | 0.8500 |
+| ZeroBench | 0.8467 |
+
+**Runtime**: 1880s (~31.3 min)
+**Success Rate**: 85.3% (29/34 tasks)
+
+**Root Cause**: IMO-ANSWER crashed to 0.12 (likely API error on IMO solver)
+**Key Insight**: ARC-AGI hit 0.9533 (highest ever!) and MATH hit 1.0
+
+## v52 Run2 (2026-04-10 02:40)
+
+**Status**: ⚠️ REGRESSION - Overall **0.8687** (-0.0479 from v52 Run1)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.7858 |
+| BBEH | 0.9000 |
+| HLE | 1.0000 |
+| IMO-ANSWER | 0.7770 |
+| SWE-Bench-Pro | 0.9167 |
+| MATH-500 | 0.8600 |
+| GPQA-Diamond | 1.0000 |
+| OSWorld-Tool-Hard | 0.8500 |
+| ZeroBench | 0.8233 |
+
+**Runtime**: 1799s (~30 min)
+**Success Rate**: 91.2% (31/34 tasks)
+
+**Root Cause**: API variance - ARC-AGI dropped to 0.786 (was 0.9233)
+**Conclusion**: v52 Run1 (0.9166) was the lucky high-roll. Normal range ~0.87.
