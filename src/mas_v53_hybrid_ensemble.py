@@ -24,7 +24,7 @@ from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from arc_loader import load_all_arc_tasks, score_arc_output, parse_grid_from_text
-from mas_v14_adaptive import LLMClient, TaskFeatureVector, TaskResult, TaskAnalyzer, PromptOptimizer, BenchmarkScores, BENCHMARK_WEIGHTS
+from mas_v14_adaptive import LLMClient, TaskFeatureVector, TaskResult, TaskAnalyzer, PromptOptimizer, BenchmarkScores, BENCHMARK_WEIGHTS, solve_bbeh, solve_hle, solve_gpqa
 from mas_v34_swe_focus import MASOrchestratorV34, EnhancedMathScorer, EnhancedSWEScorer, EnhancedZeroBenchScorer, solve_osworld_v17
 
 # ============================================================================
@@ -282,15 +282,15 @@ class MASOrchestratorV53:
         elif category == "ZeroBench":
             return MASOrchestratorV34.solve_zerobench_v15(self.llm, task)
         else:
-            # Fall back to v34 orchestrator
-            v34 = MASOrchestratorV34()
-            v34.llm = self.llm
+            # Fall back to v14 standalone functions
             if category == "BBEH":
-                return v34.solve_bbeh(task)
+                return solve_bbeh(self.llm, task)
             elif category == "HLE":
-                return v34.solve_hle(task)
+                return solve_hle(self.llm, task)
             elif category == "GPQA-Diamond":
-                return v34.solve_gpqa(task)
+                return solve_gpqa(self.llm, task)
+            return TaskResult(task_id="unknown", benchmark=category, task_name="unknown",
+                            success=False, score=0.0, tokens_used=0, time_seconds=0.0)
     
     def run_benchmark(self, tasks: Dict, time_limit: int = 3600) -> Tuple[BenchmarkScores, float, List[TaskResult]]:
         """Run full benchmark."""
