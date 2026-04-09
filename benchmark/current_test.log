@@ -1,5 +1,5 @@
 ============================================================
-MAS v55.0 - v52 Core + MATH Verification
+MAS v56.0 - IMO Self-Consistency Voting
 ============================================================
 
 Task Summary:
@@ -13,26 +13,3 @@ Task Summary:
   OSWorld-Tool-Hard: 3 tasks
   ZeroBench: 3 tasks
   TOTAL: 34 tasks
-
-============================================================
-MAS v52.0 ARC-Voting Report
-============================================================
-Overall Score: 0.9068
-Best Gen: 15
-Success Rate: 32/34 (94.1%)
-------------------------------------------------------------
-  ARC-AGI-3 (25%):    0.8924 [v52 VOTING]
-  BBEH (20%):         0.9000
-  HLE (15%):          1.0000
-  IMO-ANSWER (15%):   0.8002
-  SWE-Bench-Pro (10%): 0.9867
-  MATH-500 (8%):      0.8600
-  GPQA-Diamond (4%):  1.0000
-  OSWorld-Tool-Hard (2%): 0.8500
-  ZeroBench (1%):     0.9167
-------------------------------------------------------------
-Runtime: 1151.4s
-============================================================
-
-
-Saved to: /root/.openclaw/workspace-mas/benchmark/results/v55_1775763196.json

@@ -24,28 +24,32 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE (no test running, ~03:35)
+## 当前状态: 🟢 RUNNING v56 (IMO voting, PID 111759, started ~04:11)
 
 **历史最佳**: v52 **0.9166** 🏆
 
 **近期结果**:
 | Version | Score | Notes |
 |---------|-------|-------|
-| v52 | **0.9166** 🏆 | ARC-AGI=0.9233 with voting |
-| v55 | 0.9068 | v52 core + MATH verification |
-| v34 Run4 | 0.9120 | Previous best |
-| v53 | CRASHED | TaskResult inheritance issues |
+| v56 | RUNNING | IMO self-consistency voting (3 attempts) |
+| v55 | 0.9068 | v52 core + MATH verification (REGRESSED) |
+| v52 Run3 | 0.9036 | ARC=0.8824, IMO=0.7958 |
+| v52 Run2 | 0.8687 | ARC=0.7858, IMO=0.7770 (API variance low) |
+| v52 Run1 | **0.9166** 🏆 | ARC=0.9233, IMO=0.8320 |
+| v54 | 0.8945 | SWE dropped to 0.8167 |
+| v34 Run4 | 0.9120 | Previous stable |
 
-**分析**:
-- v55 (0.9068) < v52 (0.9166) by -0.0098
-- IMO-ANSWER dropped: 0.8002 vs v52's 0.8320
-- ARC-AGI: 0.8924 vs v52's 0.9233
+**v56 策略**:
+- v52 core (best architecture)
+- IMO self-consistency: 3 attempts → pick best score
+- ARC voting unchanged from v52 (already stable 0.92)
+- 目标: 稳定化 IMO-ANSWER (0.77-0.85 API variance → target 0.85+)
 
-**策略**: 
-- v52 remains the best architecture
-- Need to focus on ARC-AGI stability
-- IMO-ANSWER needs better technique detection
-- Git push failing (TLS issue) - will retry later
+**API Variance 分析** (same v52 code):
+- Run1 (00:32): 0.9166 - IMO=0.8320, SWE=0.9633
+- Run2 (02:40): 0.8687 - IMO=0.7770, SWE=0.9167
+- Run3 (03:06): 0.9036 - IMO=0.7958, SWE=0.9867
+→ ~5% overall swing from API randomness
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 
