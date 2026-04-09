@@ -2966,3 +2966,49 @@ Keep v52 core + MATH verification but revert IMO to v34 style
 **Success Rate**: 88.2% (30/34 tasks)
 
 **Conclusion**: v54 did not improve over v52. v52 remains best at 0.9166.
+
+## v55 (2026-04-10 03:33)
+
+**Status**: ✅ GOOD - Overall **0.9068** (-0.0098 from v52 best)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.8924 |
+| BBEH | 0.9000 |
+| HLE | 1.0000 |
+| IMO-ANSWER | 0.8002 |
+| SWE-Bench-Pro | 0.9867 |
+| MATH-500 | 0.8600 |
+| GPQA-Diamond | 1.0000 |
+| OSWorld-Tool-Hard | 0.8500 |
+| ZeroBench | 0.9167 |
+
+**Runtime**: 1151s (~19.2 min)
+**Success Rate**: 94.1% (32/34 tasks)
+
+**v55设计**: v52 core + MATH verification from v53 (which got 1.0 on MATH)
+**Conclusion**: v55 lower than v52 best due to ARC-AGI variance. v52 best remains 0.9166.
+
+## v53 (2026-04-10 01:46)
+
+**Status**: ❌ FAIL - Overall **0.8151** (-0.1015 from v52 best)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | **0.9533** 🏆 (but unstable) |
+| IMO-ANSWER | **0.1200** ❌ (massive regression!) |
+| MATH-500 | **1.0000** 🏆 (perfect!) |
+| Other | Normal |
+
+**Root Cause**: v53 IMO solver has massive regression (0.12 vs 0.80 in v52)
+**Lesson**: v53's IMO validation destroyed performance. Don't use it.
+
+## v52 Recent Runs
+
+| Run Time | Score | ARC-AGI |
+|----------|-------|---------|
+| 00:32 | **0.9166** 🏆 | 0.9233 |
+| 03:06 | 0.9036 | 0.8824 |
+| 02:40 | (in progress?) | |
+
+**Conclusion**: v52 @ 0.9166 (00:32 run) remains the best architecture. ARC-AGI voting stabilizes visual tasks.

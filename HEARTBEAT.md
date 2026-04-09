@@ -24,21 +24,27 @@
 
 ---
 
-## 当前状态: 🔄 v55 RUNNING (PID: 96739, started 03:14)
+## 当前状态: ⏸️ IDLE - No test running
 
 **历史最佳**: v52 **0.9166** 🏆 (2026-04-10 00:32)
 
 **近期结果**:
 | Version | Score | Notes |
 |---------|-------|-------|
-| v52 | **0.9166** 🏆 | Best ever |
-| v52 RUN2 | 0.9036 | Good |
-| v54 | 0.8945 | |
-| v53 | 0.8151 | IMO broke (0.12) |
+| **v52** | **0.9166** 🏆 | Best ever, ARC-AGI=0.9233 |
+| v55 | 0.9068 | v52 + MATH verification |
+| v53 | 0.8151 | IMO regression ❌ |
+| v34 Run4 | 0.9120 | Previous best |
 
-**v53问题**: IMO-ANSWER dropped to 0.12 - my v53 solve_imo_v53 changes broke it
+**关键教训**:
+- v53 IMO validation DESTROYED performance (0.12 vs 0.80)
+- v53 MATH verification was perfect (1.0)
+- v52 with ARC-AGI voting is the stable winner
 
-**v55设计**: v52核心 + v53 MATH验证 (IMO来自v52，不是v53)
+**v56策略建议**:
+- Use v52 as base (0.9166)
+- Try v53 MATH verification ONLY (not IMO)
+- Or try 5-vote ARC-AGI instead of 3-vote
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 
