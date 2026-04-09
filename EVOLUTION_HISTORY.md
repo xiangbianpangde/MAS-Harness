@@ -2668,3 +2668,24 @@ Recent attempts (v40-v43) to improve all failed.
 
 **Key Feature**: ARC-AGI 3-vote voting for stability
 **Conclusion**: v52 with voting achieves stable ~0.90 score. ARC-AGI stabilized at 0.879.
+
+## v34 Run5 (2026-04-09 23:51)
+
+**Status**: ✅ OK - Overall **0.8837** (-0.0283 from best)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.849 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.802 |
+| SWE-Bench-Pro | 0.973 |
+| MATH-500 | 0.720 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.850 |
+| ZeroBench | 0.917 |
+
+**Runtime**: 1175s (~19.6 min)
+**Success Rate**: 88.2% (30/34 tasks)
+
+**Conclusion**: v34 stable in 0.88-0.91 range. API variance on visual tasks. Best is v52 @ 0.9076 with voting.
