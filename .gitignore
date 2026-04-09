@@ -1,1 +1,3 @@
 benchmark/BIG-Bench/
+__pycache__/
+*.pyc
