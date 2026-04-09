@@ -24,24 +24,27 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE (v56 COMPLETED, ~04:34)
+## 当前状态: 🟢 RUNNING v57 (Dual voting, PID 118516, started ~04:37)
 
-**历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
+**历史最佳**: v52 **0.9166** 🏆
 
-**v56 结果**: 0.9064 (IMO voting HELPED!)
-| Category | v56 | v52 Run3 | v52 Run1 |
-|----------|-----|----------|----------|
-| Overall | 0.9064 | 0.9036 | **0.9166** |
-| ARC-AGI-3 | 0.8758 | 0.8824 | **0.9233** |
-| IMO-ANSWER | **0.8274** | 0.7958 | 0.8320 |
+**近期结果**:
+| Version | Score | ARC-AGI | IMO-ANSWER | Notes |
+|---------|-------|---------|------------|-------|
+| v56 | 0.9064 | 0.8758 | **0.8274** | IMO voting +3 |
+| v55 | 0.9068 | 0.8924 | 0.8002 | MATH verify |
+| v52 Run3 | 0.9036 | 0.8824 | 0.7958 | |
+| v52 Run1 | **0.9166** 🏆 | **0.9233** | 0.8320 | Best ever |
+| v52 Run2 | 0.8687 | 0.7858 | 0.7770 | API unlucky |
 
-**v56 分析**:
-- IMO improved: 0.8274 vs v52 Run3's 0.7958 (+0.03)
-- But overall lower than v52 best: 0.9064 vs 0.9166
-- ARC-AGI variance still present (0.8758 vs 0.9233)
-- IMO voting successfully reduced IMO variance
+**v57 策略**: Dual voting on both high-weight components
+- ARC-AGI: 5 votes (up from 3)
+- IMO-ANSWER: 3 attempts, best score
+- 目标: Stabilize both ARC (25%) and IMO (15%)
 
-**策略**: v56's IMO voting is an improvement for stability. Next: try combining v56's IMO voting with more ARC voting rounds.
+**API Variance 问题**: 
+- v52 Run1 vs Run2: 0.9166 vs 0.8687 = 5% swing
+- Caused by API randomness on high-weight tasks
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 
