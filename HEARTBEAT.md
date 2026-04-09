@@ -24,24 +24,23 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE (v59 DONE, 0.9073 🏅2nd best)
+## 当前状态: 🟢 RUNNING v60 (Hybrid voting, PID 154979, started ~07:02)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**v58/v59 结果**:
-| Version | Overall | ARC | IMO | SWE | Notes |
-|---------|---------|-----|-----|-----|-------|
-| v59 | **0.9073** 🏅 | 0.8891 | 0.8092 | **0.9867** | 2nd best |
-| v58 | 0.8965 | 0.8758 | **0.8548** | 0.8367 | Best IMO! |
-| v57 | 0.8985 | 0.8958 | 0.7884 | 0.9167 | |
-| v56 | 0.9064 | 0.8758 | 0.8274 | 0.9867 | |
+**v60 策略**: Hybrid - combine best from v58 & v59
+- IMO: 5 votes + confidence weighting (v58: best IMO 0.8548)
+- ARC: 5 votes + confidence weighting (v59: 2nd best overall)
+- 目标: IMO ~0.85+ AND SWE ~0.98+
 
-**分析**: 
-- v59 2nd best overall (0.9073), SWE recovered to 0.9867
-- v58 had best IMO (0.8548) but SWE dropped
-- API variance still causes ~3-5% swings
-
-**策略**: Design v60 - combine v59's SWE stability with v58's IMO technique
+**近期排名**:
+| Version | Overall | IMO | SWE |
+|---------|---------|-----|-----|
+| v52 Run1 | **0.9166** 🏆 | 0.8320 | 0.9633 |
+| v59 | 0.9073 🏅 | 0.8092 | 0.9867 |
+| v56 | 0.9064 | 0.8274 | 0.9867 |
+| v58 | 0.8965 | 0.8548 | 0.8367 |
+| v57 | 0.8985 | 0.7884 | 0.9167 |
 
 **资源**: Disk 18GB ✅, Mem 2.1GB ✅
 
