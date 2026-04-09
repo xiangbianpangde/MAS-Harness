@@ -2810,3 +2810,67 @@ Keep v52 core + MATH verification but revert IMO to v34 style
 
 **Root Cause**: API variance - ARC-AGI dropped to 0.786 (was 0.9233)
 **Conclusion**: v52 Run1 (0.9166) was the lucky high-roll. Normal range ~0.87.
+
+## v53 (2026-04-10 01:46)
+
+**Status**: ❌ BAD - Overall **0.8151** (-0.1015 from v52)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | **0.9533** 🏆 (improved!) |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | **0.120** ❌ (crashed!) |
+| SWE-Bench-Pro | 0.833 |
+| MATH-500 | **1.000** 🏆 (improved!) |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.850 |
+| ZeroBench | 0.847 |
+
+**Runtime**: 1880s (~31.3 min)
+
+**Root Cause**: solve_imo_v53 has a bug that destroys IMO scoring
+
+**Conclusion**: v53 hybrid approach failed. IMO solver was broken. ARC and MATH improved but overall score dropped significantly.
+
+## v54 Mixed (2026-04-10 02:09)
+
+**Status**: ⚠️ OK - Overall **0.8945** (-0.0221 from v52)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.882 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.849 |
+| SWE-Bench-Pro | **0.817** ❌ |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.850 |
+| ZeroBench | 0.917 |
+
+**Runtime**: 1281s (~21.4 min)
+
+**Root Cause**: SWE-Bench-Pro dropped significantly (0.817 vs 0.963)
+
+**Conclusion**: v54 mixed approach didn't improve over v52. Stick with v52 architecture.
+
+## v52 (2026-04-10 03:06) [REPEAT]
+
+**Status**: ⚠️ GOOD - Overall **0.9036** (-0.0130 from best v52)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.882 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.796 |
+| SWE-Bench-Pro | **0.987** 🏆 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.850 |
+| ZeroBench | 0.917 |
+
+**Runtime**: 1512s (~25.2 min)
+
+**Conclusion**: v52 is stable but API variance causes ~1-2% fluctuation. Best architecture remains v52 @ 0.9166.
