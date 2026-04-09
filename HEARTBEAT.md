@@ -24,29 +24,25 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE (v58 DONE, 0.8965)
+## 当前状态: 🟢 RUNNING v59 (confidence voting, PID 146083, started ~06:27)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**v58 结果**: 0.8965 (REGRESSED vs v56/v57)
-| Version | Overall | ARC | IMO | SWE | OSWorld |
-|---------|---------|-----|-----|-----|---------|
-| v58 | 0.8965 | 0.8758 | **0.8548** | 0.8367 | **0.9000** |
-| v57 | 0.8985 | 0.8958 | 0.7884 | 0.9167 | 0.8500 |
-| v56 | 0.9064 | 0.8758 | 0.8274 | **0.9867** | 0.8500 |
-| v52 Run1 | **0.9166** 🏆 | **0.9233** | 0.8320 | 0.9633 | 0.8500 |
+**v59 策略**: Confidence-weighted voting
+- Estimate confidence from response text (certainty indicators)
+- Weighted ensemble: score * (confidence + 0.5)
+- ARC: 5 votes with confidence weighting
+- IMO: 3 attempts with confidence weighting
 
-**v58 亮点**: IMO improved to 0.8548 with 5 votes (+0.027 vs v56)
-**v58 崩溃**: SWE crashed to 0.8367 (API bad luck)
+**v56-v58 迭代总结**:
+| Version | Score | IMO | Notes |
+|---------|-------|-----|-------|
+| v52 Run1 | **0.9166** 🏆 | 0.8320 | Best - API lucky |
+| v56 | 0.9064 | 0.8274 | IMO voting |
+| v57 | 0.8985 | 0.7884 | 5 ARC votes |
+| v58 | 0.8965 | 0.8548 | 7 ARC + 5 IMO |
 
-**核心问题 - API Variance**:
-- v52 same code: Run1=0.9166, Run2=0.8687 (5% swing!)
-- v56-v58 all below v52 best despite improvements
-- Voting helps stability but can't overcome API randomness
-
-**策略**: Need fundamentally different approach. Current voting iterations all within noise range.
-- Next: Try v59 with different architecture (not just more voting)
-- Focus on reducing API dependency rather than increasing votes
+**核心洞察**: All within API noise (5% swing). v52 Run1 = API lucky.
 
 **资源**: Disk 18GB ✅, Mem 2.1GB ✅
 
