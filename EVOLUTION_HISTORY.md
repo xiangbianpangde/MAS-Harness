@@ -2646,3 +2646,25 @@ Recent attempts (v40-v43) to improve all failed.
 **Root Cause**: ARC-AGI-3 = 0.333 (1/3 tasks). Classic API variance on visual tasks.
 
 **Conclusion**: v34 + MiniMax API on ARC-AGI has high variance (0.16-0.90 range). Non-visual categories stable. Need v52 with stabilized ARC handling or ensemble voting.
+
+## v52 ARC-Voting (2026-04-09 23:25)
+
+**Status**: ✅ GOOD - Overall **0.9076** (-0.0044 from v34 Run4)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.879 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.844 |
+| SWE-Bench-Pro | 0.967 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.850 |
+| ZeroBench | 0.883 |
+
+**Runtime**: 2019s (~33.7 min)
+**Success Rate**: 91.2% (31/34 tasks)
+
+**Key Feature**: ARC-AGI 3-vote voting for stability
+**Conclusion**: v52 with voting achieves stable ~0.90 score. ARC-AGI stabilized at 0.879.
