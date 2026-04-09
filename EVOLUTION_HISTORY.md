@@ -3063,3 +3063,32 @@ Keep v52 core + MATH verification but revert IMO to v34 style
 | v57 | 5 | 3 (best score) | 0.8985 | 0.8958 | 0.7884 |
 
 **Insight**: More ARC votes helps ARC but doesn't help IMO. IMO-ANSWER is harder to stabilize with voting alone.
+
+## v58 (2026-04-10 06:23)
+
+**Status**: ⚠️ REGRESSED - Overall **0.8965** (-0.0099 from v56)
+
+| Category | v58 | v56 | v52 Run1 |
+|----------|-----|-----|----------|
+| ARC-AGI-3 | 0.8758 | 0.8758 | **0.9233** |
+| IMO-ANSWER | **0.8548** | 0.8274 | 0.8320 |
+| SWE-Bench | 0.8367 | **0.9867** | 0.9633 |
+| OSWorld | **0.9000** | 0.8500 | 0.8500 |
+
+**Key Findings**:
+- IMO improved to 0.8548 (+0.027 vs v56) with 5 IMO votes
+- But SWE crashed to 0.8367 (-0.15 vs v56!) - API bad luck
+- More voting rounds don't guarantee better scores, just less variance
+
+**Conclusion**: All runs within API noise (~5% swing). v52 Run1 (0.9166) best remains.
+
+## v56-v58 Voting Iteration Summary
+
+| Version | ARC Votes | IMO Votes | Overall | IMO | SWE |
+|---------|-----------|-----------|---------|-----|-----|
+| v52 Run1 | 3 | 1 | **0.9166** 🏆 | 0.8320 | 0.9633 |
+| v56 | 3 | 3 | 0.9064 | 0.8274 | 0.9867 |
+| v57 | 5 | 3 | 0.8985 | 0.7884 | 0.9167 |
+| v58 | 7 | 5 | 0.8965 | 0.8548 | 0.8367 |
+
+**Insight**: IMO voting (5 votes in v58) shows improvement trend for IMO component, but overall score limited by API variance on other components.

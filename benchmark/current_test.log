@@ -1,5 +1,5 @@
 ============================================================
-MAS v57.0 - Enhanced Dual Voting (IMO + ARC)
+MAS v58.0 - Robust Weighted Ensemble
 ============================================================
 
 Task Summary:
@@ -17,22 +17,22 @@ Task Summary:
 ============================================================
 MAS v52.0 ARC-Voting Report
 ============================================================
-Overall Score: 0.8985
+Overall Score: 0.8965
 Best Gen: 15
-Success Rate: 32/34 (94.1%)
+Success Rate: 30/34 (88.2%)
 ------------------------------------------------------------
-  ARC-AGI-3 (25%):    0.8958 [v52 VOTING]
+  ARC-AGI-3 (25%):    0.8758 [v52 VOTING]
   BBEH (20%):         0.9000
   HLE (15%):          1.0000
-  IMO-ANSWER (15%):   0.7884
-  SWE-Bench-Pro (10%): 0.9167
+  IMO-ANSWER (15%):   0.8548
+  SWE-Bench-Pro (10%): 0.8367
   MATH-500 (8%):      0.8600
   GPQA-Diamond (4%):  1.0000
-  OSWorld-Tool-Hard (2%): 0.8500
+  OSWorld-Tool-Hard (2%): 0.9000
   ZeroBench (1%):     0.8833
 ------------------------------------------------------------
-Runtime: 1215.0s
+Runtime: 1482.8s
 ============================================================
 
 
-Saved to: /root/.openclaw/workspace-mas/benchmark/results/v57_1775768237.json
+Saved to: /root/.openclaw/workspace-mas/benchmark/results/v58_1775773422.json
