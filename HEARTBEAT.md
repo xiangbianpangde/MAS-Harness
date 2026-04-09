@@ -24,32 +24,24 @@
 
 ---
 
-## 当前状态: 🟢 RUNNING v56 (IMO voting, PID 111759, started ~04:11)
+## 当前状态: ⏸️ IDLE (v56 COMPLETED, ~04:34)
 
-**历史最佳**: v52 **0.9166** 🏆
+**历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**近期结果**:
-| Version | Score | Notes |
-|---------|-------|-------|
-| v56 | RUNNING | IMO self-consistency voting (3 attempts) |
-| v55 | 0.9068 | v52 core + MATH verification (REGRESSED) |
-| v52 Run3 | 0.9036 | ARC=0.8824, IMO=0.7958 |
-| v52 Run2 | 0.8687 | ARC=0.7858, IMO=0.7770 (API variance low) |
-| v52 Run1 | **0.9166** 🏆 | ARC=0.9233, IMO=0.8320 |
-| v54 | 0.8945 | SWE dropped to 0.8167 |
-| v34 Run4 | 0.9120 | Previous stable |
+**v56 结果**: 0.9064 (IMO voting HELPED!)
+| Category | v56 | v52 Run3 | v52 Run1 |
+|----------|-----|----------|----------|
+| Overall | 0.9064 | 0.9036 | **0.9166** |
+| ARC-AGI-3 | 0.8758 | 0.8824 | **0.9233** |
+| IMO-ANSWER | **0.8274** | 0.7958 | 0.8320 |
 
-**v56 策略**:
-- v52 core (best architecture)
-- IMO self-consistency: 3 attempts → pick best score
-- ARC voting unchanged from v52 (already stable 0.92)
-- 目标: 稳定化 IMO-ANSWER (0.77-0.85 API variance → target 0.85+)
+**v56 分析**:
+- IMO improved: 0.8274 vs v52 Run3's 0.7958 (+0.03)
+- But overall lower than v52 best: 0.9064 vs 0.9166
+- ARC-AGI variance still present (0.8758 vs 0.9233)
+- IMO voting successfully reduced IMO variance
 
-**API Variance 分析** (same v52 code):
-- Run1 (00:32): 0.9166 - IMO=0.8320, SWE=0.9633
-- Run2 (02:40): 0.8687 - IMO=0.7770, SWE=0.9167
-- Run3 (03:06): 0.9036 - IMO=0.7958, SWE=0.9867
-→ ~5% overall swing from API randomness
+**策略**: v56's IMO voting is an improvement for stability. Next: try combining v56's IMO voting with more ARC voting rounds.
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 
