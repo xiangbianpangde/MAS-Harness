@@ -1,17 +1,17 @@
 {
   "version": "v34",
-  "overall_score": 0.7595366666666666,
-  "timestamp": "2026-04-09T22:48:45",
-  "runtime_seconds": 2001.038657426834,
+  "overall_score": 0.883738911564626,
+  "timestamp": "2026-04-09T23:51:27",
+  "runtime_seconds": 1175.503553390503,
   "scores": {
-    "ARC-AGI-3": 0.3333333333333333,
+    "ARC-AGI-3": 0.8491156462585034,
     "BBEH": 0.9,
     "HLE": 1.0,
-    "IMO-ANSWER": 0.8237999999999998,
-    "SWE-Bench-Pro": 0.8733333333333334,
-    "MATH-500": 0.86,
+    "IMO-ANSWER": 0.8023999999999999,
+    "SWE-Bench-Pro": 0.9733333333333333,
+    "MATH-500": 0.72,
     "GPQA-Diamond": 1.0,
-    "OSWorld-Tool-Hard": 0.9,
-    "ZeroBench": 0.8500000000000001
+    "OSWorld-Tool-Hard": 0.85,
+    "ZeroBench": 0.9166666666666666
   }
 }
