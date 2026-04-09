@@ -2712,3 +2712,34 @@ Recent attempts (v40-v43) to improve all failed.
 **Key Insight**: 3-vote voting for ARC-AGI stabilized performance. ARC-AGI jumped from 0.879 (first v52 run) to 0.9233 with voting.
 
 **Conclusion**: v52 with ARC-AGI voting is the new best architecture. This proves voting/stabilization helps with LLM API variance on visual tasks.
+
+## v53 Hybrid Ensemble (2026-04-10 01:46) - REGRESSION
+
+**Status**: ❌ REGRESSION - Overall **0.8151** (-0.1015 from v52)
+
+| Category | Score | Notes |
+|----------|-------|
+| ARC-AGI-3 | **0.9533** 🏆 | Best ever! (was 0.9233) |
+| BBEH | 0.9000 | |
+| HLE | 1.0000 | |
+| **IMO-ANSWER** | **0.1200** ❌ | CRASHED (was 0.844) |
+| SWE-Bench-Pro | 0.8333 | |
+| **MATH-500** | **1.0000** 🏆 | Best ever! (was 0.86) |
+| GPQA-Diamond | 1.0000 | |
+| OSWorld-Tool-Hard | 0.8500 | |
+| ZeroBench | 0.8467 | |
+
+**Runtime**: 1880s (~31.3 min)
+**Success Rate**: 79.4% (27/34 tasks)
+
+**Root Cause**: v53 IMO enhanced solver failed badly (0.12 vs normal 0.84). The technique detection/validation loop for IMO backfired.
+
+**Key Insight**: 
+- MATH self-verification WORKS (+0.14 improvement)
+- IMO validation loop FAILED (-0.72 regression)
+- ARC voting still excellent (+0.03 improvement)
+
+**Conclusion**: Need to keep v52's IMO solver, v34's MATH solver, v52's ARC voting. v53's IMO changes hurt badly.
+
+## v54 Design:
+Keep v52 core + MATH verification but revert IMO to v34 style
