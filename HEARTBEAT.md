@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: 🔄 v52 RERUN (PID: 79565, started 02:09)
+## 当前状态: 🔄 v52 RERUN (PID: 79566, started 02:10)
 
 **历史最佳**: v52 **0.9166** 🏆
 
@@ -33,19 +33,19 @@
 |---------|-------|-------|
 | v52 | **0.9166** 🏆 | Best overall |
 | v54 | 0.8945 | SWE regression |
-| v53 | 0.8151 | IMO crashed to 0.12, but ARC=0.9533 |
+| v53 | 0.8151 | IMO crashed to 0.12 (FIXED) |
 | v34 | 0.9120 | Previous best |
 
-**v53 Analysis**:
-- v53 IMO solver is broken - uses wrong field (`expected_answer` instead of `expected`)
-- ARC-AGI at 0.9533 was excellent
-- MATH-500 at 1.0 was perfect
-- Need to fix IMO solver to use `expected` field like v14 does
+**v53 IMO Fix** (committed):
+- Changed from `expected_answer` → `expected` field
+- Restored v14 technique hint extraction
+- Restored v14 proof structure scoring
+- Should recover IMO from 0.12 to ~0.80+
 
 **v52 Strategy**:
-- v52 is stable at ~0.90 with ARC voting
 - Running v52 again to confirm high score
-- Next: fix v53's IMO solver properly, then test v55
+- After v52 completes, test fixed v53
+- v53 has potential: ARC=0.9533, MATH=1.0, IMO fixed
 
 **资源**: Disk 19GB ✅, Mem 2.4GB ✅
 
