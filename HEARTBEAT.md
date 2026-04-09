@@ -24,23 +24,31 @@
 
 ---
 
-## 当前状态: 🔄 v52 RERUN (PID: 87588, started 02:41)
+## 当前状态: ⏸️ IDLE - No test running
 
 **历史最佳**: v52 **0.9166** 🏆 (2026-04-10 00:32)
 
 **近期结果**:
 | Version | Score | Notes |
 |---------|-------|-------|
-| v52 | **0.9166** 🏆 | Best ever |
-| v54 | 0.8945 | ARC-AGI=0.882 |
-| v52 (new) | RUNNING | PID 87588 |
-| v53 | 0.8151 | IMO-ANSWER crashed to 0.12 |
+| v52 | **0.9166** 🏆 | ARC-AGI=0.9233 |
+| v52 (rerun) | 0.9036 | API variance |
+| v54 | 0.8945 | v52+v53 MATH mix |
+| v53 | 0.8151 | IMO crashed to 0.12 |
+| v34 Run4 | 0.9120 | Previous best |
 
-**v52 vs v53**: v53 had ARC-AGI=0.953 but IMO-ANSWER=0.12 (catastrophic). v54 is better but still below v52 best.
+**关键教训**:
+- v53 IMO改进 FAILED: 0.12 vs v52的0.83
+- v53 MATH改进 WORKED: 1.0 vs v52的0.86
+- v52 voting稳定了ARC-AGI到0.9233
+- API方差导致~1-2%波动
+
+**设计原则**: 
+- 保持v52核心不变（voting + v34基础）
+- 只做最小改动验证单个改进
+- 不要同时改多个组件
 
 **资源**: Disk 19GB ✅, Mem 2.4GB ✅
-
-**NOTE**: Git push failing (TLS). Will push when network restored.
 
 ---
 
