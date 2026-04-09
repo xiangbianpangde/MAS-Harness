@@ -2874,3 +2874,48 @@ Keep v52 core + MATH verification but revert IMO to v34 style
 **Runtime**: 1512s (~25.2 min)
 
 **Conclusion**: v52 is stable but API variance causes ~1-2% fluctuation. Best architecture remains v52 @ 0.9166.
+
+## v53 Hybrid (2026-04-10 01:46)
+
+**Status**: ⚠️ PARTIAL FAIL - Overall **0.8151** (-0.1015 from v52)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | **0.9533** ✅ |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | **0.120** ❌ |
+| SWE-Bench-Pro | 0.833 |
+| MATH-500 | **1.000** ✅ |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.850 |
+| ZeroBench | 0.847 |
+
+**Runtime**: 1880s (~31.3 min)
+
+**Analysis**:
+- MATH self-verification WORKS (1.0 vs 0.86 baseline)
+- IMO validation BROKE (-0.72 regression)
+- ARC-AGI improved to 0.9533 (was 0.879 in first v52 run)
+
+**Conclusion**: Don't use IMO validation. Use MATH verification. Next attempt: v55 = v52 + MATH only.
+
+## v54 Mixed (2026-04-10 02:09)
+
+**Status**: ✅ OK - Overall **0.8945** (-0.0221 from v52)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.882 |
+| BBEH | 0.900 |
+| HLE | 1.000 |
+| IMO-ANSWER | 0.849 |
+| SWE-Bench-Pro | 0.817 |
+| MATH-500 | 0.860 |
+| GPQA-Diamond | 1.000 |
+| OSWorld-Tool-Hard | 0.850 |
+| ZeroBench | 0.917 |
+
+**Runtime**: 1281s (~21.4 min)
+
+**Conclusion**: More balanced but lower overall. v52 (0.9166) still best.
