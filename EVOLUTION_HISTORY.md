@@ -3035,3 +3035,31 @@ Keep v52 core + MATH verification but revert IMO to v34 style
 **v56设计**: v52 core + IMO self-consistency voting (3 attempts, pick best EnhancedMathScorer score)
 **Key Insight**: IMO voting improved IMO score by +0.032 vs v52 Run3. Stability technique works!
 **Conclusion**: v52 best at 0.9166 still holds. v56 IMO voting technique is promising for next iteration.
+
+## v57 (2026-04-10 04:57)
+
+**Status**: ⚠️ REGRESSED - Overall **0.8985** (-0.0079 from v56)
+
+| Category | v57 | v56 | v52 Run1 |
+|----------|-----|-----|----------|
+| ARC-AGI-3 | **0.8958** | 0.8758 | 0.9233 |
+| IMO-ANSWER | 0.7884 | **0.8274** | 0.8320 |
+| SWE-Bench | 0.9167 | 0.9867 | 0.9633 |
+
+**Key Finding**: 
+- 5 ARC votes improved ARC-AGI: 0.8958 vs v56's 0.8758 (+0.02)
+- But IMO dropped: 0.7884 vs v56's 0.8274 (-0.04)
+- SWE also dropped significantly
+
+**Analysis**: API variance still dominant. Dual voting helps stabilize individual components but overall score still swings ~2-5% based on API luck.
+
+**Conclusion**: v52 Run1 (0.9166) remains best. v56's IMO voting is promising but single runs inconclusive due to variance.
+
+## v56-v57 Comparison (Voting Strategies)
+
+| Version | ARC Votes | IMO Votes | Overall | ARC | IMO |
+|---------|-----------|-----------|---------|-----|-----|
+| v56 | 3 | 3 (best score) | 0.9064 | 0.8758 | 0.8274 |
+| v57 | 5 | 3 (best score) | 0.8985 | 0.8958 | 0.7884 |
+
+**Insight**: More ARC votes helps ARC but doesn't help IMO. IMO-ANSWER is harder to stabilize with voting alone.

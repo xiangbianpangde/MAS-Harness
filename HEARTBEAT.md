@@ -24,27 +24,27 @@
 
 ---
 
-## 当前状态: 🟢 RUNNING v57 (Dual voting, PID 118516, started ~04:37)
+## 当前状态: ⏸️ IDLE (v57 DONE, 0.8985 < v56)
 
-**历史最佳**: v52 **0.9166** 🏆
+**历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**近期结果**:
-| Version | Score | ARC-AGI | IMO-ANSWER | Notes |
-|---------|-------|---------|------------|-------|
-| v56 | 0.9064 | 0.8758 | **0.8274** | IMO voting +3 |
-| v55 | 0.9068 | 0.8924 | 0.8002 | MATH verify |
-| v52 Run3 | 0.9036 | 0.8824 | 0.7958 | |
-| v52 Run1 | **0.9166** 🏆 | **0.9233** | 0.8320 | Best ever |
-| v52 Run2 | 0.8687 | 0.7858 | 0.7770 | API unlucky |
+**v57 结果**: 0.8985 (REGRESSED)
+| Version | Overall | ARC | IMO | SWE |
+|---------|---------|-----|-----|-----|
+| v57 | 0.8985 | **0.8958** | 0.7884 | 0.9167 |
+| v56 | **0.9064** | 0.8758 | **0.8274** | **0.9867** |
+| v52 Run1 | **0.9166** 🏆 | 0.9233 | 0.8320 | 0.9633 |
 
-**v57 策略**: Dual voting on both high-weight components
-- ARC-AGI: 5 votes (up from 3)
-- IMO-ANSWER: 3 attempts, best score
-- 目标: Stabilize both ARC (25%) and IMO (15%)
+**分析**:
+- 5 ARC votes improved ARC: 0.8958 vs v56's 0.8758 (+0.02)
+- But IMO dropped: 0.7884 vs v56's 0.8274 (-0.04)
+- SWE dropped: 0.9167 vs v56's 0.9867 (-0.07)
 
-**API Variance 问题**: 
-- v52 Run1 vs Run2: 0.9166 vs 0.8687 = 5% swing
-- Caused by API randomness on high-weight tasks
+**核心问题**: API variance dominates results
+- Same code: v52 Run1=0.9166, Run2=0.8687 (5% swing)
+- Voting reduces but doesn't eliminate variance
+
+**策略**: v52 best architecture + voting improvements from v56/v57 not conclusive due to single-run variance. 需要多轮测试验证。
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 
