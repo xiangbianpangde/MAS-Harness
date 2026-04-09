@@ -87,11 +87,6 @@ Write a rigorous, complete proof."""
         time_seconds=time.time() - start, reasoning_trace=proof[:300],
         final_output=proof[:200], agent_used="Proof-Agent-v53"
     )
-        score=min(1.0, score),
-        reasoning_trace=thinking[:2000],
-        tokens_used=tokens,
-        time_seconds=time.time() - start
-    )
 
 # ============================================================================
 # v53: MATH with Self-Verification
