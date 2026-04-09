@@ -32,16 +32,14 @@
 | Version | Score | Notes |
 |---------|-------|-------|
 | v52 | **0.9166** 🏆 | Best overall |
-| v53 | 0.8151 | ARC=0.9533✅, IMO=0.12❌ |
-| v54 | 0.8945 | More balanced |
+| v54 | 0.8945 | Regressed |
+| v53 | 0.8151 | IMO=0.12 ❌, MATH=1.0 ✅ |
 | v55 | RUNNING | v52 + MATH verify |
 
-**v55策略**: 
-- v52 core (0.9166) + v53 MATH verification (1.0)
-- Exclude v53's broken IMO solver
-
-**v53 Lesson**: IMO validation broke (0.12 vs 0.84). Don't use.
-**v53 WIN**: MATH self-verification works (1.0 vs 0.86)
+**关键发现**:
+- MATH verification WORKS: 0.86 → 1.0 (+0.14)
+- IMO validation BROKE: 0.84 → 0.12 (-0.72) → REJECT
+- v55策略: v52 core + MATH verification only
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 

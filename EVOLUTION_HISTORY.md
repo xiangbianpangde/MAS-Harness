@@ -2919,3 +2919,50 @@ Keep v52 core + MATH verification but revert IMO to v34 style
 **Runtime**: 1281s (~21.4 min)
 
 **Conclusion**: More balanced but lower overall. v52 (0.9166) still best.
+
+## v53 (2026-04-10 01:46)
+
+**Status**: ❌ REGRESSION - Overall **0.8151** (-0.1015 from v52)
+
+| Category | Score | Notes |
+|----------|-------|-------|
+| ARC-AGI-3 | 0.9533 | ✅ UP from 0.9233 |
+| BBEH | 0.900 | |
+| HLE | 1.000 | |
+| IMO-ANSWER | **0.120** ❌ | CRASHED from 0.84 |
+| SWE-Bench-Pro | 0.833 | DOWN |
+| MATH-500 | **1.000** 🏆 | UP from 0.86 |
+| GPQA-Diamond | 1.000 | |
+| OSWorld-Tool-Hard | 0.850 | |
+| ZeroBench | 0.847 | |
+
+**Runtime**: 1880s (~31.3 min)
+**Success Rate**: 85.3% (29/34 tasks)
+
+**Key Insight**: 
+- MATH self-verification WORKS: 0.86 → 1.0 (+0.14)
+- IMO validation BROKE: 0.84 → 0.12 (-0.72)
+- ARC-AGI voting improved: 0.9233 → 0.9533 (+0.03)
+
+**Conclusion**: Keep MATH verification, REJECT IMO validation. v53 overall regression due to IMO solver breaking.
+
+## v54 (2026-04-10 02:09)
+
+**Status**: ❌ REGRESSION - Overall **0.8945** (-0.0221 from v52)
+
+| Category | Score | Notes |
+|----------|-------|-------|
+| ARC-AGI-3 | 0.882 | DOWN |
+| BBEH | 0.900 | |
+| HLE | 1.000 | |
+| IMO-ANSWER | 0.849 | Slightly UP |
+| SWE-Bench-Pro | 0.817 | DOWN |
+| MATH-500 | 0.860 | Same |
+| GPQA-Diamond | 1.000 | |
+| OSWorld-Tool-Hard | 0.850 | |
+| ZeroBench | 0.917 | UP |
+
+**Runtime**: 1281s (~21.4 min)
+**Success Rate**: 88.2% (30/34 tasks)
+
+**Conclusion**: v54 did not improve over v52. v52 remains best at 0.9166.
