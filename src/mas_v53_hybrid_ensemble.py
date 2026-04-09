@@ -256,14 +256,11 @@ OUTPUT GRID (your prediction):"""
 # v53: Orchestrator
 # ============================================================================
 
-class MASOrchestratorV53:
+class MASOrchestratorV53(MASOrchestratorV34):
     """MAS v53 - Hybrid Ensemble combining v34 stability with v52 voting."""
     
     def __init__(self):
-        self.llm = LLMClient(
-            api_key="sk-cp-ZNEhSAB4-p-nraTwKzWoeLCpFPE-wY8If5v_1qxUvnW4_h0ryAunuH9_Vn-SItYx-D1AGFdRhD_6fn_9LhkpWG2yy6kUeRZBEjq8aFCUpruT5aFlM-Y5KDc",
-            base_url="https://api.minimax.chat/v1/text/chatcompletion_v2"
-        )
+        super().__init__()  # Inherit self.llm and all v34 solvers
         self.consecutive_stable_gens = 0
         self.best_generation = 0
         
@@ -276,11 +273,11 @@ class MASOrchestratorV53:
         elif category == "MATH-500":
             return solve_math_v53(self.llm, task)
         elif category == "SWE-Bench-Pro":
-            return MASOrchestratorV34.solve_swe_v34(self.llm, task)
+            return self.solve_swe_v34(task)
         elif category == "OSWorld-Tool-Hard":
             return solve_osworld_v17(self.llm, task)
         elif category == "ZeroBench":
-            return MASOrchestratorV34.solve_zerobench_v15(self.llm, task)
+            return self.solve_zerobench_v15(task)
         else:
             # Fall back to v14 standalone functions
             if category == "BBEH":
