@@ -24,25 +24,24 @@
 
 ---
 
-## 当前状态: 🟢 RUNNING v59 (confidence voting, PID 146083, started ~06:27)
+## 当前状态: ⏸️ IDLE (v59 DONE, 0.9073 🏅2nd best)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**v59 策略**: Confidence-weighted voting
-- Estimate confidence from response text (certainty indicators)
-- Weighted ensemble: score * (confidence + 0.5)
-- ARC: 5 votes with confidence weighting
-- IMO: 3 attempts with confidence weighting
+**v58/v59 结果**:
+| Version | Overall | ARC | IMO | SWE | Notes |
+|---------|---------|-----|-----|-----|-------|
+| v59 | **0.9073** 🏅 | 0.8891 | 0.8092 | **0.9867** | 2nd best |
+| v58 | 0.8965 | 0.8758 | **0.8548** | 0.8367 | Best IMO! |
+| v57 | 0.8985 | 0.8958 | 0.7884 | 0.9167 | |
+| v56 | 0.9064 | 0.8758 | 0.8274 | 0.9867 | |
 
-**v56-v58 迭代总结**:
-| Version | Score | IMO | Notes |
-|---------|-------|-----|-------|
-| v52 Run1 | **0.9166** 🏆 | 0.8320 | Best - API lucky |
-| v56 | 0.9064 | 0.8274 | IMO voting |
-| v57 | 0.8985 | 0.7884 | 5 ARC votes |
-| v58 | 0.8965 | 0.8548 | 7 ARC + 5 IMO |
+**分析**: 
+- v59 2nd best overall (0.9073), SWE recovered to 0.9867
+- v58 had best IMO (0.8548) but SWE dropped
+- API variance still causes ~3-5% swings
 
-**核心洞察**: All within API noise (5% swing). v52 Run1 = API lucky.
+**策略**: Design v60 - combine v59's SWE stability with v58's IMO technique
 
 **资源**: Disk 18GB ✅, Mem 2.1GB ✅
 

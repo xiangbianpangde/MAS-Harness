@@ -3092,3 +3092,32 @@ Keep v52 core + MATH verification but revert IMO to v34 style
 | v58 | 7 | 5 | 0.8965 | 0.8548 | 0.8367 |
 
 **Insight**: IMO voting (5 votes in v58) shows improvement trend for IMO component, but overall score limited by API variance on other components.
+
+## v58 (2026-04-10 06:23)
+
+**Status**: ⚠️ REGRESSED - Overall **0.8965**
+
+| Category | Score | Notes |
+|----------|-------|-------|
+| ARC-AGI-3 | 0.8758 | Stable |
+| IMO-ANSWER | **0.8548** | Best IMO this cycle! |
+| SWE-Bench | 0.8367 | Dropped |
+
+**Note**: IMO hit 0.8548 - best result since v52 Run1's 0.8320. But SWE dropped.
+
+## v59 (2026-04-10 06:56)
+
+**Status**: ✅ GOOD - Overall **0.9073** (2nd best after v52 Run1)
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.8891 |
+| IMO-ANSWER | 0.8092 |
+| SWE-Bench | **0.9867** |
+| MATH-500 | 0.8600 |
+| GPQA-Diamond | 1.0000 |
+
+**Runtime**: 1710s (~28.5 min)
+**Success Rate**: 94.1% (32/34)
+
+**Conclusion**: v59 with confidence-weighted voting achieves 0.9073, 2nd best overall. API variance still ~3-5% between runs.
