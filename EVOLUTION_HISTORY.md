@@ -3121,3 +3121,25 @@ Keep v52 core + MATH verification but revert IMO to v34 style
 **Success Rate**: 94.1% (32/34)
 
 **Conclusion**: v59 with confidence-weighted voting achieves 0.9073, 2nd best overall. API variance still ~3-5% between runs.
+
+## v58-v60 Summary (2026-04-10 05:58-07:34)
+
+Multiple runs during idle period. Key findings:
+
+| Version | Score | ARC | IMO | SWE | ZeroBench |
+|---------|-------|-----|-----|-----|-----------|
+| v60 | 0.9080 | 0.8958 | 0.8316 | 0.9400 | **0.9500** |
+| v59 | 0.9073 | 0.8891 | 0.8092 | **0.9867** | 0.9167 |
+| v58 | 0.8965 | 0.8758 | **0.8548** | 0.8367 | 0.8833 |
+
+**Key Discoveries**:
+- v58: 5 IMO votes → IMO=0.8548 (BEST EVER for IMO!)
+- v59: confidence weighting → SWE=0.9867 (BEST EVER for SWE!)
+- But v58 and v59 each sacrificed other categories
+- v60 tried to combine best of both, got 0.9080 (balanced but not best)
+
+**v58 design**: Robust ensemble with 5 IMO votes
+**v59 design**: Confidence-weighted voting for all categories  
+**v60 design**: Hybrid - IMO 5 votes + confidence + ARC 5 votes + confidence
+
+**Conclusion**: API variance still dominant. Improvements in one category often come at cost to others in single runs. Need multi-run averaging to properly evaluate.

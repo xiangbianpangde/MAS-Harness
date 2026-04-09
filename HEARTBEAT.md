@@ -24,25 +24,28 @@
 
 ---
 
-## 当前状态: 🟢 RUNNING v60 (Hybrid voting, PID 154979, started ~07:02)
+## 当前状态: ⏸️ IDLE (v60 DONE: 0.9080)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**v60 策略**: Hybrid - combine best from v58 & v59
-- IMO: 5 votes + confidence weighting (v58: best IMO 0.8548)
-- ARC: 5 votes + confidence weighting (v59: 2nd best overall)
-- 目标: IMO ~0.85+ AND SWE ~0.98+
+**v60 结果**: 0.9080 ✅ (competitive but < v52 best)
+| Version | Overall | ARC | IMO | SWE | ZeroBench |
+|---------|---------|-----|-----|-----|-----------|
+| v60 | **0.9080** | 0.8958 | 0.8316 | 0.9400 | **0.9500** |
+| v59 | 0.9073 | 0.8891 | 0.8092 | **0.9867** | 0.9167 |
+| v58 | 0.8965 | 0.8758 | **0.8548** | 0.8367 | 0.8833 |
+| v52 Run1 | **0.9166** 🏆 | **0.9233** | 0.8320 | 0.9633 | 0.8800 |
 
-**近期排名**:
-| Version | Overall | IMO | SWE |
-|---------|---------|-----|-----|
-| v52 Run1 | **0.9166** 🏆 | 0.8320 | 0.9633 |
-| v59 | 0.9073 🏅 | 0.8092 | 0.9867 |
-| v56 | 0.9064 | 0.8274 | 0.9867 |
-| v58 | 0.8965 | 0.8548 | 0.8367 |
-| v57 | 0.8985 | 0.7884 | 0.9167 |
+**关键发现**:
+- v58: 5 IMO votes → IMO=0.8548 (best ever!)
+- v59: SWE=0.9867 (best ever!)
+- v60: Hybrid approach, balanced but not best in any category
 
-**资源**: Disk 18GB ✅, Mem 2.1GB ✅
+**核心问题**: API variance dominates (~2-5% swing)
+- Even with voting, can't consistently replicate v52's 0.9166
+- Need multi-run averaging to validate improvements
+
+**资源**: Disk 19GB ✅, Mem 2.3GB ✅
 
 ---
 

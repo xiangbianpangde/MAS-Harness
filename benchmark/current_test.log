@@ -1,5 +1,5 @@
 ============================================================
-MAS v59.0 - Confidence-Weighted Self-Consistency
+MAS v60.0 - Hybrid Confidence-Weighted Dual Voting
 ============================================================
 
 Task Summary:
@@ -17,22 +17,22 @@ Task Summary:
 ============================================================
 MAS v52.0 ARC-Voting Report
 ============================================================
-Overall Score: 0.9073
+Overall Score: 0.9080
 Best Gen: 15
 Success Rate: 32/34 (94.1%)
 ------------------------------------------------------------
-  ARC-AGI-3 (25%):    0.8891 [v52 VOTING]
+  ARC-AGI-3 (25%):    0.8958 [v52 VOTING]
   BBEH (20%):         0.9000
   HLE (15%):          1.0000
-  IMO-ANSWER (15%):   0.8092
-  SWE-Bench-Pro (10%): 0.9867
+  IMO-ANSWER (15%):   0.8316
+  SWE-Bench-Pro (10%): 0.9400
   MATH-500 (8%):      0.8600
   GPQA-Diamond (4%):  1.0000
   OSWorld-Tool-Hard (2%): 0.8500
-  ZeroBench (1%):     0.9167
+  ZeroBench (1%):     0.9500
 ------------------------------------------------------------
-Runtime: 1710.4s
+Runtime: 1942.4s
 ============================================================
 
 
-Saved to: /root/.openclaw/workspace-mas/benchmark/results/v59_1775775369.json
+Saved to: /root/.openclaw/workspace-mas/benchmark/results/v60_1775777677.json
