@@ -3298,3 +3298,24 @@ Multiple runs during idle period. Key findings:
 - 11:06 v52: 0.3709 (API bad)
 - 11:23 v52: 0.5709 (API bad)
 - 13:51 v52: 0.7755 (partial recovery)
+
+## v52 @ 14:40 - API Re-Degraded
+
+**Status**: ❌ WORSE - Overall **0.5181** (HLE dropped from 1.0 to 0.52!)
+
+| Category | 13:51 | 14:40 | Change |
+|----------|-------|-------|--------|
+| HLE | 1.00 | 0.52 | ❌ Dropped |
+| BBEH | 0.90 | 0.375 | ❌ Dropped |
+| GPQA | 0.77 | 0.77 | 🟡 Stable |
+
+**Analysis**: API re-degraded after partial recovery. Even simple MCQ tasks failing again. This is very unusual - suggests API load/variance is extremely high right now.
+
+**Conclusion**: API highly unstable. v52 @ 00:32 (0.9166) remains best and unreplicable due to API issues.
+
+## Full API Timeline
+- 00:32 v52: **0.9166** (good)
+- 11:06 v52: 0.3709 (bad)
+- 11:23 v52: 0.5709 (bad)
+- 13:51 v52: 0.7755 (partial recovery)
+- 14:40 v52: 0.5181 (re-degraded!)
