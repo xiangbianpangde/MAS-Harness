@@ -24,19 +24,21 @@
 
 ---
 
-## 当前状态: 🟢 RUNNING v64 (FIXED, PID 187847, started ~09:12)
+## 当前状态: 🟢 RUNNING v65 (balanced 3+3 votes, PID 203299, started ~10:15)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**v63 CRASH**: 0.5734 - catastrophic. Root cause: solve_task() override ignored by v52.run_benchmark().
+**v64 TIMEOUT**: 0.8243, only 30/34 tasks. 7 ARC + 5 IMO votes = 12 extra calls/task → timeout.
 
-**v64 FIX**: Properly override run_benchmark() to call correct solvers:
-- ARC: 7-vote (from v58) | IMO: 5-vote (from v58)
-- SWE: v34 solver | Others: v14/v17 solvers
+**v65 策略**: Balanced voting (3+3 = 6 total, not 12)
+- ARC: 3 votes (v52's proven)
+- IMO: 3 votes (v56's technique)
+- SWE: v34 solver (stable)
+- Reduce votes to fit within 3600s timeout
 
-**v58-v62 结果** (API variance ~5-7%):
-| Version | Overall | ARC | IMO | SWE |
-|---------|---------|-----|-----|-----|
+**v58-v62 API variance** (same code, different luck):
+| Version | Score | ARC | IMO | SWE |
+|---------|-------|-----|-----|-----|
 | v60 | 0.9080 | 0.8958 | 0.8316 | 0.9400 |
 | v59 | 0.9073 | 0.8891 | 0.8092 | 0.9867 |
 | v58 | 0.8965 | 0.8758 | 0.8548 | 0.8367 |

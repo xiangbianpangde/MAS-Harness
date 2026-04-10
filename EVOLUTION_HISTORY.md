@@ -3207,3 +3207,25 @@ Multiple runs during idle period. Key findings:
 - IMO: 5-vote best-of (from v58)
 - SWE: v34 solver (proven stable)
 - Others: v14/v17 solvers directly
+
+## v64 (2026-04-10 10:13) - TIMEOUT
+
+**Status**: ⚠️ TIMEOUT - Overall **0.8243** (only 30/34 tasks completed)
+
+| Category | Score | Notes |
+|----------|-------|-------|
+| ARC-AGI-3 | 0.8958 | Good, 7-vote helped |
+| BBEH | 0.9000 | Normal |
+| HLE | 1.0000 | Normal |
+| IMO-ANSWER | 0.7062 | Low - may have timed out |
+| SWE-Bench | **0.4867** | Very low - timed out? |
+| MATH-500 | 0.8600 | Normal |
+| GPQA | 1.0000 | Normal |
+| OSWorld | 0.3500 | Very low |
+| ZeroBench | **0.0000** | Timed out completely |
+
+**Root Cause**: 7 ARC votes + 5 IMO votes = 12 extra LLM calls per task. With 5 IMO + 3 ARC = 36 extra calls. Total ~60+ calls caused timeout at 3600s.
+
+**Lesson**: Heavy voting (7+5) is too slow. Need fewer votes or different approach.
+
+**Next**: v65 with balanced voting: 3 ARC + 3 IMO votes (6 total, not 12).
