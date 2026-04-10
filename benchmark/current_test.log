@@ -14,26 +14,3 @@ Task Summary:
   ZeroBench: 3 tasks
   TOTAL: 34 tasks
   NOTE: ARC-AGI uses 3-vote voting for stability
-
-============================================================
-MAS v52.0 ARC-Voting Report
-============================================================
-Overall Score: 0.9102
-Best Gen: 15
-Success Rate: 31/34 (91.2%)
-------------------------------------------------------------
-  ARC-AGI-3 (25%):    0.8824 [v52 VOTING]
-  BBEH (20%):         0.9000
-  HLE (15%):          1.0000
-  IMO-ANSWER (15%):   0.8316
-  SWE-Bench-Pro (10%): 0.9867
-  MATH-500 (8%):      0.8600
-  GPQA-Diamond (4%):  1.0000
-  OSWorld-Tool-Hard (2%): 0.9000
-  ZeroBench (1%):     0.9333
-------------------------------------------------------------
-Runtime: 1769.3s
-============================================================
-
-
-Saved to: /root/.openclaw/workspace-mas/benchmark/results/v52_1775824182.json
