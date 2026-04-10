@@ -18,22 +18,22 @@ Task Summary:
 ============================================================
 MAS v52.0 ARC-Voting Report
 ============================================================
-Overall Score: 0.4349
+Overall Score: 0.8897
 Best Gen: 15
-Success Rate: 8/34 (23.5%)
+Success Rate: 30/34 (88.2%)
 ------------------------------------------------------------
-  ARC-AGI-3 (25%):    0.5900 [v52 VOTING]
-  BBEH (20%):         0.3000
-  HLE (15%):          0.3600
-  IMO-ANSWER (15%):   0.5580
-  SWE-Bench-Pro (10%): 0.2500
-  MATH-500 (8%):      0.4400
-  GPQA-Diamond (4%):  0.5333
-  OSWorld-Tool-Hard (2%): 0.2000
-  ZeroBench (1%):     0.4167
+  ARC-AGI-3 (25%):    0.8724 [v52 VOTING]
+  BBEH (20%):         0.9000
+  HLE (15%):          1.0000
+  IMO-ANSWER (15%):   0.7424
+  SWE-Bench-Pro (10%): 0.9667
+  MATH-500 (8%):      0.8600
+  GPQA-Diamond (4%):  1.0000
+  OSWorld-Tool-Hard (2%): 0.8500
+  ZeroBench (1%):     0.7733
 ------------------------------------------------------------
-Runtime: 772.0s
+Runtime: 1983.5s
 ============================================================
 
 
-Saved to: /root/.openclaw/workspace-mas/benchmark/results/v52_1775811299.json
+Saved to: /root/.openclaw/workspace-mas/benchmark/results/v52_1775820589.json
