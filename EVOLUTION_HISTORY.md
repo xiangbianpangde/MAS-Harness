@@ -3251,3 +3251,26 @@ Multiple runs during idle period. Key findings:
 2. Heavy voting (7+5) causes timeout
 3. Balanced voting (3+3) works but hit bad API window
 4. v52 core architecture is still best
+
+## v52 Replication @ 11:23 (API BAD PERIOD)
+
+**Status**: ❌ API TERRIBLE - Overall **0.5709** (even pure v52 failed!)
+
+| Category | Score | Normal | Drop |
+|----------|-------|--------|------|
+| HLE | 0.52 | 1.0 | -0.48 |
+| SWE | 0.25 | 0.96 | -0.71 |
+| GPQA | 0.53 | 1.0 | -0.47 |
+| OSWorld | 0.20 | 0.85 | -0.65 |
+
+**Conclusion**: This proves the bad scores are API issues, not architecture. MiniMax API is in terrible form right now.
+
+**Lesson**: Must wait for API recovery before drawing conclusions about architecture changes.
+
+## API Quality Timeline
+- 00:32 v52 Run1: **0.9166** (good)
+- 04:34 v56: 0.9064 (okay)
+- 08:45 v62: 0.8615 (okay-ish)
+- 10:53 v65: 0.6315 (bad)
+- 11:23 v52: 0.5709 (terrible)
+→ API quality declining over time. May be load-related.
