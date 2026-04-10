@@ -24,20 +24,24 @@
 
 ---
 
-## 当前状态: 🟢 RUNNING v52 (API test, PID 250396, started ~13:24)
+## 当前状态: ⏸️ IDLE - API Partially Recovered
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**API 质量恶化确认**:
-| Time | Score | Notes |
-|------|-------|-------|
-| 00:32 | **0.9166** 🏆 | Good |
-| 11:06 | 0.3709 | Very bad |
-| 11:23 | 0.5709 | Still bad, slightly better |
+**API 恢复状态** (@ 13:51 v52: 0.7755):
+| Component | Score | Status |
+|-----------|-------|--------|
+| HLE | 1.00 | ✅ Recovered |
+| BBEH | 0.90 | ✅ Recovered |
+| GPQA | 0.77 | 🟡 Recovering |
+| ARC-AGI | 0.87 | 🟡 OK |
+| IMO | 0.58 | ❌ Still low |
+| SWE | 0.57 | ❌ Still low |
+| MATH | 0.44 | ❌ Still low |
 
-**分析**: v52 replication from 11:06 (0.3709) and 11:23 (0.5709) 确认是API问题，不是架构问题。API在恢复中但仍然很差。
+Simple MCQ (HLE, BBEH) recovered. Complex tasks (IMO, SWE, MATH) still degraded.
 
-**策略**: 等待API恢复。当前不应基于差结果做架构决策。
+**策略**: 等待API完全恢复。Simple tasks已恢复，但complex reasoning仍受影响。
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 

@@ -3274,3 +3274,27 @@ Multiple runs during idle period. Key findings:
 - 10:53 v65: 0.6315 (bad)
 - 11:23 v52: 0.5709 (terrible)
 → API quality declining over time. May be load-related.
+
+## v52 @ 13:51 - Partial API Recovery
+
+**Status**: 🟡 PARTIAL RECOVERY - Overall **0.7755** (improved but not fully)
+
+| Category | Score | Normal | Status |
+|----------|-------|--------|--------|
+| HLE | 1.00 | 1.0 | ✅ Recovered |
+| BBEH | 0.90 | 0.9 | ✅ Recovered |
+| GPQA | 0.77 | 1.0 | 🟡 Recovering |
+| ARC-AGI | 0.87 | 0.92 | 🟡 OK |
+| IMO | 0.58 | 0.83 | ❌ Still low |
+| SWE | 0.57 | 0.96 | ❌ Still low |
+| MATH | 0.44 | 0.86 | ❌ Still low |
+
+**Analysis**: Simple MCQ tasks (HLE, BBEH) recovered. Complex tasks (IMO proofs, SWE code) still struggling. API quality still degraded for difficult tasks.
+
+**Conclusion**: API partially recovered. Continue monitoring - may need to wait longer for full recovery.
+
+## API Recovery Timeline
+- 00:32 v52: **0.9166** (full quality)
+- 11:06 v52: 0.3709 (API bad)
+- 11:23 v52: 0.5709 (API bad)
+- 13:51 v52: 0.7755 (partial recovery)
