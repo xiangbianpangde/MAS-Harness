@@ -3143,3 +3143,20 @@ Multiple runs during idle period. Key findings:
 **v60 design**: Hybrid - IMO 5 votes + confidence + ARC 5 votes + confidence
 
 **Conclusion**: API variance still dominant. Improvements in one category often come at cost to others in single runs. Need multi-run averaging to properly evaluate.
+
+## v61 (2026-04-10 08:12)
+
+**Status**: ❌ REGRESSION - Overall **0.8494** (-0.059 from v52 best)
+
+| Category | Score | Notes |
+|----------|-------|-------|
+| ARC-AGI-3 | 0.8824 | Normal |
+| IMO-ANSWER | **0.6800** | API unlucky |
+| SWE-Bench | **0.7367** | API unlucky |
+| MATH-500 | **0.7200** | API unlucky |
+
+**Key Insight**: API variance demonstrated conclusively:
+- Same v52 core code: 0.9166 (Run1), 0.8687 (Run2), 0.8494 (v61)
+- ~7% swing proves variance dominates improvements
+
+**Conclusion**: Cannot trust single runs. Need multiple runs to validate.

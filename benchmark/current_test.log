@@ -13,3 +13,26 @@ Task Summary:
   OSWorld-Tool-Hard: 3 tasks
   ZeroBench: 3 tasks
   TOTAL: 34 tasks
+
+============================================================
+MAS v52.0 ARC-Voting Report
+============================================================
+Overall Score: 0.8494
+Best Gen: 15
+Success Rate: 28/34 (82.4%)
+------------------------------------------------------------
+  ARC-AGI-3 (25%):    0.8824 [v52 VOTING]
+  BBEH (20%):         0.9000
+  HLE (15%):          1.0000
+  IMO-ANSWER (15%):   0.6800
+  SWE-Bench-Pro (10%): 0.7367
+  MATH-500 (8%):      0.7200
+  GPQA-Diamond (4%):  1.0000
+  OSWorld-Tool-Hard (2%): 0.8500
+  ZeroBench (1%):     0.8500
+------------------------------------------------------------
+Runtime: 2103.2s
+============================================================
+
+
+Saved to: /root/.openclaw/workspace-mas/benchmark/results/v61_1775779963.json

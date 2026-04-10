@@ -24,24 +24,24 @@
 
 ---
 
-## 当前状态: 🟢 RUNNING v61 (Category-specific best, PID 163916, started ~07:35)
+## 当前状态: ⏸️ IDLE (v61 DONE, 0.8494 - API unlucky)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**v61 策略**: Category-specific best approaches
-- IMO: 5 votes with best-score selection (from v58's best-IMO approach)
-- SWE: v34's proven bug-specific approach (0.96+ consistent)
-- ARC: 5 votes with majority voting
+**v61 结果**: 0.8494 (REGRESSION - API unlucky)
+| Version | Overall | IMO | SWE | MATH | Notes |
+|---------|---------|-----|-----|------|-------|
+| v61 | 0.8494 | 0.68 | 0.74 | 0.72 | API unlucky |
+| v52 Run1 | **0.9166** 🏆 | 0.83 | 0.96 | 0.86 | Best |
+| v56 | 0.9064 | 0.83 | 0.99 | 0.86 | Good |
 
-**v60 结果**: 0.9080 ✅ (competitive but < v52 best)
-| Version | Overall | ARC | IMO | SWE | ZeroBench |
-|---------|---------|-----|-----|-----|-----------|
-| v60 | **0.9080** | 0.8958 | 0.8316 | 0.9400 | **0.9500** |
-| v59 | 0.9073 | 0.8891 | 0.8092 | **0.9867** | 0.9167 |
-| v58 | 0.8965 | 0.8758 | **0.8548** | 0.8367 | 0.8833 |
-| v52 Run1 | **0.9166** 🏆 | **0.9233** | 0.8320 | 0.9633 | 0.8800 |
+**API Variance 证明**: Same code (v52 core):
+- Run1 (00:32): 0.9166
+- Run2 (02:40): 0.8687  
+- v61 (08:12): 0.8494
+→ 6.7% swing proves variance dominates
 
-**核心问题**: API variance dominates (~2-5% swing)
+**结论**: v52 architecture (0.9166) 是最佳架构。投票策略改进方向正确但单次运行无法克服API方差。需要多次运行取平均。
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 
