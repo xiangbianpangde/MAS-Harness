@@ -3319,3 +3319,27 @@ Multiple runs during idle period. Key findings:
 - 11:23 v52: 0.5709 (bad)
 - 13:51 v52: 0.7755 (partial recovery)
 - 14:40 v52: 0.5181 (re-degraded!)
+
+## v52 @ 16:55 - API Catastrophic
+
+**Status**: ❌ CATASTROPHIC - Overall **0.4349** (8/34 tasks)
+
+| Category | Score | Normal |
+|----------|-------|--------|
+| HLE | 0.36 | 1.0 |
+| BBEH | 0.30 | 0.9 |
+| SWE | 0.25 | 0.96 |
+
+**Analysis**: API in catastrophic state. Even simple MCQ tasks failing at 30% rate. This is beyond normal variance - likely service degradation or heavy load.
+
+**Conclusion**: Stop testing until API recovers. v52 @ 0.9166 (00:32) remains best.
+
+## Full API Timeline
+| Time | Score | Status |
+|------|-------|--------|
+| 00:32 | **0.9166** | Good |
+| 11:06 | 0.3709 | Bad |
+| 11:23 | 0.5709 | Bad |
+| 13:51 | 0.7755 | Partial recovery |
+| 14:40 | 0.5181 | Re-degraded |
+| 16:55 | 0.4349 | Catastrophic |
