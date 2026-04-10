@@ -3183,3 +3183,27 @@ Multiple runs during idle period. Key findings:
 - v52 core (stable SWE from v34)
 - v58's 7 ARC votes (robust voting from v58)
 - v58's 5 IMO votes (best IMO technique)
+
+## v63 (2026-04-10 09:09) - CRASHED
+
+**Status**: ❌ CRASHED - Overall **0.5734** (catastrophic failure!)
+
+| Category | v63 | Normal |
+|----------|-----|--------|
+| ARC-AGI-3 | 0.8924 | 0.89 |
+| BBEH | **0.3750** | 0.90 |
+| HLE | **0.5200** | 1.00 |
+| SWE-Bench | **0.5000** | 0.96 |
+| MATH-500 | **0.3000** | 0.86 |
+| GPQA | **0.3000** | 1.00 |
+
+**Root Cause**: v63 overrode solve_task() but v52.run_benchmark() doesn't call solve_task() - it directly calls specific solver methods. So BBEH/HLE/MATH/GPQA all called wrong/no solver.
+
+**Fix**: v64 properly overrides run_benchmark() to call correct solvers for each category.
+
+## v64 Design (FIXED)
+- Properly override run_benchmark()
+- ARC: 7-vote voting (from v58)
+- IMO: 5-vote best-of (from v58)
+- SWE: v34 solver (proven stable)
+- Others: v14/v17 solvers directly
