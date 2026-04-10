@@ -1,5 +1,5 @@
 ============================================================
-MAS v65.0 - Balanced Voting (3 ARC + 3 IMO)
+MAS v52.0 ARC-Voting Benchmark
 ============================================================
 
 Task Summary:
@@ -13,3 +13,4 @@ Task Summary:
   OSWorld-Tool-Hard: 3 tasks
   ZeroBench: 3 tasks
   TOTAL: 34 tasks
+  NOTE: ARC-AGI uses 3-vote voting for stability

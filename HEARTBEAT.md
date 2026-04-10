@@ -24,24 +24,25 @@
 
 ---
 
-## 当前状态: 🟢 RUNNING v65 (balanced 3+3 votes, PID 203299, started ~10:15)
+## 当前状态: 🟢 RUNNING v52 (replicate best, PID 213288, started ~10:55)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**v64 TIMEOUT**: 0.8243, only 30/34 tasks. 7 ARC + 5 IMO votes = 12 extra calls/task → timeout.
+**v65 结果**: 0.6315 - API bad period
+- HLE: 0.68 (normal 1.0) - should be stable
+- GPQA: 0.30 (normal 1.0) - should be stable
+→ API质量波动，不是架构问题
 
-**v65 策略**: Balanced voting (3+3 = 6 total, not 12)
-- ARC: 3 votes (v52's proven)
-- IMO: 3 votes (v56's technique)
-- SWE: v34 solver (stable)
-- Reduce votes to fit within 3600s timeout
-
-**v58-v62 API variance** (same code, different luck):
+**v58-v65 API方差对比**:
 | Version | Score | ARC | IMO | SWE |
 |---------|-------|-----|-----|-----|
+| v52 Run1 | **0.9166** 🏆 | 0.9233 | 0.8320 | 0.9633 |
+| v64 | 0.8243 | 0.8958 | 0.7062 | 0.4867 (timeout) |
+| v65 | 0.6315 | 0.5700 | 0.5840 | 0.5000 (API bad) |
 | v60 | 0.9080 | 0.8958 | 0.8316 | 0.9400 |
 | v59 | 0.9073 | 0.8891 | 0.8092 | 0.9867 |
-| v58 | 0.8965 | 0.8758 | 0.8548 | 0.8367 |
+
+**策略**: API方差主导结果。v52 core再次运行争取复制0.9166。
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 

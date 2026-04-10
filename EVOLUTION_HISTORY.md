@@ -3229,3 +3229,25 @@ Multiple runs during idle period. Key findings:
 **Lesson**: Heavy voting (7+5) is too slow. Need fewer votes or different approach.
 
 **Next**: v65 with balanced voting: 3 ARC + 3 IMO votes (6 total, not 12).
+
+## v65 (2026-04-10 10:53) - API BAD PERIOD
+
+**Status**: ❌ TERRIBLE - Overall **0.6315** (API issues?)
+
+| Category | v65 | Normal | Notes |
+|----------|-----|--------|-------|
+| BBEH | 0.825 | 0.90 | Should be stable |
+| HLE | **0.680** | 1.0 | Should be VERY stable |
+| GPQA | **0.300** | 1.0 | Should be stable |
+| MATH | 0.720 | 0.86 | Dropped |
+| ARC-AGI | 0.570 | 0.89 | Dropped |
+
+**Analysis**: Even stable components failed. This indicates API/model issues during this time window, not architecture problems.
+
+**Conclusion**: v52 @ 00:32 (0.9166) remains best. v65 API window was unlucky.
+
+## Key Learnings
+1. API variance can cause 5-7% swings
+2. Heavy voting (7+5) causes timeout
+3. Balanced voting (3+3) works but hit bad API window
+4. v52 core architecture is still best
