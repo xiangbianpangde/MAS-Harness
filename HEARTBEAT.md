@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE - API Partially Recovered
+## 当前状态: 🟢 RUNNING v52 (API test @ 14:21, PID 264619)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
