@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE - API Re-Degraded
+## 当前状态: 🟢 RUNNING v52 (API retest, PID 299409, started ~16:42)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
