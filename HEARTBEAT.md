@@ -24,19 +24,30 @@
 
 ---
 
-## 当前状态: 🟢 RUNNING v62 (v52 replication, PID 173208, started ~08:14)
+## 当前状态: 🟢 RUNNING v63 (best-of-all, PID 181839, started ~08:48)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
-**v62 策略**: Pure v52 core replication - 测试API方差
-- No modifications to v52 architecture
-- Goal: replicate lucky 0.9166 score
+**v58-v62 结果** (show massive API variance):
+| Version | Overall | ARC | IMO | SWE |
+|---------|---------|-----|-----|-----|
+| v60 | 0.9080 | 0.8958 | 0.8316 | 0.9400 |
+| v59 | 0.9073 | 0.8891 | 0.8092 | **0.9867** |
+| v58 | 0.8965 | 0.8758 | **0.8548** 🏆 | 0.8367 |
+| v62 | 0.8615 | 0.7788 | 0.7922 | 0.8233 |
+| v61 | 0.8494 | 0.8824 | 0.6800 | 0.7367 |
+| v52 Run1 | **0.9166** 🏆 | **0.9233** | 0.8320 | 0.9633 |
 
-**API Variance 问题本质**:
-- v52 Run1: 0.9166 (lucky)
-- v52 Run2: 0.8687 (-0.048)
-- v61: 0.8494 (-0.067)
-→ ~7% swing confirms API randomness dominates
+**关键发现**:
+- v58 achieved best IMO ever: 0.8548 (5 votes!)
+- v59 achieved best SWE: 0.9867
+- API variance causes ~5-7% swing across runs
+- v52 Run1 at 0.9166 still best overall
+
+**v63 策略**: Best-of-all combining:
+- v52 core (stable SWE from v34)
+- v58's 7 ARC votes (robust voting)
+- v58's 5 IMO votes (best IMO technique)
 
 **资源**: Disk 19GB ✅, Mem 2.3GB ✅
 

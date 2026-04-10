@@ -3160,3 +3160,26 @@ Multiple runs during idle period. Key findings:
 - ~7% swing proves variance dominates improvements
 
 **Conclusion**: Cannot trust single runs. Need multiple runs to validate.
+
+## v58-v62 Series Summary (API Variance Analysis)
+
+**Finding**: API variance dominates results - same code produces 0.85-0.92 depending on API luck.
+
+| Version | Score | ARC | IMO | SWE | Notes |
+|---------|-------|-----|-----|-----|-------|
+| v60 | 0.9080 | 0.8958 | 0.8316 | 0.9400 | |
+| v59 | 0.9073 | 0.8891 | 0.8092 | **0.9867** | Best SWE |
+| v58 | 0.8965 | 0.8758 | **0.8548** 🏆 | 0.8367 | Best IMO |
+| v62 | 0.8615 | 0.7788 | 0.7922 | 0.8233 | |
+| v61 | 0.8494 | 0.8824 | 0.6800 | 0.7367 | Worst |
+
+**Key Insight**: 
+- v58 had best IMO (0.8548) with 5 votes
+- v59 had best SWE (0.9867) with v52 core
+- v52 Run1 (0.9166) still best overall due to balanced performance
+- API variance ~5-7% makes single-run comparisons unreliable
+
+## v63 Design: Best-of-all
+- v52 core (stable SWE from v34)
+- v58's 7 ARC votes (robust voting from v58)
+- v58's 5 IMO votes (best IMO technique)
