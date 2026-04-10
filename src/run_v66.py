@@ -40,7 +40,23 @@ if __name__ == "__main__":
         sys.exit(1)
     
     elapsed = time.time() - start
-    print(orch.get_report(scores, total_score, results, elapsed))
+    
+    # Print report
+    print("\n" + "=" * 60)
+    print("MAS v66.0 Results")
+    print("=" * 60)
+    print(f"Overall Score: {total_score:.4f}")
+    print(f"Runtime: {elapsed:.1f}s")
+    print("-" * 60)
+    print(f"  ARC-AGI-3 (25%):    {scores.arc_agi_3:.4f}")
+    print(f"  BBEH (20%):         {scores.bbeh:.4f}")
+    print(f"  HLE (15%):          {scores.hle:.4f}")
+    print(f"  IMO-ANSWER (15%):   {scores.imo_answer:.4f}")
+    print(f"  SWE-Bench-Pro (10%): {scores.swe_bench_pro:.4f}")
+    print(f"  MATH-500 (8%):      {scores.math_500:.4f}")
+    print(f"  GPQA-Diamond (4%):  {scores.gpqa_diamond:.4f}")
+    print(f"  OSWorld-Tool-Hard (2%): {scores.osworld_tool_hard:.4f}")
+    print(f"  ZeroBench (1%):     {scores.zerobench:.4f}")
     
     result_file = f"/root/.openclaw/workspace-mas/benchmark/results/v66_{int(time.time())}.json"
     rd = {

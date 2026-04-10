@@ -1,5 +1,5 @@
 ============================================================
-MAS v52.0 ARC-Voting Benchmark
+MAS v66.0 - Reflexion Architecture (Self-Correction)
 ============================================================
 
 Task Summary:
@@ -13,27 +13,23 @@ Task Summary:
   OSWorld-Tool-Hard: 3 tasks
   ZeroBench: 3 tasks
   TOTAL: 34 tasks
-  NOTE: ARC-AGI uses 3-vote voting for stability
-
-============================================================
-MAS v52.0 ARC-Voting Report
-============================================================
-Overall Score: 0.8785
-Best Gen: 15
-Success Rate: 30/34 (88.2%)
-------------------------------------------------------------
-  ARC-AGI-3 (25%):    0.8858 [v52 VOTING]
-  BBEH (20%):         0.9000
-  HLE (15%):          1.0000
-  IMO-ANSWER (15%):   0.8040
-  SWE-Bench-Pro (10%): 0.7200
-  MATH-500 (8%):      0.8600
-  GPQA-Diamond (4%):  1.0000
-  OSWorld-Tool-Hard (2%): 0.8500
-  ZeroBench (1%):     0.8667
-------------------------------------------------------------
-Runtime: 2411.7s
-============================================================
-
-
-Saved to: /root/.openclaw/workspace-mas/benchmark/results/v52_1775834074.json
+[19s] ARC-AGI-3: 00576224 -> 1.00
+[116s] ARC-AGI-3: 009d5c81 -> 0.87
+[130s] ARC-AGI-3: 03560426 -> 0.77
+[138s] BBEH: bbeh_001 -> 1.00
+[150s] BBEH: bbeh_002 -> 1.00
+[180s] BBEH: bbeh_003 -> 0.60
+[198s] BBEH: bbeh_004 -> 1.00
+[213s] HLE: hle_001 -> 1.00
+[225s] HLE: hle_002 -> 1.00
+[240s] HLE: hle_003 -> 1.00
+[250s] HLE: hle_004 -> 1.00
+[271s] HLE: hle_005 -> 1.00
+[315s] IMO-ANSWER: imo_001 -> 1.00
+[376s] IMO-ANSWER: imo_002 -> 1.00
+[444s] IMO-ANSWER: imo_003 -> 1.00
+[514s] IMO-ANSWER: imo_004 -> 1.00
+[593s] IMO-ANSWER: imo_005 -> 1.00
+[600s] SWE-Bench-Pro: swe_001 -> 0.96
+[605s] SWE-Bench-Pro: swe_002 -> 0.96
+[612s] SWE-Bench-Pro: swe_003 -> 0.96

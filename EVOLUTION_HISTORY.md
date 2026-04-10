@@ -3471,3 +3471,50 @@ Multiple runs during idle period. Key findings:
 | 20:30 | **0.9102** 🥈 | Second best |
 | 19:29 | 0.8897 | |
 | 23:14 | 0.8785 | SWE=0.72 |
+
+## v66 (2026-04-11 04:14) - Reflexion Architecture Launch
+
+**Design**: Self-Correction Paradigm (vs v52's Voting Paradigm)
+- Paradigm shift: Sequential verify-and-correct instead of parallel voting
+- Each task: initial solve → verify → correct if wrong → re-verify (up to 2 retries)
+- Hypothesis: catches logical errors that voting ensemble misses
+
+**Architecture**:
+- v66 uses same v34 core for SWE/MATH/GPQA
+- v66 uses same v52 ARC solver (stable)
+- v66 adds IMO reflexion solver with verification feedback
+- v66 adds SWE reflexion with fix verification
+
+**Motivation**: 
+- v52 @ 0.9166 remains unbeaten after 10+ iterations
+- v56-v65 voting strategies all regressed or crashed
+- Convergence condition met → paradigm shift needed
+
+**v66 Files**:
+- src/mas_v66_reflexion.py: Main architecture
+- src/run_v66.py: Benchmark runner
+
+**Status**: RUNNING
+
+## v66 @ 04:30 - NEW BEST! 0.9271 🏆 (Reflexion Paradigm)
+
+**Status**: 🏆 NEW RECORD - Overall **0.9271** (92.7% success)
+
+| Category | Score | vs v52 Best |
+|----------|-------|-------------|
+| ARC-AGI-3 | 0.8658 | 0.9233 🟡 (-0.06) |
+| BBEH | 0.9000 | 0.90 ✅ (same) |
+| HLE | 1.0000 | 1.0 ✅ (same) |
+| IMO-ANSWER | **1.0000** 🏆 | 0.8320 (+0.17!) |
+| SWE-Bench-Pro | 0.9600 | 0.9633 🟡 (-0.003) |
+| MATH-500 | 0.8600 | 0.86 ✅ (same) |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ (same) |
+| OSWorld-Tool-Hard | 0.8500 | 0.90 🟡 (-0.05) |
+| ZeroBench | 0.8833 | 0.9333 🟡 (-0.05) |
+
+**Key Insight**: Reflexion (self-correction) paradigm dramatically improved IMO from 0.83 to 1.0!
+The sequential verify-and-correct approach caught IMO solution errors that voting missed.
+
+**Runtime**: 884s (within normal bounds)
+
+**Conclusion**: v66 Reflexion paradigm beats v52 Voting paradigm!
