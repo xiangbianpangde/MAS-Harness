@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE - API BAD PERIOD (recovering?)
+## 当前状态: 🟢 RUNNING v52 (API test, PID 250396, started ~13:24)
 
 **历史最佳**: v52 **0.9166** 🏆 (Run1 @ 00:32)
 
