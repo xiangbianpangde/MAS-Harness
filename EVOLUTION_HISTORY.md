@@ -4041,3 +4041,13 @@ can cause catastrophic failures on individual tasks even when architecture is so
 | MATH | 0.8600 | |
 | OSWorld | 0.8500 | |
 | ZeroBench | 0.8067 | Lower |
+
+## v96 @ 05:00 - 0.9314
+
+| Category | Score |
+|----------|-------|
+| ARC | 0.8824 |
+| IMO | 1.0000 |
+| SWE | 0.9600 |
+| MATH | 0.8600 |
+| ZeroBench | 0.9000 |
