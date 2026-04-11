@@ -4030,3 +4030,14 @@ can cause catastrophic failures on individual tasks even when architecture is so
 | MATH | 0.8600 | |
 | OSWorld | 0.8500 | |
 | ZeroBench | 0.8833 | |
+
+## v95 @ 04:38 - 0.9288
+
+| Category | Score | Notes |
+|----------|-------|-------|
+| ARC-AGI-3 | 0.8758 | |
+| IMO | 1.0000 | Perfect |
+| SWE | 0.9600 | Perfect |
+| MATH | 0.8600 | |
+| OSWorld | 0.8500 | |
+| ZeroBench | 0.8067 | Lower |
