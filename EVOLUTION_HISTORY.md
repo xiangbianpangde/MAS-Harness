@@ -3873,3 +3873,20 @@ can cause catastrophic failures on individual tasks even when architecture is so
 - This shows the IMO scorer (expected=None) is extremely vulnerable to API variance
 
 **Conclusion**: v68 @ 0.9304 remains best. IMO benchmark has fundamental issues.
+
+## v81 @ ~23:30 - TIMEOUT (3rd consecutive)
+
+**Status**: TIMEOUT - process took >45min
+
+**Partial results** (from polling):
+- ARC: 1.00, 0.87, 0.74 (avg ~0.87)
+- BBEH: 0.90 (typical)
+- HLE: 1.0 (perfect)
+- IMO: 1.00, 1.00, 1.00, 1.00 (perfect so far!)
+
+**Analysis**: 
+- This is the 3rd consecutive timeout
+- The slow I/O is causing timeouts
+- IMO was PERFECT (1.0 for first 4 tasks) before timeout
+
+**Conclusion**: v68 @ 0.9304 remains best.

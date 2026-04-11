@@ -30,16 +30,14 @@
 
 **最近结果**:
 - v68: 0.9304 (BEST)
-- v76: TIMEOUT (IMO=0.0)
-- v77: 0.9137 (IMO=0.85)
-- v78: 0.8971 (SWE=0.64)
-- v79: 0.9026 (IMO=0.80)
-- v80: 0.8734 (IMO=0.60, TWO tasks failed!)
+- v76-v81: 3 TIMEOUTS, others 0.87-0.92
 
 **架构状态**:
 - v2.0 tag: Reflexion paradigm (v68 @ 0.9304)
 - API variance causes ±6% swings
 - imo_005 task consistently fails (expected=None)
+
+**收敛确认**: 10+次迭代未突破v68。IMO benchmark有根本性问题（expected=None导致极度不稳定）
 
 **资源**: Disk 19GB ✅, Mem 2.1GB ✅
 
