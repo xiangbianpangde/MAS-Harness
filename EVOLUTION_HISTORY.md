@@ -3833,3 +3833,21 @@ The architecture (reflexion paradigm) is stable - just very unlucky API calls.
 
 **Conclusion**: v68 @ 0.9304 remains best. This run shows that API variance
 can cause catastrophic failures on individual tasks even when architecture is sound.
+
+## v79 @ 20:38 - 0.9026 (IMO=0.80 again)
+
+**Status**: Below v68 due to imo_005 failure
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|---------|-------|
+| ARC-AGI-3 | 0.8858 | 0.8789 🟢 | Higher |
+| BBEH | 0.9000 | 0.90 ✅ | Same |
+| HLE | 1.0000 | 1.0 ✅ | Same |
+| IMO-ANSWER | 0.8000 | 1.0 ❌ | imo_005=0.0 |
+| SWE-Bench-Pro | 0.9600 | 0.96 ✅ | Same |
+| MATH-500 | 0.8600 | 0.86 ✅ | Same |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ | Same |
+| OSWorld-Tool-Hard | 0.8500 | 0.85 ✅ | Same |
+| ZeroBench | 0.9333 | 0.8833 🟢 | Higher |
+
+**Conclusion**: v68 @ 0.9304 remains best.
