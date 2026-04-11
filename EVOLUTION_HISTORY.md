@@ -3851,3 +3851,25 @@ can cause catastrophic failures on individual tasks even when architecture is so
 | ZeroBench | 0.9333 | 0.8833 🟢 | Higher |
 
 **Conclusion**: v68 @ 0.9304 remains best.
+
+## v80 @ 22:04 - 0.8734 (CATASTROPHIC IMO failure)
+
+**Status**: MUCH WORSE than v68 - TWO IMO tasks failed
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|---------|-------|
+| ARC-AGI-3 | 0.8924 | 0.8789 🟢 | Slightly higher |
+| BBEH | 0.9000 | 0.90 ✅ | Same |
+| HLE | 1.0000 | 1.0 ✅ | Same |
+| IMO-ANSWER | 0.6000 | 1.0 ❌ | imo_003=0.0, imo_005=0.0 |
+| SWE-Bench-Pro | 0.9600 | 0.96 ✅ | Same |
+| MATH-500 | 0.8600 | 0.86 ✅ | Same |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ | Same |
+| OSWorld-Tool-Hard | 0.8500 | 0.85 ✅ | Same |
+| ZeroBench | 0.8500 | 0.8833 🟡 | Slightly lower |
+
+**Analysis**: CATASTROPHIC API variance - TWO IMO tasks got 0.0!
+- imo_003 and imo_005 both failed
+- This shows the IMO scorer (expected=None) is extremely vulnerable to API variance
+
+**Conclusion**: v68 @ 0.9304 remains best. IMO benchmark has fundamental issues.

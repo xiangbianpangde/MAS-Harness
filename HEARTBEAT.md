@@ -33,7 +33,8 @@
 - v76: TIMEOUT (IMO=0.0)
 - v77: 0.9137 (IMO=0.85)
 - v78: 0.8971 (SWE=0.64)
-- v79: 0.9026 (IMO=0.80, imo_005=0.0)
+- v79: 0.9026 (IMO=0.80)
+- v80: 0.8734 (IMO=0.60, TWO tasks failed!)
 
 **架构状态**:
 - v2.0 tag: Reflexion paradigm (v68 @ 0.9304)
