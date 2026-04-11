@@ -38,6 +38,7 @@
 **架构状态**:
 - v2.0 tag: Reflexion paradigm (v68 @ 0.9304)
 - API variance causes ±6% swings
+- imo_005 task consistently fails (expected=None)
 
 **资源**: Disk 19GB ✅, Mem 2.1GB ✅
 
