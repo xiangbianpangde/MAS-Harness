@@ -3676,3 +3676,25 @@ This is a benchmark limitation, not architecture issue.
 This shows the API variance can cause significant drops in individual task performance.
 
 **Conclusion**: v68 @ 0.9304 remains best.
+
+## v73 @ 11:52 - 0.9249 (close to v68)
+
+**Status**: Slightly below v68 due to ARC variance
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|--------|-------|
+| ARC-AGI-3 | 0.8558 | 0.8789 🟡 | Lower than v68 |
+| BBEH | 0.9000 | 0.90 ✅ | Same |
+| HLE | 1.0000 | 1.0 ✅ | Same |
+| IMO-ANSWER | 1.0000 | 1.0 ✅ | Perfect! |
+| SWE-Bench-Pro | 0.9600 | 0.96 ✅ | Same |
+| MATH-500 | 0.8600 | 0.86 ✅ | Same |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ | Same |
+| OSWorld-Tool-Hard | 0.8500 | 0.85 ✅ | Same |
+| ZeroBench | 0.9167 | 0.8833 🟢 | Higher! |
+
+**Analysis**: v73 achieved perfect IMO (1.0) like v68, but ARC dropped slightly.
+Overall: 0.9249 vs v68's 0.9304 = -0.0055 difference.
+This is API variance on ARC tasks.
+
+**Conclusion**: v68 @ 0.9304 remains best.

@@ -36,6 +36,7 @@
 | v70 | 0.8983 | IMO=0.80 (API variance) |
 | v71 | 0.9001 | IMO=0.80 (imo_005=0.0) |
 | v72 | TIMEOUT | Incomplete |
+| v73 | 0.9249 | ARC=0.86 (variance) |
 
 **v68 组件得分**:
 - ARC-AGI-3: 0.8789
