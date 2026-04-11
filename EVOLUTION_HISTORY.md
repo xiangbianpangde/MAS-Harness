@@ -4051,3 +4051,19 @@ can cause catastrophic failures on individual tasks even when architecture is so
 | SWE | 0.9600 |
 | MATH | 0.8600 |
 | ZeroBench | 0.9000 |
+
+## v97 @ ~05:36 - 0.8943 (SWE=0.64)
+
+| Category | Score | Notes |
+|----------|-------|-------|
+| SWE | 0.6400 | swe_002=0.0 |
+| ZeroBench | 0.8067 | Low |
+
+## v98 @ ~05:55 - 0.8894 (SWE=0.64, MATH=0.72)
+
+| Category | Score | Notes |
+|----------|-------|-------|
+| SWE | 0.6400 | swe_002=0.0 |
+| MATH | 0.7200 | math_003=0.30, math_005=0.30 |
+
+**Summary**: v93 (0.9339) remains best. Recent runs showing API variance impact.
