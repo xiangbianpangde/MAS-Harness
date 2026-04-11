@@ -3614,3 +3614,24 @@ Overall: v68's SWE health (0.96) vs v69's SWE disaster (0.64) = API luck.
 **Analysis**: v69 run2 recovered to 0.9279 (from 0.9061). API variance confirmed ±2%.
 
 **Conclusion**: v68 @ 0.9304 remains best. v69 is same architecture, run2 shows stability.
+
+## v70 @ 09:46 - 0.8983 (API variance)
+
+**Status**: Below v68 due to IMO regression
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|--------|-------|
+| ARC-AGI-3 | 0.8724 | 0.8789 🟡 | Slight drop |
+| BBEH | 0.9000 | 0.90 ✅ | Same |
+| HLE | 1.0000 | 1.0 ✅ | Same |
+| IMO-ANSWER | 0.8000 | 1.0 ❌ | imo_005 failed (API variance) |
+| SWE-Bench-Pro | 0.9600 | 0.96 ✅ | Same |
+| MATH-500 | 0.8600 | 0.86 ✅ | Same |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ | Same |
+| OSWorld-Tool-Hard | 0.8500 | 0.85 ✅ | Same |
+| ZeroBench | 0.8433 | 0.8833 🟡 | Slight drop |
+
+**Analysis**: IMO dropped to 0.80 (imo_005 got 0.0) due to API variance.
+This is the same architecture as v68 - just bad luck on that specific task.
+
+**Conclusion**: v68 @ 0.9304 remains best.

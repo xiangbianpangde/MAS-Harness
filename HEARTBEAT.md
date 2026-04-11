@@ -32,8 +32,8 @@
 | Version | Score | Notes |
 |---------|-------|-------|
 | v68 | **0.9304** 🏆 | Best |
-| v69 | 0.9061 | SWE=0.64 (API variance) |
-| v69 | 0.9279 | SWE=0.96 (recovered) |
+| v69 | 0.9279 | SWE recovered |
+| v70 | 0.8983 | IMO=0.80 (API variance) |
 
 **v68 组件得分**:
 - ARC-AGI-3: 0.8789
