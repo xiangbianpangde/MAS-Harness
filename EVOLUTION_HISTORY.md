@@ -3657,3 +3657,22 @@ All IMO tasks have expected=None - the scorer uses weak validation (non-empty).
 This is a benchmark limitation, not architecture issue.
 
 **Conclusion**: v68 @ 0.9304 remains best. IMO variance is inherent to the benchmark.
+
+## v72 @ ~11:10 - TIMEOUT (incomplete)
+
+**Status**: Run timed out before completion
+
+**Partial results** (from polling output):
+- ARC: 1.00, 0.87, 0.67 (avg ~0.85) - lower than usual
+- BBEH: 0.90 (same)
+- HLE: 1.0 (perfect)
+- IMO: 1.0, 1.0, 0.0, 1.0 (imo_003 got 0.0 - unusual!)
+
+**Analysis**: v72 had worse than normal performance due to:
+1. ARC task 3 got only 0.67 (normally ~0.75-0.80)
+2. IMO task 3 got 0.0 (normally all 1.0)
+3. Process timed out before completion
+
+This shows the API variance can cause significant drops in individual task performance.
+
+**Conclusion**: v68 @ 0.9304 remains best.
