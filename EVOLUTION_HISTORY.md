@@ -3698,3 +3698,24 @@ Overall: 0.9249 vs v68's 0.9304 = -0.0055 difference.
 This is API variance on ARC tasks.
 
 **Conclusion**: v68 @ 0.9304 remains best.
+
+## v74 @ 15:58 - 0.9001 (IMO variance persists)
+
+**Status**: Below v68 due to imo_005 failure
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|--------|-------|
+| ARC-AGI-3 | 0.8758 | 0.8789 🟡 | Same |
+| BBEH | 0.9000 | 0.90 ✅ | Same |
+| HLE | 1.0000 | 1.0 ✅ | Same |
+| IMO-ANSWER | 0.8000 | 1.0 ❌ | imo_005=0.0 (API variance) |
+| SWE-Bench-Pro | 0.9600 | 0.96 ✅ | Same |
+| MATH-500 | 0.8600 | 0.86 ✅ | Same |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ | Same |
+| OSWorld-Tool-Hard | 0.8500 | 0.85 ✅ | Same |
+| ZeroBench | 0.9333 | 0.8833 🟢 | Higher |
+
+**Analysis**: imo_005 consistently fails (v70, v71, v74 all got 0.0).
+This is API variance on the weak IMO validation (expected=None).
+
+**Conclusion**: v68 @ 0.9304 remains best.

@@ -24,7 +24,7 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE (API variance period)
+## 当前状态: ⏸️ IDLE (waiting for user)
 
 **历史最佳**: v68 **0.9304** 🏆 (Run1 @ 05:50)
 
@@ -37,6 +37,7 @@
 | v71 | 0.9001 | IMO=0.80 (imo_005=0.0) |
 | v72 | TIMEOUT | Incomplete |
 | v73 | 0.9249 | ARC=0.86 (variance) |
+| v74 | 0.9001 | IMO=0.80 (imo_005=0.0) |
 
 **v68 组件得分**:
 - ARC-AGI-3: 0.8789
