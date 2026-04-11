@@ -4067,3 +4067,9 @@ can cause catastrophic failures on individual tasks even when architecture is so
 | MATH | 0.7200 | math_003=0.30, math_005=0.30 |
 
 **Summary**: v93 (0.9339) remains best. Recent runs showing API variance impact.
+
+## v99 @ 06:26 - 0.8903 (SWE=0.64)
+## v100 @ 06:57 - 0.8879 (ARC=0.83, IMO=0.80)
+
+**Summary**: Recent runs showing high API variance.
+**Best**: v93 (0.9339)
