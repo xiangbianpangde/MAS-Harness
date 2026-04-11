@@ -24,20 +24,18 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE
+## 当前状态: ⏸️ IDLE (Convergence confirmed)
 
 **历史最佳**: v68 **0.9304** 🏆 (Run1 @ 05:50)
 
-**最近结果**:
+**收敛确认**: 10+次迭代未突破。3次连续TIMEOUT。
 - v68: 0.9304 (BEST)
 - v76-v81: 3 TIMEOUTS, others 0.87-0.92
+- IMO benchmark has expected=None导致极度不稳定
 
 **架构状态**:
 - v2.0 tag: Reflexion paradigm (v68 @ 0.9304)
-- API variance causes ±6% swings
-- imo_005 task consistently fails (expected=None)
-
-**收敛确认**: 10+次迭代未突破v68。IMO benchmark有根本性问题（expected=None导致极度不稳定）
+- API variance + timeouts preventing improvement
 
 **资源**: Disk 19GB ✅, Mem 2.1GB ✅
 
