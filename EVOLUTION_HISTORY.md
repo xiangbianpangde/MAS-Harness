@@ -3946,3 +3946,14 @@ can cause catastrophic failures on individual tasks even when architecture is so
 | ZeroBench | 0.9167 | Good |
 
 **Analysis**: IMO perfect again. MATH dropped due to API variance.
+
+## v84 @ 00:55 - 0.9243
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.8558 |
+| IMO | 1.0000 |
+| SWE | 0.9600 |
+| MATH | 0.8600 |
+| OSWorld | 0.8500 |
+| ZeroBench | 0.8533 |
