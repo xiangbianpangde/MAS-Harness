@@ -3890,3 +3890,44 @@ can cause catastrophic failures on individual tasks even when architecture is so
 - IMO was PERFECT (1.0 for first 4 tasks) before timeout
 
 **Conclusion**: v68 @ 0.9304 remains best.
+
+## v81 @ ~23:28 - TIMEOUT (Partial: IMO was perfect 1.0)
+
+**Status**: TIMEOUT after ~45min
+
+**Partial results** (from polling output):
+- ARC: 1.00, 0.87, 0.74 (avg ~0.87) - same as v68
+- BBEH: 0.90 (typical)
+- HLE: 1.0 (perfect)
+- IMO: 1.00, 1.00, 1.00, 1.00 (**PERFECT** for first 4 tasks!)
+
+**Analysis**: 
+- IMO was **PERFECT** (1.0 for first 4 tasks) before timeout
+- If completed, v81 could have been a new best
+- Timeouts are causing wasted runs
+
+**Conclusion**: v68 @ 0.9304 remains best. Need faster runs to avoid timeouts.
+
+## v82 @ 23:52 - 0.9276 (BEST SINCE V68!)
+
+**Status**: Very close to v68 - excellent run!
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|---------|-------|
+| ARC-AGI-3 | 0.8624 | 0.8789 🟡 | Lower |
+| BBEH | 0.9000 | 0.90 ✅ | Same |
+| HLE | 1.0000 | 1.0 ✅ | Perfect |
+| IMO-ANSWER | 1.0000 | 1.0 ✅ | **PERFECT!** |
+| SWE-Bench-Pro | 0.9600 | 0.96 ✅ | Same |
+| MATH-500 | 0.8600 | 0.86 ✅ | Same |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ | Perfect |
+| OSWorld-Tool-Hard | 0.9000 | 0.85 🟢 | Higher! |
+| ZeroBench | 0.9167 | 0.8833 🟢 | Higher! |
+
+**Analysis**: 
+- IMO: **PERFECT** (1.0) - same as v68
+- OSWorld: **0.90** (higher than v68's 0.85)
+- ZeroBench: **0.92** (higher than v68's 0.88)
+- Overall: 0.9276 vs v68's 0.9304 = -0.0028
+
+**Conclusion**: v82 is the best run since v68! Very close to the best.
