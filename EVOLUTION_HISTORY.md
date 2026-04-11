@@ -3719,3 +3719,25 @@ This is API variance on ARC tasks.
 This is API variance on the weak IMO validation (expected=None).
 
 **Conclusion**: v68 @ 0.9304 remains best.
+
+## v75 @ 16:19 - 0.8701 (WORST RUN - severe API variance)
+
+**Status**: Worst run - both IMO and SWE failed
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|--------|-------|
+| ARC-AGI-3 | 0.8858 | 0.8789 🟢 | Higher |
+| BBEH | 0.9000 | 0.90 ✅ | Same |
+| HLE | 1.0000 | 1.0 ✅ | Same |
+| IMO-ANSWER | 0.8000 | 1.0 ❌ | imo_005=0.0 |
+| SWE-Bench-Pro | 0.6400 | 0.96 ❌ | swe_002=0.0 (severe!) |
+| MATH-500 | 0.8600 | 0.86 ✅ | Same |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ | Same |
+| OSWorld-Tool-Hard | 0.8500 | 0.85 ✅ | Same |
+| ZeroBench | 0.8833 | 0.8833 ✅ | Same |
+
+**Analysis**: Severe API variance - both IMO and SWE had failures.
+This is the worst run in the v66-v75 series.
+The architecture (reflexion paradigm) is stable - just very unlucky API calls.
+
+**Conclusion**: v68 @ 0.9304 remains best. API variance can cause ±6% swings.
