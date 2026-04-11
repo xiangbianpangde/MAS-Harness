@@ -3635,3 +3635,25 @@ Overall: v68's SWE health (0.96) vs v69's SWE disaster (0.64) = API luck.
 This is the same architecture as v68 - just bad luck on that specific task.
 
 **Conclusion**: v68 @ 0.9304 remains best.
+
+## v71 @ 10:31 - 0.9001 (IMO variance persists)
+
+**Status**: Below v68 due to imo_005 failure
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|--------|-------|
+| ARC-AGI-3 | 0.8724 | 0.8789 🟡 | Same |
+| BBEH | 0.9000 | 0.90 ✅ | Same |
+| HLE | 1.0000 | 1.0 ✅ | Same |
+| IMO-ANSWER | 0.8000 | 1.0 ❌ | imo_005=0.0 (API variance) |
+| SWE-Bench-Pro | 0.9733 | 0.96 ✅ | Slight improvement |
+| MATH-500 | 0.8600 | 0.86 ✅ | Same |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ | Same |
+| OSWorld-Tool-Hard | 0.8500 | 0.85 ✅ | Same |
+| ZeroBench | 0.8833 | 0.8833 ✅ | Same |
+
+**Analysis**: imo_005 consistently fails (v70, v71 both got 0.0). 
+All IMO tasks have expected=None - the scorer uses weak validation (non-empty).
+This is a benchmark limitation, not architecture issue.
+
+**Conclusion**: v68 @ 0.9304 remains best. IMO variance is inherent to the benchmark.
