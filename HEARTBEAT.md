@@ -30,8 +30,8 @@
 
 **最近结果**:
 - v68: 0.9304 (BEST)
-- v82: 0.9276 (IMO=1.0, OSWorld=0.90, ZeroBench=0.92)
-- v76-v81: 3 TIMEOUTS, others 0.87-0.92
+- v82: 0.9276 (IMO=1.0, OSWorld=0.90)
+- v83: 0.9205 (IMO=1.0, MATH=0.72)
 
 **架构状态**:
 - v2.0 tag: Reflexion paradigm (v68 @ 0.9304)
