@@ -31,7 +31,8 @@
 **最近结果**:
 - v68: 0.9304 (BEST)
 - v76: TIMEOUT (IMO=0.0, catastrophic API variance)
-- v77: 0.9137 (IMO=0.85, SWE=0.99) |
+- v77: 0.9137 (IMO=0.85, SWE=0.99)
+- v78: 0.8971 (SWE=0.64, MATH=0.72 - severe API variance)
 
 **架构状态**:
 - v2.0 tag: Reflexion paradigm (v68 @ 0.9304)

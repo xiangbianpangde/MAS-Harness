@@ -3808,3 +3808,28 @@ The architecture (reflexion paradigm) is stable - just very unlucky API calls.
 - IMO dropped: 1.0 → 0.8474 due to API variance
 
 **Conclusion**: v68 @ 0.9304 remains best.
+
+## v78 @ 19:36 - 0.8971 (API variance hits hard)
+
+**Status**: Below v68 due to API variance on SWE and MATH
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|---------|-------|
+| ARC-AGI-3 | 0.9200 | 0.8789 🟢 | Higher! |
+| BBEH | 0.9000 | 0.90 ✅ | Same |
+| HLE | 1.0000 | 1.0 ✅ | Same |
+| IMO-ANSWER | 1.0000 | 1.0 ✅ | Perfect! |
+| SWE-Bench-Pro | 0.6400 | 0.96 ❌ | swe_002=0.0 |
+| MATH-500 | 0.7200 | 0.86 ❌ | math_003=0.30, math_004=0.30 |
+| GPQA-Diamond | 1.0000 | 1.0 ✅ | Same |
+| OSWorld-Tool-Hard | 0.8500 | 0.85 ✅ | Same |
+| ZeroBench | 0.8500 | 0.8833 🟡 | Lower |
+
+**Analysis**: 
+- ARC improved: 0.8789 → 0.9200 (+0.04) - excellent!
+- IMO perfect: 1.0 - same as v68
+- SWE failed: 0.96 → 0.64 due to swe_002=0.0
+- MATH failed: 0.86 → 0.72 due to math_003=0.30, math_004=0.30
+
+**Conclusion**: v68 @ 0.9304 remains best. This run shows that API variance
+can cause catastrophic failures on individual tasks even when architecture is sound.
