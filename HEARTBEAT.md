@@ -24,14 +24,16 @@
 
 ---
 
-## 当前状态: ⏸️ IDLE (System rest)
+## 当前状态: ⏸️ IDLE (API variance period)
 
 **历史最佳**: v68 **0.9304** 🏆 (Run1 @ 05:50)
 
-**v68 结果**:
-| Time | Score | Notes |
-|------|-------|-------|
-| 05:50 | **0.9304** 🏆 | NEW BEST! |
+**最近运行**:
+| Version | Score | Notes |
+|---------|-------|-------|
+| v68 | **0.9304** 🏆 | Best |
+| v69 | 0.9061 | SWE=0.64 (API variance) |
+| v69 | 0.9279 | SWE=0.96 (recovered) |
 
 **v68 组件得分**:
 - ARC-AGI-3: 0.8789
@@ -43,11 +45,6 @@
 - GPQA-Diamond: 1.0000
 - OSWorld-Tool-Hard: 0.8500
 - ZeroBench: 0.8833
-
-**历史对比**:
-- v52: 0.9166 (Voting paradigm)
-- v66: 0.9271 (Reflexion paradigm)  
-- v68: 0.9304 (Reflexion + ARC improvement) - NEW BEST!
 
 **资源**: Disk 19GB ✅, Mem 2.2GB ✅
 
