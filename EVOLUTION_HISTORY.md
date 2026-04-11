@@ -3981,3 +3981,25 @@ can cause catastrophic failures on individual tasks even when architecture is so
 - This is within API variance, but a new record!
 
 **Conclusion**: v87 @ 0.9322 is the new best!
+
+## v91 @ 03:36 - 0.9261
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.8624 |
+| IMO | 1.0000 |
+| SWE | 0.9600 |
+| MATH | 0.8600 |
+| OSWorld | 0.8500 |
+| ZeroBench | 0.8650 |
+
+## v92 @ 03:58 - 0.9326
+
+| Category | Score |
+|----------|-------|
+| ARC-AGI-3 | 0.8891 |
+| IMO | 1.0000 |
+| SWE | 0.9600 |
+| MATH | 0.8600 |
+| OSWorld | 0.8500 |
+| ZeroBench | 0.8500 |
