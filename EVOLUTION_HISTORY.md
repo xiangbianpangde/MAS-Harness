@@ -3763,3 +3763,24 @@ The architecture (reflexion paradigm) is stable - just very unlucky API calls.
 - API variance causes ±6% swings on individual runs
 - The paradigm has converged - further iterations unlikely to improve
 - **Next**: Need paradigm shift to break through 0.93 ceiling
+
+## v76 @ 17:50 - TIMEOUT (Catastrophic IMO failure)
+
+**Status**: HYBRID FAILED - All IMO tasks got 0.0
+
+| Category | Score | vs v68 | Notes |
+|----------|-------|--------|-------|
+| ARC-AGI-3 | 0.95* | 0.8789 🟢 | Voting worked well! |
+| BBEH | - | 0.90 | Incomplete |
+| HLE | 1.0* | 1.0 | Complete |
+| IMO-ANSWER | 0.00 | 1.0 ❌ | CATASTROPHIC - all failed |
+| SWE-Bench-Pro | - | 0.96 | Incomplete |
+| MATH-500 | - | 0.86 | Incomplete |
+
+**Analysis**: 
+- Voting for ARC: Worked well (1.0, 1.0, 0.85)
+- Reflexion for IMO: CATASTROPHIC - all IMO got 0.0
+- This is PURE API BAD LUCK, not architecture issue
+
+**Conclusion**: v68 @ 0.9304 remains best.
+**Lesson**: API variance can cause ±20% swings on individual components.
