@@ -1,0 +1,17 @@
+{
+  "version": "v112",
+  "overall_score": 0.9192122448979593,
+  "timestamp": "2026-04-12T12:28:32",
+  "runtime_seconds": 1489.6975393295288,
+  "scores": {
+    "ARC-AGI-3": 0.8791156462585034,
+    "BBEH": 0.9,
+    "HLE": 1.0,
+    "IMO-ANSWER": 1.0,
+    "SWE-Bench-Pro": 0.96,
+    "MATH-500": 0.72,
+    "GPQA-Diamond": 1.0,
+    "OSWorld-Tool-Hard": 0.85,
+    "ZeroBench": 0.8833333333333334
+  }
+}
